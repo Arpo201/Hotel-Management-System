@@ -9,6 +9,9 @@ package GUI;
  *
  * @author Asus
  */
+import javax.swing.ImageIcon;
+import java.awt.Image;
+
 public class Home extends javax.swing.JFrame {
 
     /**
@@ -16,8 +19,15 @@ public class Home extends javax.swing.JFrame {
      */
     public Home() {
         initComponents();
+        scaleImage();
     }
-
+    public void scaleImage(){
+      ImageIcon icon = new ImageIcon("D:\\Arpo\\Github\\Hotel-Management-System\\HotelSystem\\src\\Images\\user_icon.png");
+      Image img = icon.getImage();
+      Image imgScale = img.getScaledInstance(jUserIconLabel.getWidth(), jUserIconLabel.getHeight(), Image.SCALE_SMOOTH);
+      ImageIcon scaledIcon = new ImageIcon(imgScale);
+      jUserIconLabel.setIcon(scaledIcon);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -281,11 +291,16 @@ public class Home extends javax.swing.JFrame {
 
         jLabel11.setText("จำนวนผู้เข้าพักขณะนี้");
 
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setText("0");
 
         jLabel14.setText("คน");
 
-        jUserIconLabel.setText("jLabel15");
+        jUserIconLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jUserIconLabel.setText("img");
+        jUserIconLabel.setMaximumSize(new java.awt.Dimension(30, 30));
+        jUserIconLabel.setMinimumSize(new java.awt.Dimension(30, 30));
+        jUserIconLabel.setPreferredSize(new java.awt.Dimension(30, 30));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -293,25 +308,24 @@ public class Home extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jUserIconLabel)
-                .addGap(102, 102, 102)
                 .addComponent(jLabel11)
-                .addGap(29, 29, 29)
-                .addComponent(jLabel13)
-                .addGap(28, 28, 28)
+                .addGap(18, 18, 18)
+                .addComponent(jUserIconLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel14)
                 .addGap(21, 21, 21))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel14)
-                    .addComponent(jUserIconLabel))
-                .addContainerGap())
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jUserIconLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
