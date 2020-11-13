@@ -33,8 +33,8 @@ public class LoginForm extends javax.swing.JFrame {
     public Connection connectDB(){
         try {
             Class.forName("com.mysql.jdbc.Driver");//ระบุ Driver
-            String url = "jdbc:mysql://" +"localhost"+ "/" +"hotel_db"; //=localhost/StudentDB
-            Connection connect = DriverManager.getConnection(url,"root",""); //ใช้งาน interface ที่ชื่อ Connection
+            String url = "jdbc:mysql://" +"68.183.181.112"+ "/" +"hotel"; //=localhost/StudentDB
+            Connection connect = DriverManager.getConnection(url,"hotel","r2BIwa7o2e"); //ใช้งาน interface ที่ชื่อ Connection
             System.out.println("เชื่อมต่อฐานข้อมูลเรียบร้อย");
             return connect;
         } catch (Exception e) {
@@ -281,7 +281,7 @@ public class LoginForm extends javax.swing.JFrame {
         try {
             this.rs = con.createStatement().executeQuery(sql);
             while(rs.next()){
-                if(jUsernameField.getText().equals(rs.getString("id_User"))&&jPasswordField.getText().equals(rs.getString("pass_User"))){
+                if(jUsernameField.getText().equals(rs.getString("login_user"))&&jPasswordField.getText().equals(rs.getString("pass_user"))){
                     System.out.println("OK");
                     Home h = new Home();
                     h.pack();
