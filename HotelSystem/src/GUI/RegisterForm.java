@@ -360,6 +360,7 @@ public class RegisterForm extends javax.swing.JFrame {
             l.pack();
             l.setVisible(true);
             this.setVisible(false);
+            System.out.println(Integer.toString(jDatePicker1.getModel().getDay())+"/"+Integer.toString(jDatePicker1.getModel().getMonth())+"/"+Integer.toString(jDatePicker1.getModel().getYear()));
             con.close();
             stm.close();
         } catch (Exception e) {

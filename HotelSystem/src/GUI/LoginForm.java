@@ -289,12 +289,6 @@ public class LoginForm extends javax.swing.JFrame {
                     break;
                 }
             }
-            /*while(rs.next()){
-                if(String.valueOf(jPasswordField.getPassword()).equals(rs.getString("pass_User"))){
-                    System.out.println("VeryGood");
-                    break;
-                }
-            }*/
         } catch (Exception ex) {
             Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
         }
