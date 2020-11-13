@@ -1,35 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package GUI;
 
-import java.awt.Image;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
+public class Room extends javax.swing.JPanel {
 
-/**
- *
- * @author Asus
- */
-public class Room extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Room
-     */
     public Room() {
         initComponents();
-        scaleUserIconImage();
     }
-    
-    public void scaleUserIconImage(){
-      ImageIcon icon = new ImageIcon("D:\\Arpo\\Github\\Hotel-Management-System\\HotelSystem\\src\\Images\\user_icon.png");
-      Image img = icon.getImage();
-      Image imgScale = img.getScaledInstance(jUserIconLabel.getWidth(), jUserIconLabel.getHeight(), Image.SCALE_SMOOTH);
-      ImageIcon scaledIcon = new ImageIcon(imgScale);
-      jUserIconLabel.setIcon(scaledIcon);
-    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -39,13 +15,6 @@ public class Room extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jHeadPanel = new javax.swing.JPanel();
-        jNameLabel = new javax.swing.JLabel();
-        jTabPanel = new javax.swing.JPanel();
-        jHomeButton = new javax.swing.JButton();
-        jRoomButton = new javax.swing.JButton();
-        jFoodButton = new javax.swing.JButton();
-        jLogoutButton = new javax.swing.JButton();
         jPageHeadPanel = new javax.swing.JPanel();
         jPageLabel = new javax.swing.JLabel();
         jBodyPanel = new javax.swing.JPanel();
@@ -93,109 +62,6 @@ public class Room extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jUserIconLabel = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBounds(new java.awt.Rectangle(0, 0, 1000, 720));
-        setFont(new java.awt.Font("Angsana New", 0, 10)); // NOI18N
-        setMaximumSize(new java.awt.Dimension(1920, 1080));
-        setMinimumSize(new java.awt.Dimension(1280, 720));
-        setPreferredSize(new java.awt.Dimension(1280, 720));
-
-        jHeadPanel.setBackground(new java.awt.Color(67, 106, 141));
-        jHeadPanel.setForeground(new java.awt.Color(85, 122, 149));
-        jHeadPanel.setFont(new java.awt.Font("Angsana New", 0, 36)); // NOI18N
-
-        jNameLabel.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
-        jNameLabel.setForeground(new java.awt.Color(255, 255, 255));
-        jNameLabel.setText("นายปิง กล้าค้าขาย");
-
-        javax.swing.GroupLayout jHeadPanelLayout = new javax.swing.GroupLayout(jHeadPanel);
-        jHeadPanel.setLayout(jHeadPanelLayout);
-        jHeadPanelLayout.setHorizontalGroup(
-            jHeadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jHeadPanelLayout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addComponent(jNameLabel)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jHeadPanelLayout.setVerticalGroup(
-            jHeadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE)
-        );
-
-        jTabPanel.setBackground(new java.awt.Color(76, 126, 171));
-        jTabPanel.setFont(new java.awt.Font("Cambria", 0, 14)); // NOI18N
-
-        jHomeButton.setBackground(new java.awt.Color(216, 243, 255));
-        jHomeButton.setFont(new java.awt.Font("Angsana New", 1, 30)); // NOI18N
-        jHomeButton.setText("Home");
-        jHomeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jHomeButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jHomeButtonActionPerformed(evt);
-            }
-        });
-
-        jRoomButton.setBackground(new java.awt.Color(216, 243, 255));
-        jRoomButton.setFont(new java.awt.Font("Angsana New", 1, 30)); // NOI18N
-        jRoomButton.setText("Room");
-        jRoomButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jRoomButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRoomButtonActionPerformed(evt);
-            }
-        });
-
-        jFoodButton.setBackground(new java.awt.Color(216, 243, 255));
-        jFoodButton.setFont(new java.awt.Font("Angsana New", 1, 30)); // NOI18N
-        jFoodButton.setText("Food");
-        jFoodButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jFoodButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFoodButtonActionPerformed(evt);
-            }
-        });
-
-        jLogoutButton.setBackground(new java.awt.Color(255, 153, 153));
-        jLogoutButton.setFont(new java.awt.Font("Angsana New", 1, 24)); // NOI18N
-        jLogoutButton.setForeground(new java.awt.Color(255, 51, 51));
-        jLogoutButton.setText("Logout");
-        jLogoutButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLogoutButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jLogoutButtonActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jTabPanelLayout = new javax.swing.GroupLayout(jTabPanel);
-        jTabPanel.setLayout(jTabPanelLayout);
-        jTabPanelLayout.setHorizontalGroup(
-            jTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jTabPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jHomeButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jRoomButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jFoodButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-            .addGroup(jTabPanelLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLogoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
-        );
-        jTabPanelLayout.setVerticalGroup(
-            jTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jTabPanelLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jHomeButton)
-                .addGap(30, 30, 30)
-                .addComponent(jRoomButton)
-                .addGap(30, 30, 30)
-                .addComponent(jFoodButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 494, Short.MAX_VALUE)
-                .addComponent(jLogoutButton)
-                .addGap(21, 21, 21))
-        );
-
         jPageHeadPanel.setBackground(new java.awt.Color(165, 184, 201));
 
         jPageLabel.setFont(new java.awt.Font("Angsana New", 1, 48)); // NOI18N
@@ -228,6 +94,8 @@ public class Room extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+
+        floor1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         jLabel1.setText("ชั้น 1");
@@ -344,9 +212,9 @@ public class Room extends javax.swing.JFrame {
         floor1Layout.setHorizontalGroup(
             floor1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(floor1Layout.createSequentialGroup()
-                .addContainerGap(36, Short.MAX_VALUE)
+                .addContainerGap(41, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(40, 40, 40)
+                .addGap(20, 20, 20)
                 .addComponent(R101, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
                 .addComponent(R102, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -356,7 +224,7 @@ public class Room extends javax.swing.JFrame {
                 .addComponent(R104, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
                 .addComponent(R105, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         floor1Layout.setVerticalGroup(
             floor1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -371,6 +239,8 @@ public class Room extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addComponent(R102, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        floor2.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel27.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         jLabel27.setText("ชั้น 2");
@@ -485,9 +355,9 @@ public class Room extends javax.swing.JFrame {
         floor2Layout.setHorizontalGroup(
             floor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(floor2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(39, Short.MAX_VALUE)
                 .addComponent(jLabel27)
-                .addGap(40, 40, 40)
+                .addGap(20, 20, 20)
                 .addComponent(R117, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
                 .addComponent(R118, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -497,7 +367,7 @@ public class Room extends javax.swing.JFrame {
                 .addComponent(R120, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
                 .addComponent(R121, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         floor2Layout.setVerticalGroup(
             floor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -509,6 +379,8 @@ public class Room extends javax.swing.JFrame {
                 .addComponent(R121, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
+
+        floor3.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel15.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         jLabel15.setText("ชั้น 3");
@@ -623,9 +495,9 @@ public class Room extends javax.swing.JFrame {
         floor3Layout.setHorizontalGroup(
             floor3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(floor3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(39, Short.MAX_VALUE)
                 .addComponent(jLabel15)
-                .addGap(40, 40, 40)
+                .addGap(20, 20, 20)
                 .addComponent(R107, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
                 .addComponent(R108, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -635,7 +507,7 @@ public class Room extends javax.swing.JFrame {
                 .addComponent(R110, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
                 .addComponent(R111, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         floor3Layout.setVerticalGroup(
             floor3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -648,16 +520,22 @@ public class Room extends javax.swing.JFrame {
             .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
 
+        jFooterPanel.setBackground(new java.awt.Color(67, 106, 141));
+
         jLabel11.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("ขณะนี้มีผู้เข้าพัก");
 
         jLabel13.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setText("0");
 
         jLabel14.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("คน");
 
+        jUserIconLabel.setForeground(new java.awt.Color(255, 255, 255));
         jUserIconLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jUserIconLabel.setText("img");
         jUserIconLabel.setMaximumSize(new java.awt.Dimension(25, 30));
@@ -697,11 +575,11 @@ public class Room extends javax.swing.JFrame {
             .addComponent(jFooterPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(floor1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jBodyPanelLayout.createSequentialGroup()
-                .addContainerGap(399, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jDatePicker1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15)
                 .addComponent(jButton1)
-                .addContainerGap(424, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(floor3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(floor2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -722,52 +600,21 @@ public class Room extends javax.swing.JFrame {
                 .addComponent(jFooterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jHeadPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jTabPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPageHeadPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jBodyPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addComponent(jPageHeadPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jBodyPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jHeadPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPageHeadPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(3, 3, 3)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTabPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPageHeadPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(3, 3, 3)
-                        .addComponent(jBodyPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addComponent(jBodyPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jHomeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jHomeButtonActionPerformed
-        this.dispose();
-        new Home().setVisible(true);
-    }//GEN-LAST:event_jHomeButtonActionPerformed
-
-    private void jRoomButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRoomButtonActionPerformed
-
-    }//GEN-LAST:event_jRoomButtonActionPerformed
-
-    private void jFoodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFoodButtonActionPerformed
-        jPageLabel.setText("Food");
-        jBodyPanel.setVisible(true);
-    }//GEN-LAST:event_jFoodButtonActionPerformed
-
-    private void jLogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLogoutButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLogoutButtonActionPerformed
 
     private void jDatePicker1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDatePicker1ActionPerformed
         // TODO add your handling code here:
@@ -777,40 +624,6 @@ public class Room extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Room.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Room.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Room.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Room.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Room().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel R101;
@@ -834,10 +647,7 @@ public class Room extends javax.swing.JFrame {
     private javax.swing.JPanel jBodyPanel;
     private javax.swing.JButton jButton1;
     private org.jdatepicker.JDatePicker jDatePicker1;
-    private javax.swing.JButton jFoodButton;
     private javax.swing.JPanel jFooterPanel;
-    private javax.swing.JPanel jHeadPanel;
-    private javax.swing.JButton jHomeButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -859,12 +669,8 @@ public class Room extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JButton jLogoutButton;
-    private javax.swing.JLabel jNameLabel;
     private javax.swing.JPanel jPageHeadPanel;
     private javax.swing.JLabel jPageLabel;
-    private javax.swing.JButton jRoomButton;
-    private javax.swing.JPanel jTabPanel;
     private javax.swing.JLabel jUserIconLabel;
     // End of variables declaration//GEN-END:variables
 }
