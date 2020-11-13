@@ -1,6 +1,9 @@
 package GUI;
 
 
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 /*
@@ -14,13 +17,57 @@ import javax.swing.JFrame;
  * @author Asus
  */
 public class LoginForm extends javax.swing.JFrame {
+    private Connection con;
+    private ResultSet rs = null;
+    private PreparedStatement pst = null; 
 
     /**
      * Creates new form LoginForm
      */
     public LoginForm() {
+        connectDB();
         initComponents();
+        showData();
         this.setLocationRelativeTo(null);// center form in the screen
+    }
+    public Connection connectDB(){
+        try {
+            Class.forName("com.mysql.jdbc.Driver");//ระบุ Driver
+            String url = "jdbc:mysql://" +"localhost"+ "/" +"hotel_db"; //=localhost/StudentDB
+            Connection connect = DriverManager.getConnection(url,"root",""); //ใช้งาน interface ที่ชื่อ Connection
+            System.out.println("เชื่อมต่อฐานข้อมูลเรียบร้อย");
+            return connect;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+    public void showData(){
+        String sql = "select * from user_hotel";
+        try {
+            this.con = connectDB();
+            this.rs = con.createStatement().executeQuery(sql);
+            /*while(rs.next()){
+                System.out.println(rs.getString("id_User"));
+                System.out.println(rs.getString("pass_User"));
+            }*/
+        } catch (Exception ex) {
+            Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public void insertData(){
+        String sql = "insert into user_hotel value('rock','androw')";
+        try {
+            con = connectDB();
+            Statement stm = con.createStatement();
+            stm.executeUpdate(sql);
+            System.out.println("บันทึกข้อมูลเรียบร้อย");
+
+            con.close();
+            stm.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -40,10 +87,10 @@ public class LoginForm extends javax.swing.JFrame {
         jUsernameLabel = new javax.swing.JLabel();
         jUsernameField = new javax.swing.JTextField();
         jPasswordLabel = new javax.swing.JLabel();
-        jPasswordField = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabelRegister = new javax.swing.JLabel();
+        jPasswordField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -115,8 +162,6 @@ public class LoginForm extends javax.swing.JFrame {
         jPasswordLabel.setForeground(new java.awt.Color(255, 255, 255));
         jPasswordLabel.setText("Password:");
 
-        jPasswordField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
         jButton1.setBackground(new java.awt.Color(0, 204, 255));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -147,6 +192,12 @@ public class LoginForm extends javax.swing.JFrame {
             }
         });
 
+        jPasswordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordFieldActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -159,11 +210,11 @@ public class LoginForm extends javax.swing.JFrame {
                     .addComponent(jPasswordLabel))
                 .addGap(35, 35, 35)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jUsernameField)
-                    .addComponent(jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(93, Short.MAX_VALUE))
+                    .addComponent(jUsernameField, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
+                    .addComponent(jPasswordField))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(140, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelRegister)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -179,14 +230,15 @@ public class LoginForm extends javax.swing.JFrame {
                 .addGap(61, 61, 61)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jUsernameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(19, 19, 19)
-                        .addComponent(jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jUsernameLabel)
                         .addGap(20, 20, 20)
-                        .addComponent(jPasswordLabel)))
-                .addGap(28, 28, 28)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jPasswordLabel)
+                            .addComponent(jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jUsernameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton1))
@@ -224,7 +276,29 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelMinMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        if(evt.getSource().equals(jButton1)){
+            String sql = "select * from user_hotel";
+        try {
+            this.rs = con.createStatement().executeQuery(sql);
+            while(rs.next()){
+                if(jUsernameField.getText().equals(rs.getString("id_User"))&&jPasswordField.getText().equals(rs.getString("pass_User"))){
+                    System.out.println("OK");
+                    Home h = new Home();
+                    h.pack();
+                    h.setVisible(true);
+                    break;
+                }
+            }
+            /*while(rs.next()){
+                if(String.valueOf(jPasswordField.getPassword()).equals(rs.getString("pass_User"))){
+                    System.out.println("VeryGood");
+                    break;
+                }
+            }*/
+        } catch (Exception ex) {
+            Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+      }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -239,6 +313,10 @@ public class LoginForm extends javax.swing.JFrame {
         rgf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.dispose();
     }//GEN-LAST:event_jLabelRegisterMouseClicked
+
+    private void jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -284,7 +362,7 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelRegister;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField;
+    private javax.swing.JTextField jPasswordField;
     private javax.swing.JLabel jPasswordLabel;
     private javax.swing.JTextField jUsernameField;
     private javax.swing.JLabel jUsernameLabel;

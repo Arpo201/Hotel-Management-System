@@ -9,9 +9,12 @@ package GUI;
  *
  * @author Asus
  */
+import java.sql.*;
+import java.sql.DriverManager;
 import javax.swing.*;
 
 public class RegisterForm extends javax.swing.JFrame {
+    private Connection con;
 
     /**
      * Creates new form RegisterForm
@@ -20,7 +23,18 @@ public class RegisterForm extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
     }
-
+    public Connection connectDB(){
+        try {
+            Class.forName("com.mysql.jdbc.Driver");//ระบุ Driver
+            String url = "jdbc:mysql://" +"localhost"+ "/" +"hotel_db"; //=localhost/StudentDB
+            Connection connect = DriverManager.getConnection(url,"root",""); //ใช้งาน interface ที่ชื่อ Connection
+            System.out.println("เชื่อมต่อฐานข้อมูลเรียบร้อย");
+            return connect;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -327,11 +341,31 @@ public class RegisterForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelRegisterMouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        LoginForm lgf = new LoginForm();
+        lgf.setVisible(true);
+        lgf.pack();
+        this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        if(evt.getSource().equals(jButton1)){
+            String sql = "insert into user_hotel value('"+jUsernameTextField1.getText()+"','"+jRetypeTextField.getText()+"')";
+        try {
+            con = connectDB();
+            Statement stm = con.createStatement();
+            stm.executeUpdate(sql);
+            System.out.println("บันทึกข้อมูลเรียบร้อย");
+            LoginForm l = new LoginForm();
+            RegisterForm re = new RegisterForm();
+            l.pack();
+            l.setVisible(true);
+            this.setVisible(false);
+            con.close();
+            stm.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabelMinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMinMouseClicked

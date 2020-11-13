@@ -476,11 +476,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -499,7 +496,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jUserIconLabel;
     private javax.swing.JLabel jVacantLabel;
     private javax.swing.JPanel jfloor1Panel;
-    private javax.swing.JPanel jfloor1Panel3;
     private javax.swing.JPanel jfloor2Panel;
     private javax.swing.JPanel jfloor3Panel;
     private java.awt.Label name;
