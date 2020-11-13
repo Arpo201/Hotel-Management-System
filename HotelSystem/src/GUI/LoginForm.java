@@ -283,9 +283,7 @@ public class LoginForm extends javax.swing.JFrame {
             while(rs.next()){
                 if(jUsernameField.getText().equals(rs.getString("login_user"))&&jPasswordField.getText().equals(rs.getString("pass_user"))){
                     System.out.println("OK");
-                    Home h = new Home();
-                    h.pack();
-                    h.setVisible(true);
+                    RunAdmin h = new RunAdmin();
                     break;
                 }
             }
