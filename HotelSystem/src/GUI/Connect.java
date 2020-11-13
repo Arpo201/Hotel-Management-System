@@ -19,8 +19,8 @@ public class Connect {
     public static Connection connectDB(){
         try {
             Class.forName("com.mysql.jdbc.Driver");//ระบุ Driver
-            String url = "jdbc:mysql://" +"localhost"+ "/" +"hotel_db"; //=localhost/StudentDB
-            Connection connect = DriverManager.getConnection(url,"root",""); //ใช้งาน interface ที่ชื่อ Connection
+            String url = "jdbc:mysql://" +"68.183.181.112"+ "/" +"hotel"; //=localhost/StudentDB
+            Connection connect = DriverManager.getConnection(url,"hotel","r2BIwa7o2e"); //ใช้งาน interface ที่ชื่อ Connection
             System.out.println("เชื่อมต่อฐานข้อมูลเรียบร้อย");
             return connect;
         } catch (Exception e) {

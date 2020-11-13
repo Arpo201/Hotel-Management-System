@@ -19,9 +19,9 @@ public class Home extends javax.swing.JFrame {
      */
     public Home() {
         initComponents();
-        scaleImage();
+        scaleUserIconImage();
     }
-    public void scaleImage(){
+    public void scaleUserIconImage(){
       ImageIcon icon = new ImageIcon("D:\\Arpo\\Github\\Hotel-Management-System\\HotelSystem\\src\\Images\\user_icon.png");
       Image img = icon.getImage();
       Image imgScale = img.getScaledInstance(jUserIconLabel.getWidth(), jUserIconLabel.getHeight(), Image.SCALE_SMOOTH);

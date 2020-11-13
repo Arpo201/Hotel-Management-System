@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import java.awt.Image;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 /**
@@ -18,8 +20,16 @@ public class Room extends javax.swing.JFrame {
      */
     public Room() {
         initComponents();
+        scaleUserIconImage();
     }
     
+    public void scaleUserIconImage(){
+      ImageIcon icon = new ImageIcon("D:\\Arpo\\Github\\Hotel-Management-System\\HotelSystem\\src\\Images\\user_icon.png");
+      Image img = icon.getImage();
+      Image imgScale = img.getScaledInstance(jUserIconLabel.getWidth(), jUserIconLabel.getHeight(), Image.SCALE_SMOOTH);
+      ImageIcon scaledIcon = new ImageIcon(imgScale);
+      jUserIconLabel.setIcon(scaledIcon);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -224,6 +234,7 @@ public class Room extends javax.swing.JFrame {
 
         R101.setBackground(new java.awt.Color(204, 255, 204));
         R101.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        R101.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel2.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         jLabel2.setText("101");
@@ -244,6 +255,7 @@ public class Room extends javax.swing.JFrame {
 
         R102.setBackground(new java.awt.Color(255, 204, 204));
         R102.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        R102.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel4.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         jLabel4.setText("102");
@@ -264,6 +276,7 @@ public class Room extends javax.swing.JFrame {
 
         R103.setBackground(new java.awt.Color(204, 255, 204));
         R103.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        R103.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel6.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         jLabel6.setText("103");
@@ -286,6 +299,7 @@ public class Room extends javax.swing.JFrame {
 
         R104.setBackground(new java.awt.Color(204, 255, 204));
         R104.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        R104.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel9.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         jLabel9.setText("104");
@@ -306,6 +320,7 @@ public class Room extends javax.swing.JFrame {
 
         R105.setBackground(new java.awt.Color(204, 255, 204));
         R105.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        R105.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel10.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         jLabel10.setText("105");
@@ -362,6 +377,7 @@ public class Room extends javax.swing.JFrame {
 
         R117.setBackground(new java.awt.Color(204, 255, 204));
         R117.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        R117.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel28.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         jLabel28.setText("201");
@@ -382,6 +398,7 @@ public class Room extends javax.swing.JFrame {
 
         R118.setBackground(new java.awt.Color(255, 204, 204));
         R118.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        R118.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel29.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         jLabel29.setText("202");
@@ -402,6 +419,7 @@ public class Room extends javax.swing.JFrame {
 
         R119.setBackground(new java.awt.Color(204, 255, 204));
         R119.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        R119.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel30.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         jLabel30.setText("203");
@@ -422,6 +440,7 @@ public class Room extends javax.swing.JFrame {
 
         R120.setBackground(new java.awt.Color(204, 255, 204));
         R120.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        R120.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel31.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         jLabel31.setText("204");
@@ -442,6 +461,7 @@ public class Room extends javax.swing.JFrame {
 
         R121.setBackground(new java.awt.Color(204, 255, 204));
         R121.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        R121.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel32.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         jLabel32.setText("205");
@@ -495,6 +515,7 @@ public class Room extends javax.swing.JFrame {
 
         R107.setBackground(new java.awt.Color(204, 255, 204));
         R107.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        R107.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel16.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         jLabel16.setText("301");
@@ -515,6 +536,7 @@ public class Room extends javax.swing.JFrame {
 
         R108.setBackground(new java.awt.Color(255, 204, 204));
         R108.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        R108.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel17.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         jLabel17.setText("302");
@@ -535,6 +557,7 @@ public class Room extends javax.swing.JFrame {
 
         R109.setBackground(new java.awt.Color(204, 255, 204));
         R109.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        R109.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel18.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         jLabel18.setText("303");
@@ -555,6 +578,7 @@ public class Room extends javax.swing.JFrame {
 
         R110.setBackground(new java.awt.Color(204, 255, 204));
         R110.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        R110.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel19.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         jLabel19.setText("304");
@@ -575,6 +599,7 @@ public class Room extends javax.swing.JFrame {
 
         R111.setBackground(new java.awt.Color(204, 255, 204));
         R111.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        R111.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel20.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         jLabel20.setText("305");
