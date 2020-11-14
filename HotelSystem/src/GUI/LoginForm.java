@@ -90,7 +90,6 @@ public class LoginForm extends javax.swing.JFrame {
         jPasswordLabel = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jLabelRegister = new javax.swing.JLabel();
         jPasswordField = new javax.swing.JTextField();
         state = new javax.swing.JLabel();
 
@@ -100,6 +99,11 @@ public class LoginForm extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(52, 116, 156));
 
         jPanel1.setBackground(new java.awt.Color(16, 76, 113));
+        jPanel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jPanel1MouseDragged(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Angsana New", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -158,7 +162,7 @@ public class LoginForm extends javax.swing.JFrame {
         jUsernameLabel.setForeground(new java.awt.Color(255, 255, 255));
         jUsernameLabel.setText("Username: ");
 
-        jUsernameField.setFont(new java.awt.Font("Angsana New", 0, 18)); // NOI18N
+        jUsernameField.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
         jUsernameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jUsernameFieldActionPerformed(evt);
@@ -197,26 +201,16 @@ public class LoginForm extends javax.swing.JFrame {
             }
         });
 
-        jLabelRegister.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabelRegister.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelRegister.setText("click here to create a new account");
-        jLabelRegister.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabelRegister.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabelRegisterMouseClicked(evt);
-            }
-        });
-
-        jPasswordField.setFont(new java.awt.Font("Angsana New", 0, 18)); // NOI18N
+        jPasswordField.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
         jPasswordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPasswordFieldActionPerformed(evt);
             }
         });
 
-        state.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
-        state.setForeground(new java.awt.Color(255, 255, 255));
-        state.setText("State");
+        state.setFont(new java.awt.Font("Angsana New", 1, 24)); // NOI18N
+        state.setForeground(new java.awt.Color(255, 119, 119));
+        state.setText("        ");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -240,15 +234,10 @@ public class LoginForm extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(140, 140, 140))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabelRegister)
-                        .addGap(151, 151, 151))))
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(140, 140, 140))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -268,9 +257,7 @@ public class LoginForm extends javax.swing.JFrame {
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(state)
-                .addGap(18, 18, 18)
-                .addComponent(jLabelRegister)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -315,8 +302,8 @@ public class LoginForm extends javax.swing.JFrame {
                     this.dispose();
                     break;
                 }else{
+//                    this.state.setForeground(Color.getHSBColor(255, 199, 199));
                     this.state.setText("Fail"); 
-                    this.state.setForeground(Color.RED);
                 }
             }
         } catch (Exception ex) {
@@ -326,21 +313,16 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jLabelRegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelRegisterMouseClicked
-        RegisterForm rgf = new RegisterForm();
-        rgf.setVisible(true);
-        rgf.pack();
-        rgf.setLocationRelativeTo(null);
-        rgf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.dispose();
-    }//GEN-LAST:event_jLabelRegisterMouseClicked
 
     private void jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordFieldActionPerformed
+
+    private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel1MouseDragged
 
     /**
      * @param args the command line arguments
@@ -383,7 +365,6 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelClose;
     private javax.swing.JLabel jLabelMin;
-    private javax.swing.JLabel jLabelRegister;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jPasswordField;

@@ -30,7 +30,6 @@ public class Navbar extends javax.swing.JPanel {
         jTabPanel = new javax.swing.JPanel();
         jHomeButton = new javax.swing.JButton();
         jRoomButton = new javax.swing.JButton();
-        jFoodButton = new javax.swing.JButton();
         jLogoutButton = new javax.swing.JButton();
 
         jTabPanel.setBackground(new java.awt.Color(76, 126, 171));
@@ -56,16 +55,6 @@ public class Navbar extends javax.swing.JPanel {
             }
         });
 
-        jFoodButton.setBackground(new java.awt.Color(216, 243, 255));
-        jFoodButton.setFont(new java.awt.Font("Angsana New", 1, 30)); // NOI18N
-        jFoodButton.setText("Food");
-        jFoodButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jFoodButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFoodButtonActionPerformed(evt);
-            }
-        });
-
         jLogoutButton.setBackground(new java.awt.Color(255, 153, 153));
         jLogoutButton.setFont(new java.awt.Font("Angsana New", 1, 24)); // NOI18N
         jLogoutButton.setForeground(new java.awt.Color(255, 51, 51));
@@ -85,13 +74,12 @@ public class Navbar extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jHomeButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jRoomButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jFoodButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jRoomButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(jTabPanelLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jLogoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         jTabPanelLayout.setVerticalGroup(
             jTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -100,9 +88,7 @@ public class Navbar extends javax.swing.JPanel {
                 .addComponent(jHomeButton)
                 .addGap(30, 30, 30)
                 .addComponent(jRoomButton)
-                .addGap(30, 30, 30)
-                .addComponent(jFoodButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 325, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 398, Short.MAX_VALUE)
                 .addComponent(jLogoutButton)
                 .addGap(21, 21, 21))
         );
@@ -129,17 +115,12 @@ public class Navbar extends javax.swing.JPanel {
         RunAdmin.getRoom();
     }//GEN-LAST:event_jRoomButtonActionPerformed
 
-    private void jFoodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFoodButtonActionPerformed
-
-    }//GEN-LAST:event_jFoodButtonActionPerformed
-
     private void jLogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLogoutButtonActionPerformed
         RunAdmin.logout();
     }//GEN-LAST:event_jLogoutButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jFoodButton;
     private javax.swing.JButton jHomeButton;
     private javax.swing.JButton jLogoutButton;
     private javax.swing.JButton jRoomButton;

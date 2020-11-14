@@ -51,10 +51,12 @@ public class Home extends javax.swing.JPanel {
         jLabel14 = new javax.swing.JLabel();
         jUserIconLabel = new javax.swing.JLabel();
 
-        jPageHeadPanel.setBackground(new java.awt.Color(165, 184, 201));
+        setBackground(new java.awt.Color(234, 242, 249));
+
+        jPageHeadPanel.setBackground(new java.awt.Color(146, 177, 204));
 
         jPageLabel.setFont(new java.awt.Font("Angsana New", 1, 48)); // NOI18N
-        jPageLabel.setForeground(new java.awt.Color(52, 86, 116));
+        jPageLabel.setForeground(new java.awt.Color(30, 91, 145));
         jPageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPageLabel.setText("Home");
 
