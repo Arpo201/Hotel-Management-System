@@ -2,15 +2,15 @@ package GUI;
 
 //import java.awt.Image;
 //import javax.swing.ImageIcon;
-//import javax.swing.JLabel;
 
 public class Home extends javax.swing.JPanel {
-
+    
+    
     public Home() {
         initComponents();
 //        scaleUserIconImage();
+        
     }
-    
 //    public void scaleUserIconImage(){
 //      ImageIcon icon = new ImageIcon("D:\\Arpo\\Github\\Hotel-Management-System\\HotelSystem\\src\\Images\\user_icon.png");
 //      Image img = icon.getImage();
@@ -109,13 +109,13 @@ public class Home extends javax.swing.JPanel {
         jfloor1PanelLayout.setVerticalGroup(
             jfloor1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jfloor1PanelLayout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
+                .addContainerGap(25, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(20, 20, 20)
                 .addComponent(jLabel4)
                 .addGap(5, 5, 5)
                 .addComponent(jLabel5)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         jfloor2Panel.setBackground(new java.awt.Color(255, 255, 255));
@@ -210,9 +210,7 @@ public class Home extends javax.swing.JPanel {
         jUserIconLabel.setForeground(new java.awt.Color(255, 255, 255));
         jUserIconLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jUserIconLabel.setText("img");
-        jUserIconLabel.setMaximumSize(new java.awt.Dimension(25, 30));
         jUserIconLabel.setMinimumSize(new java.awt.Dimension(25, 30));
-        jUserIconLabel.setPreferredSize(new java.awt.Dimension(25, 30));
 
         javax.swing.GroupLayout jFooterPanelLayout = new javax.swing.GroupLayout(jFooterPanel);
         jFooterPanel.setLayout(jFooterPanelLayout);
@@ -221,8 +219,8 @@ public class Home extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFooterPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel11)
-                .addGap(11, 11, 11)
-                .addComponent(jUserIconLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jUserIconLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)

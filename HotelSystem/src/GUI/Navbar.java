@@ -134,7 +134,7 @@ public class Navbar extends javax.swing.JPanel {
     }//GEN-LAST:event_jFoodButtonActionPerformed
 
     private void jLogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLogoutButtonActionPerformed
-        // TODO add your handling code here:
+        RunAdmin.logout();
     }//GEN-LAST:event_jLogoutButtonActionPerformed
 
 

@@ -43,6 +43,10 @@ public class RunAdmin {
             CardLayout c1 = (CardLayout)(card.getLayout());
             c1.show(card, "Room");
         }
+        public static void logout(){
+            frame.dispose();
+            new LoginForm().setVisible(true);
+        }
     public static void main(String[] args) {
         new RunAdmin();
     }
