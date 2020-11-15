@@ -14,6 +14,7 @@ import java.awt.*;
 public class RunAdmin {
         private Navbar nav = new Navbar();
         private Head head = new Head();
+        private ClientBar clientBar = new ClientBar();
         private static JFrame frame;
         private static JPanel card;
         private static Home home = new Home();
@@ -21,14 +22,16 @@ public class RunAdmin {
         public RunAdmin(){
             frame = new JFrame();
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.add(head, BorderLayout.NORTH);
-            frame.add(nav, BorderLayout.WEST);
             
             card = new JPanel();
             card.setLayout(new CardLayout());
             card.add(home, "Home");
             card.add(room, "Room");
+            
+            frame.add(head, BorderLayout.NORTH);
+            frame.add(nav, BorderLayout.WEST);
             frame.add(card);
+            frame.add(clientBar, BorderLayout.SOUTH);
             
             frame.pack();
             frame.setLocationRelativeTo(null);
