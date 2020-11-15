@@ -80,13 +80,9 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD
-              <Component id="jFooterPanel" alignment="0" max="32767" attributes="0"/>
-=======
               <Component id="jVacantLabel" alignment="0" max="32767" attributes="0"/>
->>>>>>> d188e6d927fda6cd12ed7e85d55c5edb2c1b85da
               <Component id="jLabel1" alignment="1" max="32767" attributes="0"/>
-              <Group type="102" alignment="1" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="jfloor1Panel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
@@ -95,15 +91,11 @@
                   <Component id="jfloor3Panel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
-<<<<<<< HEAD
-              <Component id="jVacantLabel" alignment="1" max="32767" attributes="0"/>
-=======
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="clientData" min="-2" pref="240" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
->>>>>>> d188e6d927fda6cd12ed7e85d55c5edb2c1b85da
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -113,15 +105,15 @@
                   <Component id="jVacantLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="74" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                  <EmptySpace pref="20" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jfloor1Panel" alignment="0" max="32767" attributes="0"/>
                       <Component id="jfloor3Panel" alignment="0" max="32767" attributes="0"/>
                       <Component id="jfloor2Panel" alignment="0" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="clientData" min="-2" pref="50" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="16" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
