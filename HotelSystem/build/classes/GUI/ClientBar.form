@@ -37,8 +37,8 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="649" max="32767" attributes="0"/>
-                  <Component id="jUserIconLabel" min="-2" pref="30" max="-2" attributes="0"/>
+                  <EmptySpace pref="639" max="32767" attributes="0"/>
+                  <Component id="clientIcon" min="-2" pref="40" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -51,13 +51,16 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jUserIconLabel" alignment="0" max="32767" attributes="0"/>
+              <Component id="clientIcon" alignment="0" max="32767" attributes="0"/>
               <Component id="jLabel14" alignment="0" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel11" max="32767" attributes="0"/>
-                      <Component id="jLabel13" pref="60" max="32767" attributes="0"/>
+                      <Component id="jLabel11" pref="60" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="jLabel13" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
           </Group>
@@ -67,7 +70,7 @@
         <Component class="javax.swing.JLabel" name="jLabel11">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Angsana New" size="24" style="0"/>
+              <Font name="Angsana New" size="24" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -92,7 +95,7 @@
         <Component class="javax.swing.JLabel" name="jLabel14">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Angsana New" size="24" style="0"/>
+              <Font name="Angsana New" size="24" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -100,7 +103,7 @@
             <Property name="text" type="java.lang.String" value="&#xe04;&#xe19;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jUserIconLabel">
+        <Component class="javax.swing.JLabel" name="clientIcon">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>

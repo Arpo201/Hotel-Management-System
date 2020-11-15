@@ -12,15 +12,15 @@ public class Navbar extends javax.swing.JPanel {
     }
     
     public void getHomeBtn(){
-        ImageIcon setHomeIcon = new ImageIcon(new ImageIcon(getClass().getResource("../Images/home-icon.png")).getImage().getScaledInstance(70, 50, Image.SCALE_SMOOTH));
+        ImageIcon setHomeIcon = new ImageIcon(new ImageIcon(getClass().getResource("../Images/home-icon.png")).getImage().getScaledInstance(60, 50, Image.SCALE_SMOOTH));
         this.homeIcon.setText("");
         this.homeIcon.setIcon(setHomeIcon);
     }
     
     public void getRoomBtn(){
-        ImageIcon setHomeIcon = new ImageIcon(new ImageIcon(getClass().getResource("../Images/bed-icon.jpg")).getImage().getScaledInstance(80, 40, Image.SCALE_SMOOTH));
+        ImageIcon setBedIcon = new ImageIcon(new ImageIcon(getClass().getResource("../Images/bed-icon.jpg")).getImage().getScaledInstance(80, 40, Image.SCALE_SMOOTH));
         this.bedIcon.setText("");
-        this.bedIcon.setIcon(setHomeIcon);
+        this.bedIcon.setIcon(setBedIcon);
     }
 
     @SuppressWarnings("unchecked")
@@ -120,7 +120,7 @@ public class Navbar extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLogoutButton.setBackground(new java.awt.Color(255, 153, 153));
+        jLogoutButton.setBackground(new java.awt.Color(255, 204, 204));
         jLogoutButton.setFont(new java.awt.Font("Angsana New", 1, 24)); // NOI18N
         jLogoutButton.setForeground(new java.awt.Color(255, 51, 51));
         jLogoutButton.setText("Logout");
