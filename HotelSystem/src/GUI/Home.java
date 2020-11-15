@@ -1,23 +1,11 @@
 package GUI;
 
-//import java.awt.Image;
-//import javax.swing.ImageIcon;
-
 public class Home extends javax.swing.JPanel {
     
     
     public Home() {
         initComponents();
-//        scaleUserIconImage();
-        
     }
-//    public void scaleUserIconImage(){
-//      ImageIcon icon = new ImageIcon("D:\\Arpo\\Github\\Hotel-Management-System\\HotelSystem\\src\\Images\\user_icon.png");
-//      Image img = icon.getImage();
-//      Image imgScale = img.getScaledInstance(jUserIconLabel.getWidth(), jUserIconLabel.getHeight(), Image.SCALE_SMOOTH);
-//      ImageIcon scaledIcon = new ImageIcon(imgScale);
-//      jUserIconLabel.setIcon(scaledIcon);
-//    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -45,16 +33,14 @@ public class Home extends javax.swing.JPanel {
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jFooterPanel = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jUserIconLabel = new javax.swing.JLabel();
+        clientData = new javax.swing.JButton();
 
-        jPageHeadPanel.setBackground(new java.awt.Color(165, 184, 201));
+        setBackground(new java.awt.Color(234, 242, 249));
+
+        jPageHeadPanel.setBackground(new java.awt.Color(146, 177, 204));
 
         jPageLabel.setFont(new java.awt.Font("Angsana New", 1, 48)); // NOI18N
-        jPageLabel.setForeground(new java.awt.Color(52, 86, 116));
+        jPageLabel.setForeground(new java.awt.Color(30, 91, 145));
         jPageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPageLabel.setText("Home");
 
@@ -109,13 +95,13 @@ public class Home extends javax.swing.JPanel {
         jfloor1PanelLayout.setVerticalGroup(
             jfloor1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jfloor1PanelLayout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
+                .addContainerGap(18, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(20, 20, 20)
                 .addComponent(jLabel4)
                 .addGap(5, 5, 5)
                 .addComponent(jLabel5)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         jfloor2Panel.setBackground(new java.awt.Color(255, 255, 255));
@@ -192,57 +178,27 @@ public class Home extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jFooterPanel.setBackground(new java.awt.Color(67, 106, 141));
-
-        jLabel11.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("ขณะนี้มีผู้เข้าพัก");
-
-        jLabel13.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("0");
-
-        jLabel14.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("คน");
-
-        jUserIconLabel.setForeground(new java.awt.Color(255, 255, 255));
-        jUserIconLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jUserIconLabel.setText("img");
-        jUserIconLabel.setMinimumSize(new java.awt.Dimension(25, 30));
-
-        javax.swing.GroupLayout jFooterPanelLayout = new javax.swing.GroupLayout(jFooterPanel);
-        jFooterPanel.setLayout(jFooterPanelLayout);
-        jFooterPanelLayout.setHorizontalGroup(
-            jFooterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFooterPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jUserIconLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel14)
-                .addGap(40, 40, 40))
-        );
-        jFooterPanelLayout.setVerticalGroup(
-            jFooterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFooterPanelLayout.createSequentialGroup()
-                .addGroup(jFooterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jUserIconLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        clientData.setBackground(new java.awt.Color(206, 237, 255));
+        clientData.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
+        clientData.setForeground(new java.awt.Color(37, 80, 127));
+        clientData.setText("รายชื่อลูกค้า");
+        clientData.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        clientData.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        clientData.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clientDataActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jBodyPanelLayout = new javax.swing.GroupLayout(jBodyPanel);
         jBodyPanel.setLayout(jBodyPanelLayout);
         jBodyPanelLayout.setHorizontalGroup(
             jBodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
             .addComponent(jFooterPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+=======
+            .addComponent(jVacantLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+>>>>>>> d188e6d927fda6cd12ed7e85d55c5edb2c1b85da
             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jBodyPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -252,22 +208,30 @@ public class Home extends javax.swing.JPanel {
                 .addGap(50, 50, 50)
                 .addComponent(jfloor3Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+<<<<<<< HEAD
             .addComponent(jVacantLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+=======
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jBodyPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(clientData, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+>>>>>>> d188e6d927fda6cd12ed7e85d55c5edb2c1b85da
         );
         jBodyPanelLayout.setVerticalGroup(
             jBodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jBodyPanelLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
+                .addContainerGap()
                 .addComponent(jVacantLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(28, 28, 28)
                 .addGroup(jBodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jfloor1Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jfloor3Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jfloor2Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jFooterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addComponent(clientData, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -286,15 +250,16 @@ public class Home extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void clientDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientDataActionPerformed
+        new ClientData().setVisible(true);
+    }//GEN-LAST:event_clientDataActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton clientData;
     private javax.swing.JPanel jBodyPanel;
-    private javax.swing.JPanel jFooterPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -305,7 +270,6 @@ public class Home extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPageHeadPanel;
     private javax.swing.JLabel jPageLabel;
-    private javax.swing.JLabel jUserIconLabel;
     private javax.swing.JLabel jVacantLabel;
     private javax.swing.JPanel jfloor1Panel;
     private javax.swing.JPanel jfloor2Panel;
