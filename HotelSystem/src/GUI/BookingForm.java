@@ -201,6 +201,7 @@ public class BookingForm extends javax.swing.JFrame {
         cancel.setFont(new java.awt.Font("Angsana New", 1, 24)); // NOI18N
         cancel.setForeground(new java.awt.Color(255, 51, 51));
         cancel.setText("Cancel");
+        cancel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         cancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cancel.setMaximumSize(new java.awt.Dimension(90, 35));
         cancel.setMinimumSize(new java.awt.Dimension(90, 35));
@@ -215,6 +216,7 @@ public class BookingForm extends javax.swing.JFrame {
         reset.setFont(new java.awt.Font("Angsana New", 1, 24)); // NOI18N
         reset.setForeground(new java.awt.Color(48, 103, 163));
         reset.setText("Reset");
+        reset.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         reset.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         reset.setMaximumSize(new java.awt.Dimension(90, 35));
         reset.setMinimumSize(new java.awt.Dimension(90, 35));
@@ -229,6 +231,7 @@ public class BookingForm extends javax.swing.JFrame {
         confirm.setFont(new java.awt.Font("Angsana New", 1, 24)); // NOI18N
         confirm.setForeground(new java.awt.Color(101, 186, 42));
         confirm.setText("Confirm");
+        confirm.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         confirm.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         confirm.setMaximumSize(new java.awt.Dimension(90, 35));
         confirm.setMinimumSize(new java.awt.Dimension(90, 35));
