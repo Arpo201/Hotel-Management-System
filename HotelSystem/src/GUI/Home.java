@@ -33,7 +33,8 @@ public class Home extends javax.swing.JPanel {
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        clientData = new javax.swing.JButton();
+        clientData = new javax.swing.JPanel();
+        clientDataLabel = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(234, 242, 249));
 
@@ -179,16 +180,36 @@ public class Home extends javax.swing.JPanel {
         );
 
         clientData.setBackground(new java.awt.Color(206, 237, 255));
-        clientData.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
-        clientData.setForeground(new java.awt.Color(37, 80, 127));
-        clientData.setText("รายชื่อลูกค้า");
         clientData.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        clientData.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        clientData.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clientDataActionPerformed(evt);
+        clientData.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clientDataMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                clientDataMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                clientDataMouseReleased(evt);
             }
         });
+
+        clientDataLabel.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
+        clientDataLabel.setForeground(new java.awt.Color(37, 80, 127));
+        clientDataLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        clientDataLabel.setText("รายชื่อลูกค้า");
+        clientDataLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        clientDataLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout clientDataLayout = new javax.swing.GroupLayout(clientData);
+        clientData.setLayout(clientDataLayout);
+        clientDataLayout.setHorizontalGroup(
+            clientDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(clientDataLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        clientDataLayout.setVerticalGroup(
+            clientDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(clientDataLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout jBodyPanelLayout = new javax.swing.GroupLayout(jBodyPanel);
         jBodyPanel.setLayout(jBodyPanelLayout);
@@ -200,13 +221,11 @@ public class Home extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jfloor1Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
-                .addComponent(jfloor2Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jBodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(clientData, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jfloor2Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(50, 50, 50)
                 .addComponent(jfloor3Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jBodyPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(clientData, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jBodyPanelLayout.setVerticalGroup(
@@ -216,14 +235,14 @@ public class Home extends javax.swing.JPanel {
                 .addComponent(jVacantLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jBodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jfloor1Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jfloor3Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jfloor2Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(clientData, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addComponent(clientData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -242,13 +261,22 @@ public class Home extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void clientDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientDataActionPerformed
+    private void clientDataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clientDataMouseClicked
         new ClientData().setVisible(true);
-    }//GEN-LAST:event_clientDataActionPerformed
+    }//GEN-LAST:event_clientDataMouseClicked
+
+    private void clientDataMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clientDataMousePressed
+        this.clientData.setBackground(this.clientData.getBackground().darker());
+    }//GEN-LAST:event_clientDataMousePressed
+
+    private void clientDataMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clientDataMouseReleased
+        this.clientData.setBackground(this.clientData.getBackground().brighter());
+    }//GEN-LAST:event_clientDataMouseReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton clientData;
+    private javax.swing.JPanel clientData;
+    private javax.swing.JLabel clientDataLabel;
     private javax.swing.JPanel jBodyPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
