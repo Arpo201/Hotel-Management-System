@@ -3,15 +3,15 @@ package GUI;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
-public class ClientBar extends javax.swing.JPanel {
+public class bottomBar extends javax.swing.JPanel {
 
-    public ClientBar() {
+    public bottomBar() {
         initComponents();
         getClientBtn();
     }
     
     public void getClientBtn(){
-        ImageIcon setClientIcon = new ImageIcon(new ImageIcon(getClass().getResource("../Images/user-icon.png")).getImage().getScaledInstance(40, 40, Image.SCALE_SMOOTH));
+        ImageIcon setClientIcon = new ImageIcon(new ImageIcon(getClass().getResource("../Images/user-icon.png")).getImage().getScaledInstance(35, 40, Image.SCALE_SMOOTH));
         this.clientIcon.setText("");
         this.clientIcon.setIcon(setClientIcon);
     }

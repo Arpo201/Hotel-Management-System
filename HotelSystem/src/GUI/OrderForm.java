@@ -35,10 +35,6 @@ public class OrderForm extends javax.swing.JInternalFrame {
         return this.room.getText();
     }
     
-    public void finishOrder(){
-        RunOrder.finishOrder(this);
-    }
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -88,6 +84,7 @@ public class OrderForm extends javax.swing.JInternalFrame {
         close.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         close.setForeground(new java.awt.Color(37, 80, 127));
         close.setText("Finish");
+        close.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         close.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         close.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

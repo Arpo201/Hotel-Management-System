@@ -5,9 +5,6 @@ package GUI;
  * @author Asus
  */
 public class ClientOrderForm extends javax.swing.JFrame {
-    /**
-     * Creates new form Food
-     */
     public ClientOrderForm() {
         initComponents();
     }
@@ -18,27 +15,41 @@ public class ClientOrderForm extends javax.swing.JFrame {
         newOrder.setTitle("ห้อง"+num);
         this.desktopPane.add(newOrder, "ห้อง "+num);
     }
-    public void finishOrder(OrderForm order){
-        this.desktopPane.remove(order);
-    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        jNameLabel3 = new javax.swing.JLabel();
-        testBtn = new javax.swing.JButton();
+        headLabel = new javax.swing.JLabel();
         body = new javax.swing.JPanel();
         desktopPane = new javax.swing.JDesktopPane();
+        testBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(67, 106, 141));
 
-        jNameLabel3.setFont(new java.awt.Font("Angsana New", 1, 48)); // NOI18N
-        jNameLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jNameLabel3.setText("Order");
+        headLabel.setFont(new java.awt.Font("Angsana New", 1, 48)); // NOI18N
+        headLabel.setForeground(new java.awt.Color(255, 255, 255));
+        headLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        headLabel.setText("Order");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(headLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(headLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        body.setBackground(new java.awt.Color(234, 242, 249));
+
+        desktopPane.setBackground(new java.awt.Color(227, 234, 240));
 
         testBtn.setText("add test");
         testBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -47,37 +58,23 @@ public class ClientOrderForm extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(testBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 418, Short.MAX_VALUE)
-                .addComponent(jNameLabel3)
-                .addContainerGap(425, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jNameLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
-                .addComponent(testBtn))
-        );
-
-        body.setBackground(new java.awt.Color(234, 242, 249));
-
-        desktopPane.setBackground(new java.awt.Color(227, 234, 240));
+        desktopPane.setLayer(testBtn, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout desktopPaneLayout = new javax.swing.GroupLayout(desktopPane);
         desktopPane.setLayout(desktopPaneLayout);
         desktopPaneLayout.setHorizontalGroup(
             desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, desktopPaneLayout.createSequentialGroup()
+                .addContainerGap(928, Short.MAX_VALUE)
+                .addComponent(testBtn)
+                .addContainerGap())
         );
         desktopPaneLayout.setVerticalGroup(
             desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 519, Short.MAX_VALUE)
+            .addGroup(desktopPaneLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(testBtn)
+                .addContainerGap(481, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout bodyLayout = new javax.swing.GroupLayout(body);
@@ -163,7 +160,7 @@ public class ClientOrderForm extends javax.swing.JFrame {
     private javax.swing.JPanel body;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JDesktopPane desktopPane;
-    private javax.swing.JLabel jNameLabel3;
+    private javax.swing.JLabel headLabel;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton testBtn;
     // End of variables declaration//GEN-END:variables

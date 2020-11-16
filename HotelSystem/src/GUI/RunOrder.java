@@ -11,16 +11,12 @@ package GUI;
  */
 public class RunOrder {
     private static ClientOrderForm cof;
-    private static OrderForm newOrder;
     public RunOrder(){
         cof = new ClientOrderForm();
     }
     
     public void addOrder(int num){
         cof.addOrder(num);
-    }
-    public static void finishOrder(OrderForm order){
-        cof.finishOrder(order);
     }
     public static void main(String[] args) {
         new ClientOrderForm().setVisible(true);

@@ -125,6 +125,7 @@ public class BookingForm extends javax.swing.JFrame {
         checkin.setCalendarPreferredSize(new java.awt.Dimension(500, 300));
         checkin.setNothingAllowed(false);
         checkin.setFieldFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
+        checkin.setMinDate(java.util.Calendar.getInstance());
         checkin.setNavigateFont(new java.awt.Font("Angsana New", java.awt.Font.PLAIN, 24));
         checkin.setCurrentNavigateIndex(0);
 
@@ -135,6 +136,7 @@ public class BookingForm extends javax.swing.JFrame {
         checkout.setCalendarPreferredSize(new java.awt.Dimension(500, 300));
         checkout.setNothingAllowed(false);
         checkout.setFieldFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
+        checkout.setMinDate(java.util.Calendar.getInstance());
         checkout.setNavigateFont(new java.awt.Font("Angsana New", java.awt.Font.PLAIN, 24));
         checkout.setCurrentNavigateIndex(0);
 

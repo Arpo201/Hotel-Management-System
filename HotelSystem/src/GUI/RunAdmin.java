@@ -14,7 +14,7 @@ import java.awt.*;
 public class RunAdmin {
         private Navbar nav = new Navbar();
         private Head head = new Head();
-        private ClientBar clientBar = new ClientBar();
+        private bottomBar clientBar = new bottomBar();
         private static JFrame frame;
         private static JPanel card;
         private static Home home = new Home();
