@@ -10,22 +10,18 @@ package GUI;
  * @author Asus
  */
 public class RunOrder {
-    private ClientOrderForm cof;
-    private OrderForm newOrder;
+    private static ClientOrderForm cof;
+    private static OrderForm newOrder;
     public RunOrder(){
         cof = new ClientOrderForm();
     }
     
     public void addOrder(int num){
-        newOrder = new OrderForm();
-        newOrder.setRoom(num);
-        cof.addOrder(newOrder);
+        cof.addOrder(num);
     }
-    
-    public void finishOrder(){
-        cof.finishOrder();
+    public static void finishOrder(OrderForm order){
+        cof.finishOrder(order);
     }
-    
     public static void main(String[] args) {
         new ClientOrderForm().setVisible(true);
     }

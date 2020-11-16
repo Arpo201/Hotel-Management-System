@@ -12,24 +12,25 @@ public class ClientOrderForm extends javax.swing.JFrame {
         initComponents();
     }
 
-    public void addOrder(OrderForm newOrder){
-        this.jTabbedPane.add(newOrder, newOrder.getRoom());
+    public void addOrder(int num){
+        OrderForm newOrder = new OrderForm();
+        newOrder.setRoom(num);
+        newOrder.setTitle("ห้อง"+num);
+        this.desktopPane.add(newOrder, "ห้อง "+num);
     }
-    public void finishOrder(){
-        
+    public void finishOrder(OrderForm order){
+        this.desktopPane.remove(order);
     }
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jNameLabel3 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
+        testBtn = new javax.swing.JButton();
         body = new javax.swing.JPanel();
-        jTabbedPane = new javax.swing.JTabbedPane();
-        testPane = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        desktopPane = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -39,10 +40,10 @@ public class ClientOrderForm extends javax.swing.JFrame {
         jNameLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jNameLabel3.setText("Order");
 
-        jButton5.setText("add test");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        testBtn.setText("add test");
+        testBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                testBtnActionPerformed(evt);
             }
         });
 
@@ -52,57 +53,45 @@ public class ClientOrderForm extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(testBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 418, Short.MAX_VALUE)
                 .addComponent(jNameLabel3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(425, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(jNameLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
-                .addComponent(jButton5))
+                .addComponent(testBtn))
         );
 
         body.setBackground(new java.awt.Color(234, 242, 249));
 
-        jTabbedPane.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
+        desktopPane.setBackground(new java.awt.Color(227, 234, 240));
 
-        jButton1.setText("ปิด");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout testPaneLayout = new javax.swing.GroupLayout(testPane);
-        testPane.setLayout(testPaneLayout);
-        testPaneLayout.setHorizontalGroup(
-            testPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(testPaneLayout.createSequentialGroup()
-                .addGap(394, 394, 394)
-                .addComponent(jButton1)
-                .addContainerGap(510, Short.MAX_VALUE))
+        javax.swing.GroupLayout desktopPaneLayout = new javax.swing.GroupLayout(desktopPane);
+        desktopPane.setLayout(desktopPaneLayout);
+        desktopPaneLayout.setHorizontalGroup(
+            desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        testPaneLayout.setVerticalGroup(
-            testPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(testPaneLayout.createSequentialGroup()
-                .addGap(120, 120, 120)
-                .addComponent(jButton1)
-                .addContainerGap(286, Short.MAX_VALUE))
+        desktopPaneLayout.setVerticalGroup(
+            desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 519, Short.MAX_VALUE)
         );
-
-        jTabbedPane.addTab("รายการอาหาร", testPane);
 
         javax.swing.GroupLayout bodyLayout = new javax.swing.GroupLayout(body);
         body.setLayout(bodyLayout);
         bodyLayout.setHorizontalGroup(
             bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(desktopPane)
         );
         bodyLayout.setVerticalGroup(
             bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bodyLayout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(desktopPane)
+                .addGap(0, 0, 0))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -123,13 +112,10 @@ public class ClientOrderForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void testBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testBtnActionPerformed
+        addOrder(555);
         System.out.println("add");
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.jTabbedPane.remove(this.testPane);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_testBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,11 +161,10 @@ public class ClientOrderForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel body;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton5;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JLabel jNameLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTabbedPane jTabbedPane;
-    private javax.swing.JPanel testPane;
+    private javax.swing.JButton testBtn;
     // End of variables declaration//GEN-END:variables
 }
