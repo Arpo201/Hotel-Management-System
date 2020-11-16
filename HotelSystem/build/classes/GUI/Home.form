@@ -82,18 +82,16 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="jVacantLabel" alignment="0" max="32767" attributes="0"/>
               <Component id="jLabel1" alignment="1" max="32767" attributes="0"/>
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="jfloor1Panel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                  <Component id="jfloor2Panel" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="clientData" max="32767" attributes="0"/>
+                      <Component id="jfloor2Panel" max="32767" attributes="0"/>
+                  </Group>
                   <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                   <Component id="jfloor3Panel" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="clientData" min="-2" pref="341" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -105,15 +103,15 @@
                   <Component id="jVacantLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="74" max="-2" attributes="0"/>
-                  <EmptySpace pref="20" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jfloor1Panel" alignment="0" max="32767" attributes="0"/>
                       <Component id="jfloor3Panel" alignment="0" max="32767" attributes="0"/>
                       <Component id="jfloor2Panel" alignment="0" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="21" max="32767" attributes="0"/>
-                  <Component id="clientData" min="-2" pref="50" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="32767" attributes="0"/>
+                  <Component id="clientData" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -347,31 +345,54 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="clientData">
+        <Container class="javax.swing.JPanel" name="clientData">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ed" red="ce" type="rgb"/>
             </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Angsana New" size="36" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="7f" green="50" red="25" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="&#xe23;&#xe32;&#xe22;&#xe0a;&#xe37;&#xe48;&#xe2d;&#xe25;&#xe39;&#xe01;&#xe04;&#xe49;&#xe32;"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
                 <BevelBorder/>
               </Border>
             </Property>
-            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Hand Cursor"/>
-            </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clientDataActionPerformed"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="clientDataMouseClicked"/>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="clientDataMousePressed"/>
+            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="clientDataMouseReleased"/>
           </Events>
-        </Component>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="clientDataLabel" alignment="0" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="clientDataLabel" alignment="0" pref="52" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="clientDataLabel">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Angsana New" size="36" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="7f" green="50" red="25" type="rgb"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="&#xe23;&#xe32;&#xe22;&#xe0a;&#xe37;&#xe48;&#xe2d;&#xe25;&#xe39;&#xe01;&#xe04;&#xe49;&#xe32;"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
+                <Property name="horizontalTextPosition" type="int" value="0"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
   </SubComponents>
