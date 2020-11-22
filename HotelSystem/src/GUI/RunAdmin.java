@@ -12,13 +12,13 @@ import java.awt.*;
  * @author Asus
  */
 public class RunAdmin {
-        private Navbar nav = new Navbar();
-        private Head head = new Head();
-        private bottomBar clientBar = new bottomBar();
+        private MainCompoNavbar nav = new MainCompoNavbar();
+        private MainCompoHead head = new MainCompoHead();
+        private MainCompoBottomBar clientBar = new MainCompoBottomBar();
         private static JFrame frame;
         private static JPanel card;
-        private static Home home = new Home();
-        private static Room room = new Room();
+        private static MainpageHome home = new MainpageHome();
+        private static MainpageRoom room = new MainpageRoom();
         public RunAdmin(){
             frame = new JFrame();
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
