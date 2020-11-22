@@ -69,7 +69,7 @@ public class MainpageHome extends javax.swing.JPanel {
         jLabel1.setText("15");
 
         jfloor1Panel.setBackground(new java.awt.Color(255, 255, 255));
-        jfloor1Panel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jfloor1Panel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jfloor1Panel.setMinimumSize(new java.awt.Dimension(300, 200));
 
         jLabel2.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
@@ -106,7 +106,7 @@ public class MainpageHome extends javax.swing.JPanel {
         );
 
         jfloor2Panel.setBackground(new java.awt.Color(255, 255, 255));
-        jfloor2Panel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jfloor2Panel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jfloor2Panel.setMinimumSize(new java.awt.Dimension(300, 200));
 
         jLabel8.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
@@ -143,7 +143,7 @@ public class MainpageHome extends javax.swing.JPanel {
         );
 
         jfloor3Panel.setBackground(new java.awt.Color(255, 255, 255));
-        jfloor3Panel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jfloor3Panel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jfloor3Panel.setMinimumSize(new java.awt.Dimension(300, 200));
 
         jLabel17.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N

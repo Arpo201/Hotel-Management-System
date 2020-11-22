@@ -1,7 +1,6 @@
 package GUI;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 /**
  *
@@ -26,23 +25,23 @@ public class BookingForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        northPanel = new javax.swing.JPanel();
-        bookingLabel = new javax.swing.JLabel();
-        bodyPanel = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jNameLabel3 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         numRoom = new javax.swing.JLabel();
         prefix = new javax.swing.JComboBox<>();
         fname = new javax.swing.JTextField();
-        lnameLabel = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         lname = new javax.swing.JTextField();
-        phoneLabel = new javax.swing.JLabel();
-        phoneNum = new javax.swing.JTextField();
-        mailLabel = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        pnum = new javax.swing.JTextField();
         mail = new javax.swing.JTextField();
-        checkinLabel = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         checkin = new datechooser.beans.DateChooserCombo();
-        checkoutLabel = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         checkout = new datechooser.beans.DateChooserCombo();
-        southPanel = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
         cancel = new javax.swing.JButton();
         reset = new javax.swing.JButton();
         confirm = new javax.swing.JButton();
@@ -50,27 +49,27 @@ public class BookingForm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
-        northPanel.setBackground(new java.awt.Color(67, 106, 141));
+        jPanel1.setBackground(new java.awt.Color(67, 106, 141));
 
-        bookingLabel.setFont(new java.awt.Font("Angsana New", 1, 48)); // NOI18N
-        bookingLabel.setForeground(new java.awt.Color(255, 255, 255));
-        bookingLabel.setText("Booking Form");
+        jNameLabel3.setFont(new java.awt.Font("Angsana New", 1, 48)); // NOI18N
+        jNameLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jNameLabel3.setText("Booking Form");
 
-        javax.swing.GroupLayout northPanelLayout = new javax.swing.GroupLayout(northPanel);
-        northPanel.setLayout(northPanelLayout);
-        northPanelLayout.setHorizontalGroup(
-            northPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, northPanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bookingLabel)
+                .addComponent(jNameLabel3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        northPanelLayout.setVerticalGroup(
-            northPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bookingLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jNameLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
         );
 
-        bodyPanel.setBackground(new java.awt.Color(234, 242, 249));
+        jPanel2.setBackground(new java.awt.Color(234, 242, 249));
 
         numRoom.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         numRoom.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -86,9 +85,9 @@ public class BookingForm extends javax.swing.JFrame {
             }
         });
 
-        lnameLabel.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
-        lnameLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lnameLabel.setText("นามสกุล");
+        jLabel3.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel3.setText("นามสกุล");
 
         lname.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
         lname.addActionListener(new java.awt.event.ActionListener() {
@@ -97,20 +96,16 @@ public class BookingForm extends javax.swing.JFrame {
             }
         });
 
-        phoneLabel.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
-        phoneLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        phoneLabel.setText("เบอร์โทร");
+        jLabel4.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel4.setText("เบอร์โทร");
 
-        phoneNum.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
-        phoneNum.addActionListener(new java.awt.event.ActionListener() {
+        pnum.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
+        pnum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                phoneNumActionPerformed(evt);
+                pnumActionPerformed(evt);
             }
         });
-
-        mailLabel.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
-        mailLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        mailLabel.setText("อีเมล");
 
         mail.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
         mail.addActionListener(new java.awt.event.ActionListener() {
@@ -119,9 +114,13 @@ public class BookingForm extends javax.swing.JFrame {
             }
         });
 
-        checkinLabel.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
-        checkinLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        checkinLabel.setText("เช็คอิน");
+        jLabel5.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel5.setText("อีเมล");
+
+        jLabel8.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel8.setText("เช็คอิน");
 
         checkin.setCalendarPreferredSize(new java.awt.Dimension(500, 300));
         checkin.setNothingAllowed(false);
@@ -130,9 +129,9 @@ public class BookingForm extends javax.swing.JFrame {
         checkin.setNavigateFont(new java.awt.Font("Angsana New", java.awt.Font.PLAIN, 24));
         checkin.setCurrentNavigateIndex(0);
 
-        checkoutLabel.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
-        checkoutLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        checkoutLabel.setText("เช็คเอาท์");
+        jLabel9.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel9.setText("เช็คเอาท์");
 
         checkout.setCalendarPreferredSize(new java.awt.Dimension(500, 300));
         checkout.setNothingAllowed(false);
@@ -141,64 +140,64 @@ public class BookingForm extends javax.swing.JFrame {
         checkout.setNavigateFont(new java.awt.Font("Angsana New", java.awt.Font.PLAIN, 24));
         checkout.setCurrentNavigateIndex(0);
 
-        javax.swing.GroupLayout bodyPanelLayout = new javax.swing.GroupLayout(bodyPanel);
-        bodyPanel.setLayout(bodyPanelLayout);
-        bodyPanelLayout.setHorizontalGroup(
-            bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(numRoom, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(bodyPanelLayout.createSequentialGroup()
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(90, 90, 90)
-                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(mailLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(phoneLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lnameLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(checkinLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(checkoutLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(prefix, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(fname)
                     .addComponent(lname, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
-                    .addComponent(phoneNum, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
+                    .addComponent(pnum, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
                     .addComponent(mail, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
                     .addComponent(checkin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(checkout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(100, 100, 100))
         );
-        bodyPanelLayout.setVerticalGroup(
-            bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bodyPanelLayout.createSequentialGroup()
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addComponent(numRoom)
                 .addGap(20, 20, 20)
-                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(fname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(prefix, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lnameLabel))
+                    .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(phoneNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(phoneLabel))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(pnum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(mailLabel)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
                     .addComponent(mail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(checkin, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(checkinLabel))
+                    .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(checkout, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(checkoutLabel))
+                    .addComponent(jLabel9))
                 .addGap(85, 85, 85))
         );
 
-        southPanel.setBackground(new java.awt.Color(146, 177, 204));
+        jPanel3.setBackground(new java.awt.Color(146, 177, 204));
 
         cancel.setBackground(new java.awt.Color(255, 153, 153));
         cancel.setFont(new java.awt.Font("Angsana New", 1, 24)); // NOI18N
@@ -245,11 +244,11 @@ public class BookingForm extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout southPanelLayout = new javax.swing.GroupLayout(southPanel);
-        southPanel.setLayout(southPanelLayout);
-        southPanelLayout.setHorizontalGroup(
-            southPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(southPanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap(70, Short.MAX_VALUE)
                 .addComponent(cancel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
@@ -258,11 +257,11 @@ public class BookingForm extends javax.swing.JFrame {
                 .addComponent(confirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(70, 70, 70))
         );
-        southPanelLayout.setVerticalGroup(
-            southPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(southPanelLayout.createSequentialGroup()
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(10, 10, 10)
-                .addGroup(southPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(reset, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(confirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -273,18 +272,18 @@ public class BookingForm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(northPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(bodyPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(southPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(northPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(bodyPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(southPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -299,9 +298,9 @@ public class BookingForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_lnameActionPerformed
 
-    private void phoneNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phoneNumActionPerformed
+    private void pnumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pnumActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_phoneNumActionPerformed
+    }//GEN-LAST:event_pnumActionPerformed
 
     private void mailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mailActionPerformed
         // TODO add your handling code here:
@@ -315,10 +314,8 @@ public class BookingForm extends javax.swing.JFrame {
         this.prefix.setSelectedIndex(0);
         this.fname.setText("");
         this.lname.setText("");
-        this.phoneNum.setText("");
+        this.pnum.setText("");
         this.mail.setText("");
-        this.checkin.setSelectedDate(Calendar.getInstance());
-        this.checkout.setSelectedDate(Calendar.getInstance());
     }//GEN-LAST:event_resetActionPerformed
 
     private void confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmActionPerformed
@@ -361,25 +358,25 @@ public class BookingForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel bodyPanel;
-    private javax.swing.JLabel bookingLabel;
     private javax.swing.JButton cancel;
     private datechooser.beans.DateChooserCombo checkin;
-    private javax.swing.JLabel checkinLabel;
     private datechooser.beans.DateChooserCombo checkout;
-    private javax.swing.JLabel checkoutLabel;
     private javax.swing.JButton confirm;
     private javax.swing.JTextField fname;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jNameLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField lname;
-    private javax.swing.JLabel lnameLabel;
     private javax.swing.JTextField mail;
-    private javax.swing.JLabel mailLabel;
-    private javax.swing.JPanel northPanel;
     private javax.swing.JLabel numRoom;
-    private javax.swing.JLabel phoneLabel;
-    private javax.swing.JTextField phoneNum;
+    private javax.swing.JTextField pnum;
     private javax.swing.JComboBox<String> prefix;
     private javax.swing.JButton reset;
-    private javax.swing.JPanel southPanel;
     // End of variables declaration//GEN-END:variables
 }
