@@ -337,7 +337,7 @@ public class UserSite extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         if(evt.getSource().equals(jButton1)){
-            Pin nu = new Pin();
+            UserPin nu = new UserPin();
             nu.pack();
             nu.setVisible(true);
         }
