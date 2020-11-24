@@ -21,27 +21,27 @@ public class MainCompoBottomBar extends javax.swing.JPanel {
     private void initComponents() {
 
         jFooterPanel = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
+        CurrentClientLabel1 = new javax.swing.JLabel();
+        ClientNum = new javax.swing.JLabel();
+        CurrentClientLabel2 = new javax.swing.JLabel();
         clientIcon = new javax.swing.JLabel();
 
         jFooterPanel.setBackground(new java.awt.Color(67, 106, 141));
 
-        jLabel11.setFont(new java.awt.Font("Angsana New", 1, 24)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("ขณะนี้มีผู้เข้าพัก");
+        CurrentClientLabel1.setFont(new java.awt.Font("Angsana New", 1, 24)); // NOI18N
+        CurrentClientLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        CurrentClientLabel1.setText("ขณะนี้มีผู้เข้าพัก");
 
-        jLabel13.setFont(new java.awt.Font("Angsana New", 0, 36)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("0");
-        jLabel13.setAlignmentY(0.0F);
-        jLabel13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ClientNum.setFont(new java.awt.Font("Angsana New", 0, 36)); // NOI18N
+        ClientNum.setForeground(new java.awt.Color(255, 255, 255));
+        ClientNum.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ClientNum.setText("0");
+        ClientNum.setAlignmentY(0.0F);
+        ClientNum.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        jLabel14.setFont(new java.awt.Font("Angsana New", 1, 24)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("คน");
+        CurrentClientLabel2.setFont(new java.awt.Font("Angsana New", 1, 24)); // NOI18N
+        CurrentClientLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        CurrentClientLabel2.setText("คน");
 
         clientIcon.setForeground(new java.awt.Color(255, 255, 255));
         clientIcon.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -56,23 +56,23 @@ public class MainCompoBottomBar extends javax.swing.JPanel {
                 .addContainerGap(639, Short.MAX_VALUE)
                 .addComponent(clientIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
-                .addComponent(jLabel11)
+                .addComponent(CurrentClientLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ClientNum, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel14)
+                .addComponent(CurrentClientLabel2)
                 .addGap(50, 50, 50))
         );
         jFooterPanelLayout.setVerticalGroup(
             jFooterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(clientIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(CurrentClientLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jFooterPanelLayout.createSequentialGroup()
                 .addGap(1, 1, 1)
                 .addGroup(jFooterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                    .addComponent(CurrentClientLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
                     .addGroup(jFooterPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ClientNum, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(5, 5, 5))))
         );
 
@@ -90,10 +90,10 @@ public class MainCompoBottomBar extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ClientNum;
+    private javax.swing.JLabel CurrentClientLabel1;
+    private javax.swing.JLabel CurrentClientLabel2;
     private javax.swing.JLabel clientIcon;
     private javax.swing.JPanel jFooterPanel;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     // End of variables declaration//GEN-END:variables
 }

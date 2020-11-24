@@ -47,20 +47,20 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="room" alignment="1" max="32767" attributes="0"/>
+              <Component id="roomNumber" alignment="1" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="room" min="-2" pref="58" max="-2" attributes="0"/>
+                  <Component id="roomNumber" min="-2" pref="58" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="room">
+        <Component class="javax.swing.JLabel" name="roomNumber">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Angsana New" size="36" style="1"/>
@@ -81,7 +81,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jLabel1" alignment="1" max="32767" attributes="0"/>
+              <Component id="foodListHeader" alignment="1" max="32767" attributes="0"/>
               <Component id="time" alignment="1" max="32767" attributes="0"/>
               <Component id="date" alignment="1" max="32767" attributes="0"/>
               <Group type="102" alignment="1" attributes="0">
@@ -104,7 +104,7 @@
                   <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                   <Component id="date" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="foodListHeader" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Component id="orderData" pref="215" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
@@ -125,7 +125,7 @@
             <Property name="rows" type="int" value="5"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="foodListHeader">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Angsana New" size="30" style="1"/>

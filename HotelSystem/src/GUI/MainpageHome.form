@@ -81,7 +81,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="jVacantLabel" alignment="0" max="32767" attributes="0"/>
-              <Component id="jLabel1" alignment="1" max="32767" attributes="0"/>
+              <Component id="OverallRoom" alignment="1" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="jfloor1Panel" min="-2" max="-2" attributes="0"/>
@@ -102,7 +102,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jVacantLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" pref="74" max="-2" attributes="0"/>
+                  <Component id="OverallRoom" min="-2" pref="74" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jfloor1Panel" alignment="0" max="32767" attributes="0"/>
@@ -126,7 +126,7 @@
             <Property name="text" type="java.lang.String" value="&#xe02;&#xe13;&#xe30;&#xe19;&#xe35;&#xe49;&#xe21;&#xe35;&#xe2b;&#xe49;&#xe2d;&#xe07;&#xe27;&#xe48;&#xe32;&#xe07;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="OverallRoom">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -157,27 +157,27 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel5" alignment="1" max="32767" attributes="0"/>
-                  <Component id="jLabel2" alignment="1" max="32767" attributes="0"/>
-                  <Component id="jLabel4" alignment="1" pref="300" max="32767" attributes="0"/>
+                  <Component id="floor1Free" alignment="1" max="32767" attributes="0"/>
+                  <Component id="floor1Label" alignment="1" max="32767" attributes="0"/>
+                  <Component id="availableRoom1" alignment="1" pref="300" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace pref="18" max="32767" attributes="0"/>
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="floor1Label" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <Component id="availableRoom1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                      <Component id="floor1Free" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="18" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel2">
+            <Component class="javax.swing.JLabel" name="floor1Label">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Angsana New" size="36" style="1"/>
@@ -186,7 +186,7 @@
                 <Property name="text" type="java.lang.String" value="&#xe0a;&#xe31;&#xe49;&#xe19; 1"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel4">
+            <Component class="javax.swing.JLabel" name="availableRoom1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Angsana New" size="24" style="0"/>
@@ -195,7 +195,7 @@
                 <Property name="text" type="java.lang.String" value="&#xe02;&#xe13;&#xe30;&#xe19;&#xe35;&#xe49;&#xe27;&#xe48;&#xe32;&#xe07;"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel5">
+            <Component class="javax.swing.JLabel" name="floor1Free">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Angsana New" size="60" style="1"/>
@@ -225,27 +225,27 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel10" alignment="1" max="32767" attributes="0"/>
-                  <Component id="jLabel8" alignment="1" max="32767" attributes="0"/>
-                  <Component id="jLabel9" alignment="1" pref="300" max="32767" attributes="0"/>
+                  <Component id="floor2Free" alignment="1" max="32767" attributes="0"/>
+                  <Component id="floor2Label" alignment="1" max="32767" attributes="0"/>
+                  <Component id="availableRoom2" alignment="1" pref="300" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                      <Component id="floor2Label" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                      <Component id="availableRoom2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                      <Component id="floor2Free" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel8">
+            <Component class="javax.swing.JLabel" name="floor2Label">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Angsana New" size="36" style="1"/>
@@ -254,7 +254,7 @@
                 <Property name="text" type="java.lang.String" value="&#xe0a;&#xe31;&#xe49;&#xe19; 2"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel9">
+            <Component class="javax.swing.JLabel" name="availableRoom2">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Angsana New" size="24" style="0"/>
@@ -263,7 +263,7 @@
                 <Property name="text" type="java.lang.String" value="&#xe02;&#xe13;&#xe30;&#xe19;&#xe35;&#xe49;&#xe27;&#xe48;&#xe32;&#xe07;"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel10">
+            <Component class="javax.swing.JLabel" name="floor2Free">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Angsana New" size="60" style="1"/>
@@ -293,27 +293,27 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel19" alignment="1" max="32767" attributes="0"/>
-                  <Component id="jLabel17" alignment="1" max="32767" attributes="0"/>
-                  <Component id="jLabel18" alignment="1" pref="300" max="32767" attributes="0"/>
+                  <Component id="floor3Free" alignment="1" max="32767" attributes="0"/>
+                  <Component id="floor3Label" alignment="1" max="32767" attributes="0"/>
+                  <Component id="availableRoom3" alignment="1" pref="300" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
+                      <Component id="floor3Label" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                      <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
+                      <Component id="availableRoom3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                      <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
+                      <Component id="floor3Free" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel17">
+            <Component class="javax.swing.JLabel" name="floor3Label">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Angsana New" size="36" style="1"/>
@@ -322,7 +322,7 @@
                 <Property name="text" type="java.lang.String" value="&#xe0a;&#xe31;&#xe49;&#xe19; 3"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel18">
+            <Component class="javax.swing.JLabel" name="availableRoom3">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Angsana New" size="24" style="0"/>
@@ -331,7 +331,7 @@
                 <Property name="text" type="java.lang.String" value="&#xe02;&#xe13;&#xe30;&#xe19;&#xe35;&#xe49;&#xe27;&#xe48;&#xe32;&#xe07;"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel19">
+            <Component class="javax.swing.JLabel" name="floor3Free">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Angsana New" size="60" style="1"/>
