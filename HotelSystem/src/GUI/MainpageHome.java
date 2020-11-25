@@ -20,19 +20,19 @@ public class MainpageHome extends javax.swing.JPanel {
         jPageLabel = new javax.swing.JLabel();
         jBodyPanel = new javax.swing.JPanel();
         jVacantLabel = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        OverallRoom = new javax.swing.JLabel();
         jfloor1Panel = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        floor1Label = new javax.swing.JLabel();
+        availableRoom1 = new javax.swing.JLabel();
+        floor1Free = new javax.swing.JLabel();
         jfloor2Panel = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        floor2Label = new javax.swing.JLabel();
+        availableRoom2 = new javax.swing.JLabel();
+        floor2Free = new javax.swing.JLabel();
         jfloor3Panel = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
+        floor3Label = new javax.swing.JLabel();
+        availableRoom3 = new javax.swing.JLabel();
+        floor3Free = new javax.swing.JLabel();
         clientData = new javax.swing.JPanel();
         clientDataLabel = new javax.swing.JLabel();
 
@@ -62,120 +62,120 @@ public class MainpageHome extends javax.swing.JPanel {
         jVacantLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jVacantLabel.setText("ขณะนี้มีห้องว่าง");
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Angsana New", 1, 100)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(120, 208, 31));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("15");
+        OverallRoom.setBackground(new java.awt.Color(255, 255, 255));
+        OverallRoom.setFont(new java.awt.Font("Angsana New", 1, 100)); // NOI18N
+        OverallRoom.setForeground(new java.awt.Color(120, 208, 31));
+        OverallRoom.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        OverallRoom.setText("15");
 
         jfloor1Panel.setBackground(new java.awt.Color(255, 255, 255));
-        jfloor1Panel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jfloor1Panel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jfloor1Panel.setMinimumSize(new java.awt.Dimension(300, 200));
 
-        jLabel2.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("ชั้น 1");
+        floor1Label.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
+        floor1Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        floor1Label.setText("ชั้น 1");
 
-        jLabel4.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("ขณะนี้ว่าง");
+        availableRoom1.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
+        availableRoom1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        availableRoom1.setText("ขณะนี้ว่าง");
 
-        jLabel5.setFont(new java.awt.Font("Angsana New", 1, 60)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(120, 208, 31));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("5");
+        floor1Free.setFont(new java.awt.Font("Angsana New", 1, 60)); // NOI18N
+        floor1Free.setForeground(new java.awt.Color(120, 208, 31));
+        floor1Free.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        floor1Free.setText("5");
 
         javax.swing.GroupLayout jfloor1PanelLayout = new javax.swing.GroupLayout(jfloor1Panel);
         jfloor1Panel.setLayout(jfloor1PanelLayout);
         jfloor1PanelLayout.setHorizontalGroup(
             jfloor1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+            .addComponent(floor1Free, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(floor1Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(availableRoom1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
         );
         jfloor1PanelLayout.setVerticalGroup(
             jfloor1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jfloor1PanelLayout.createSequentialGroup()
                 .addContainerGap(18, Short.MAX_VALUE)
-                .addComponent(jLabel2)
+                .addComponent(floor1Label)
                 .addGap(20, 20, 20)
-                .addComponent(jLabel4)
+                .addComponent(availableRoom1)
                 .addGap(5, 5, 5)
-                .addComponent(jLabel5)
+                .addComponent(floor1Free)
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
         jfloor2Panel.setBackground(new java.awt.Color(255, 255, 255));
-        jfloor2Panel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jfloor2Panel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jfloor2Panel.setMinimumSize(new java.awt.Dimension(300, 200));
 
-        jLabel8.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("ชั้น 2");
+        floor2Label.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
+        floor2Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        floor2Label.setText("ชั้น 2");
 
-        jLabel9.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("ขณะนี้ว่าง");
+        availableRoom2.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
+        availableRoom2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        availableRoom2.setText("ขณะนี้ว่าง");
 
-        jLabel10.setFont(new java.awt.Font("Angsana New", 1, 60)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(120, 208, 31));
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("5");
+        floor2Free.setFont(new java.awt.Font("Angsana New", 1, 60)); // NOI18N
+        floor2Free.setForeground(new java.awt.Color(120, 208, 31));
+        floor2Free.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        floor2Free.setText("5");
 
         javax.swing.GroupLayout jfloor2PanelLayout = new javax.swing.GroupLayout(jfloor2Panel);
         jfloor2Panel.setLayout(jfloor2PanelLayout);
         jfloor2PanelLayout.setHorizontalGroup(
             jfloor2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+            .addComponent(floor2Free, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(floor2Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(availableRoom2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
         );
         jfloor2PanelLayout.setVerticalGroup(
             jfloor2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jfloor2PanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel8)
+                .addComponent(floor2Label)
                 .addGap(20, 20, 20)
-                .addComponent(jLabel9)
+                .addComponent(availableRoom2)
                 .addGap(5, 5, 5)
-                .addComponent(jLabel10)
+                .addComponent(floor2Free)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jfloor3Panel.setBackground(new java.awt.Color(255, 255, 255));
-        jfloor3Panel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jfloor3Panel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jfloor3Panel.setMinimumSize(new java.awt.Dimension(300, 200));
 
-        jLabel17.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
-        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setText("ชั้น 3");
+        floor3Label.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
+        floor3Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        floor3Label.setText("ชั้น 3");
 
-        jLabel18.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
-        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel18.setText("ขณะนี้ว่าง");
+        availableRoom3.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
+        availableRoom3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        availableRoom3.setText("ขณะนี้ว่าง");
 
-        jLabel19.setFont(new java.awt.Font("Angsana New", 1, 60)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(120, 208, 31));
-        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel19.setText("5");
+        floor3Free.setFont(new java.awt.Font("Angsana New", 1, 60)); // NOI18N
+        floor3Free.setForeground(new java.awt.Color(120, 208, 31));
+        floor3Free.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        floor3Free.setText("5");
 
         javax.swing.GroupLayout jfloor3PanelLayout = new javax.swing.GroupLayout(jfloor3Panel);
         jfloor3Panel.setLayout(jfloor3PanelLayout);
         jfloor3PanelLayout.setHorizontalGroup(
             jfloor3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+            .addComponent(floor3Free, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(floor3Label, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(availableRoom3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
         );
         jfloor3PanelLayout.setVerticalGroup(
             jfloor3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jfloor3PanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel17)
+                .addComponent(floor3Label)
                 .addGap(20, 20, 20)
-                .addComponent(jLabel18)
+                .addComponent(availableRoom3)
                 .addGap(5, 5, 5)
-                .addComponent(jLabel19)
+                .addComponent(floor3Free)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -216,7 +216,7 @@ public class MainpageHome extends javax.swing.JPanel {
         jBodyPanelLayout.setHorizontalGroup(
             jBodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jVacantLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(OverallRoom, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jBodyPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jfloor1Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -234,7 +234,7 @@ public class MainpageHome extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jVacantLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(OverallRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jBodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jfloor1Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -275,19 +275,19 @@ public class MainpageHome extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel OverallRoom;
+    private javax.swing.JLabel availableRoom1;
+    private javax.swing.JLabel availableRoom2;
+    private javax.swing.JLabel availableRoom3;
     private javax.swing.JPanel clientData;
     private javax.swing.JLabel clientDataLabel;
+    private javax.swing.JLabel floor1Free;
+    private javax.swing.JLabel floor1Label;
+    private javax.swing.JLabel floor2Free;
+    private javax.swing.JLabel floor2Label;
+    private javax.swing.JLabel floor3Free;
+    private javax.swing.JLabel floor3Label;
     private javax.swing.JPanel jBodyPanel;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPageHeadPanel;
     private javax.swing.JLabel jPageLabel;
     private javax.swing.JLabel jVacantLabel;

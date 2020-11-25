@@ -82,14 +82,14 @@ public class LoginForm extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabelClose = new javax.swing.JLabel();
-        jLabelMin = new javax.swing.JLabel();
+        headLabel = new javax.swing.JLabel();
+        closeButton = new javax.swing.JLabel();
+        minButton = new javax.swing.JLabel();
         jUsernameLabel = new javax.swing.JLabel();
         jUsernameField = new javax.swing.JTextField();
         jPasswordLabel = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        loginButton = new javax.swing.JButton();
+        cancelButton = new javax.swing.JButton();
         jPasswordField = new javax.swing.JTextField();
         state = new javax.swing.JLabel();
 
@@ -105,27 +105,27 @@ public class LoginForm extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Angsana New", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Login Form");
+        headLabel.setFont(new java.awt.Font("Angsana New", 1, 48)); // NOI18N
+        headLabel.setForeground(new java.awt.Color(255, 255, 255));
+        headLabel.setText("Login Form");
 
-        jLabelClose.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabelClose.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelClose.setText("x");
-        jLabelClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabelClose.addMouseListener(new java.awt.event.MouseAdapter() {
+        closeButton.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        closeButton.setForeground(new java.awt.Color(255, 255, 255));
+        closeButton.setText("x");
+        closeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        closeButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabelCloseMouseClicked(evt);
+                closeButtonMouseClicked(evt);
             }
         });
 
-        jLabelMin.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
-        jLabelMin.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelMin.setText("-");
-        jLabelMin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabelMin.addMouseListener(new java.awt.event.MouseAdapter() {
+        minButton.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        minButton.setForeground(new java.awt.Color(255, 255, 255));
+        minButton.setText("-");
+        minButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        minButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabelMinMouseClicked(evt);
+                minButtonMouseClicked(evt);
             }
         });
 
@@ -135,11 +135,11 @@ public class LoginForm extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addComponent(jLabel1)
+                .addComponent(headLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 249, Short.MAX_VALUE)
-                .addComponent(jLabelMin)
+                .addComponent(minButton)
                 .addGap(27, 27, 27)
-                .addComponent(jLabelClose)
+                .addComponent(closeButton)
                 .addGap(28, 28, 28))
         );
         jPanel1Layout.setVerticalGroup(
@@ -149,13 +149,13 @@ public class LoginForm extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(jLabelClose, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(closeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(headLabel)
                         .addGap(10, 10, 10))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(4, 4, 4)
-                        .addComponent(jLabelMin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(minButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         jUsernameLabel.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
@@ -173,31 +173,31 @@ public class LoginForm extends javax.swing.JFrame {
         jPasswordLabel.setForeground(new java.awt.Color(255, 255, 255));
         jPasswordLabel.setText("Password:");
 
-        jButton1.setBackground(new java.awt.Color(0, 204, 255));
-        jButton1.setFont(new java.awt.Font("Angsana New", 1, 30)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Login");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.setMaximumSize(new java.awt.Dimension(100, 35));
-        jButton1.setMinimumSize(new java.awt.Dimension(100, 35));
-        jButton1.setPreferredSize(new java.awt.Dimension(100, 35));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        loginButton.setBackground(new java.awt.Color(0, 204, 255));
+        loginButton.setFont(new java.awt.Font("Angsana New", 1, 30)); // NOI18N
+        loginButton.setForeground(new java.awt.Color(255, 255, 255));
+        loginButton.setText("Login");
+        loginButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        loginButton.setMaximumSize(new java.awt.Dimension(100, 35));
+        loginButton.setMinimumSize(new java.awt.Dimension(100, 35));
+        loginButton.setPreferredSize(new java.awt.Dimension(100, 35));
+        loginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                loginButtonActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 102, 102));
-        jButton2.setFont(new java.awt.Font("Angsana New", 1, 30)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Cancel");
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton2.setMaximumSize(new java.awt.Dimension(100, 35));
-        jButton2.setMinimumSize(new java.awt.Dimension(100, 35));
-        jButton2.setPreferredSize(new java.awt.Dimension(100, 35));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        cancelButton.setBackground(new java.awt.Color(255, 102, 102));
+        cancelButton.setFont(new java.awt.Font("Angsana New", 1, 30)); // NOI18N
+        cancelButton.setForeground(new java.awt.Color(255, 255, 255));
+        cancelButton.setText("Cancel");
+        cancelButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cancelButton.setMaximumSize(new java.awt.Dimension(100, 35));
+        cancelButton.setMinimumSize(new java.awt.Dimension(100, 35));
+        cancelButton.setPreferredSize(new java.awt.Dimension(100, 35));
+        cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                cancelButtonActionPerformed(evt);
             }
         });
 
@@ -234,9 +234,9 @@ public class LoginForm extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(140, 140, 140))
         );
         jPanel2Layout.setVerticalGroup(
@@ -253,8 +253,8 @@ public class LoginForm extends javax.swing.JFrame {
                     .addComponent(jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(state)
                 .addGap(30, 30, 30))
@@ -280,16 +280,16 @@ public class LoginForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jUsernameFieldActionPerformed
 
-    private void jLabelCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelCloseMouseClicked
+    private void closeButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeButtonMouseClicked
         System.exit(0);
-    }//GEN-LAST:event_jLabelCloseMouseClicked
+    }//GEN-LAST:event_closeButtonMouseClicked
 
-    private void jLabelMinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMinMouseClicked
+    private void minButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minButtonMouseClicked
         this.setState(JFrame.ICONIFIED);
-    }//GEN-LAST:event_jLabelMinMouseClicked
+    }//GEN-LAST:event_minButtonMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if(evt.getSource().equals(jButton1)){
+    private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
+        if(evt.getSource().equals(loginButton)){
             String sql = "select * from user_hotel";
         try {
             this.rs = con.createStatement().executeQuery(sql);
@@ -310,11 +310,11 @@ public class LoginForm extends javax.swing.JFrame {
             Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
         }
       }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_loginButtonActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_cancelButtonActionPerformed
 
     private void jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldActionPerformed
         // TODO add your handling code here:
@@ -360,17 +360,17 @@ public class LoginForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabelClose;
-    private javax.swing.JLabel jLabelMin;
+    private javax.swing.JButton cancelButton;
+    private javax.swing.JLabel closeButton;
+    private javax.swing.JLabel headLabel;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jPasswordField;
     private javax.swing.JLabel jPasswordLabel;
     private javax.swing.JTextField jUsernameField;
     private javax.swing.JLabel jUsernameLabel;
+    private javax.swing.JButton loginButton;
+    private javax.swing.JLabel minButton;
     private javax.swing.JLabel state;
     // End of variables declaration//GEN-END:variables
 }

@@ -31,21 +31,21 @@ public class MainpageRoom extends javax.swing.JPanel {
         jBodyPanel = new javax.swing.JPanel();
         jDateLabel = new javax.swing.JLabel();
         floor3 = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
+        floor3Label = new javax.swing.JLabel();
         R301 = new javax.swing.JButton();
         R302 = new javax.swing.JButton();
         R303 = new javax.swing.JButton();
         R304 = new javax.swing.JButton();
         R305 = new javax.swing.JButton();
         floor2 = new javax.swing.JPanel();
-        jLabel16 = new javax.swing.JLabel();
+        floor2Label = new javax.swing.JLabel();
         R201 = new javax.swing.JButton();
         R202 = new javax.swing.JButton();
         R203 = new javax.swing.JButton();
         R204 = new javax.swing.JButton();
         R205 = new javax.swing.JButton();
         floor1 = new javax.swing.JPanel();
-        jLabel15 = new javax.swing.JLabel();
+        floor1Label = new javax.swing.JLabel();
         R101 = new javax.swing.JButton();
         R102 = new javax.swing.JButton();
         R103 = new javax.swing.JButton();
@@ -77,8 +77,8 @@ public class MainpageRoom extends javax.swing.JPanel {
 
         floor3.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel17.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
-        jLabel17.setText("ชั้น 3");
+        floor3Label.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
+        floor3Label.setText("ชั้น 3");
 
         R301.setBackground(new java.awt.Color(216, 255, 186));
         R301.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
@@ -156,7 +156,7 @@ public class MainpageRoom extends javax.swing.JPanel {
             floor3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(floor3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel17)
+                .addComponent(floor3Label)
                 .addGap(18, 18, 18)
                 .addComponent(R301, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
@@ -171,7 +171,7 @@ public class MainpageRoom extends javax.swing.JPanel {
         );
         floor3Layout.setVerticalGroup(
             floor3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(floor3Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(floor3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(R301, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(R302, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -182,8 +182,8 @@ public class MainpageRoom extends javax.swing.JPanel {
 
         floor2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel16.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
-        jLabel16.setText("ชั้น 2");
+        floor2Label.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
+        floor2Label.setText("ชั้น 2");
 
         R201.setBackground(new java.awt.Color(216, 255, 186));
         R201.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
@@ -261,7 +261,7 @@ public class MainpageRoom extends javax.swing.JPanel {
             floor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(floor2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel16)
+                .addComponent(floor2Label)
                 .addGap(18, 18, 18)
                 .addComponent(R201, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
@@ -276,7 +276,7 @@ public class MainpageRoom extends javax.swing.JPanel {
         );
         floor2Layout.setVerticalGroup(
             floor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(floor2Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(floor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(R201, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(R202, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -287,8 +287,8 @@ public class MainpageRoom extends javax.swing.JPanel {
 
         floor1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel15.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
-        jLabel15.setText("ชั้น 1");
+        floor1Label.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
+        floor1Label.setText("ชั้น 1");
 
         R101.setBackground(new java.awt.Color(216, 255, 186));
         R101.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
@@ -366,7 +366,7 @@ public class MainpageRoom extends javax.swing.JPanel {
             floor1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(floor1Layout.createSequentialGroup()
                 .addContainerGap(50, Short.MAX_VALUE)
-                .addComponent(jLabel15)
+                .addComponent(floor1Label)
                 .addGap(18, 18, 18)
                 .addComponent(R101, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
@@ -381,7 +381,7 @@ public class MainpageRoom extends javax.swing.JPanel {
         );
         floor1Layout.setVerticalGroup(
             floor1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(floor1Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(floor1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(R101, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(R102, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -510,13 +510,13 @@ public class MainpageRoom extends javax.swing.JPanel {
     private javax.swing.JButton R304;
     private javax.swing.JButton R305;
     private javax.swing.JPanel floor1;
+    private javax.swing.JLabel floor1Label;
     private javax.swing.JPanel floor2;
+    private javax.swing.JLabel floor2Label;
     private javax.swing.JPanel floor3;
+    private javax.swing.JLabel floor3Label;
     private javax.swing.JPanel jBodyPanel;
     private javax.swing.JLabel jDateLabel;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JPanel jPageHeadPanel;
     private javax.swing.JLabel jPageLabel;
     // End of variables declaration//GEN-END:variables

@@ -25,23 +25,23 @@ public class UserSite extends javax.swing.JFrame {
         ImageIcon setHomeIcon4 = new ImageIcon(new ImageIcon(getClass().getResource("../Images/food4.jpg")).getImage().getScaledInstance(100, 120, Image.SCALE_SMOOTH));
         ImageIcon setHomeIcon5 = new ImageIcon(new ImageIcon(getClass().getResource("../Images/food5.jpg")).getImage().getScaledInstance(100, 120, Image.SCALE_SMOOTH));
         ImageIcon setHomeIcon6 = new ImageIcon(new ImageIcon(getClass().getResource("../Images/food6.jpg")).getImage().getScaledInstance(100, 120, Image.SCALE_SMOOTH));
-        this.jLabel5.setText("");
-        this.jLabel5.setIcon(setHomeIcon);
+        this.foodPic1.setText("");
+        this.foodPic1.setIcon(setHomeIcon);
         
-        this.jLabel3.setText("");
-        this.jLabel3.setIcon(setHomeIcon2);
+        this.foodPic2.setText("");
+        this.foodPic2.setIcon(setHomeIcon2);
         
-        this.jLabel4.setText("");
-        this.jLabel4.setIcon(setHomeIcon3);
+        this.foodPic3.setText("");
+        this.foodPic3.setIcon(setHomeIcon3);
         
-        this.jLabel8.setText("");
-        this.jLabel8.setIcon(setHomeIcon4);
+        this.foodPic4.setText("");
+        this.foodPic4.setIcon(setHomeIcon4);
         
-        this.jLabel6.setText("");
-        this.jLabel6.setIcon(setHomeIcon5);
+        this.foodPic5.setText("");
+        this.foodPic5.setIcon(setHomeIcon5);
         
-        this.jLabel7.setText("");
-        this.jLabel7.setIcon(setHomeIcon6);
+        this.foodPic6.setText("");
+        this.foodPic6.setIcon(setHomeIcon6);
     }
 
     /**
@@ -55,28 +55,28 @@ public class UserSite extends javax.swing.JFrame {
 
         jButton6 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        ClientNameLabel = new javax.swing.JLabel();
+        RoomLabel = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        FoodList = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jButton10 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        clearButton = new javax.swing.JButton();
+        submitButton = new javax.swing.JButton();
+        food1 = new javax.swing.JButton();
+        food2 = new javax.swing.JButton();
+        food3 = new javax.swing.JButton();
+        food4 = new javax.swing.JButton();
+        food5 = new javax.swing.JButton();
+        food6 = new javax.swing.JButton();
+        foodPic2 = new javax.swing.JLabel();
+        foodPic3 = new javax.swing.JLabel();
+        foodPic1 = new javax.swing.JLabel();
+        foodPic5 = new javax.swing.JLabel();
+        foodPic6 = new javax.swing.JLabel();
+        foodPic4 = new javax.swing.JLabel();
+        headerLabel = new javax.swing.JLabel();
+        pinButton = new javax.swing.JButton();
 
         jButton6.setText("ข้าวผัดหมู");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -89,13 +89,13 @@ public class UserSite extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(56, 86, 116));
 
-        jLabel1.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("คุณ Asama Courage to sell");
+        ClientNameLabel.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
+        ClientNameLabel.setForeground(new java.awt.Color(255, 255, 255));
+        ClientNameLabel.setText("คุณ Asama Courage to sell");
 
-        jLabel2.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("ห้อง 101  ชั้น 1");
+        RoomLabel.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
+        RoomLabel.setForeground(new java.awt.Color(255, 255, 255));
+        RoomLabel.setText("ห้อง 101  ชั้น 1");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -103,9 +103,9 @@ public class UserSite extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addComponent(jLabel2)
+                .addComponent(RoomLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 266, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(ClientNameLabel)
                 .addGap(117, 117, 117))
         );
         jPanel1Layout.setVerticalGroup(
@@ -113,8 +113,8 @@ public class UserSite extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(RoomLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ClientNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
@@ -135,19 +135,19 @@ public class UserSite extends javax.swing.JFrame {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        FoodList.setViewportView(jTextArea1);
 
-        jButton10.setText("Clear");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        clearButton.setText("Clear");
+        clearButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                clearButtonActionPerformed(evt);
             }
         });
 
-        jButton9.setText("Submit");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        submitButton.setText("Submit");
+        submitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                submitButtonActionPerformed(evt);
             }
         });
 
@@ -155,87 +155,87 @@ public class UserSite extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
+            .addComponent(FoodList, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton9)
+                .addComponent(submitButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton10)
+                .addComponent(clearButton)
                 .addGap(25, 25, 25))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)
+                .addComponent(FoodList, javax.swing.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton10)
-                    .addComponent(jButton9))
+                    .addComponent(clearButton)
+                    .addComponent(submitButton))
                 .addContainerGap())
         );
 
-        jButton2.setText("ข้าวกระเพราะไก่");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        food1.setText("ข้าวกระเพราะไก่");
+        food1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                food1ActionPerformed(evt);
             }
         });
 
-        jButton3.setText("ข้าวไก่กระเทียม");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        food2.setText("ข้าวไก่กระเทียม");
+        food2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                food2ActionPerformed(evt);
             }
         });
 
-        jButton4.setText("ข้าวผัดหมู");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        food3.setText("ข้าวผัดหมู");
+        food3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                food3ActionPerformed(evt);
             }
         });
 
-        jButton5.setText("ข้าวแกงกระหรี่หมูทอด");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        food4.setText("ข้าวแกงกระหรี่หมูทอด");
+        food4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                food4ActionPerformed(evt);
             }
         });
 
-        jButton7.setText("โจ้กหมู");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        food5.setText("โจ้กหมู");
+        food5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                food5ActionPerformed(evt);
             }
         });
 
-        jButton8.setText("ข้าวต้มกุ้ง");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        food6.setText("ข้าวต้มกุ้ง");
+        food6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                food6ActionPerformed(evt);
             }
         });
 
-        jLabel3.setText("         img");
+        foodPic2.setText("         img");
 
-        jLabel4.setText("         img");
+        foodPic3.setText("         img");
 
-        jLabel5.setText("         img");
+        foodPic1.setText("         img");
 
-        jLabel6.setText("         img");
+        foodPic5.setText("         img");
 
-        jLabel7.setText("         img");
+        foodPic6.setText("         img");
 
-        jLabel8.setText("         img");
+        foodPic4.setText("         img");
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel9.setText("รายการอาหารที่สั่ง");
+        headerLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        headerLabel.setText("รายการอาหารที่สั่ง");
 
-        jButton1.setFont(new java.awt.Font("Angsana New", 1, 24)); // NOI18N
-        jButton1.setText("Pin");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        pinButton.setFont(new java.awt.Font("Angsana New", 1, 24)); // NOI18N
+        pinButton.setText("Pin");
+        pinButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                pinButtonActionPerformed(evt);
             }
         });
 
@@ -246,50 +246,50 @@ public class UserSite extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1))
+                .addComponent(pinButton))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(123, 123, 123)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(foodPic1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton4))
+                        .addComponent(food3))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(290, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(foodPic2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(15, 15, 15))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton5)
+                                    .addComponent(food4)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(24, 24, 24)
-                                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(foodPic4, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(108, 108, 108)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGap(10, 10, 10)
-                                                .addComponent(jButton7))
-                                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                .addComponent(food5))
+                                            .addComponent(foodPic5, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addGap(22, 22, 22))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
-                                .addComponent(jButton2)
+                                .addComponent(food1)
                                 .addGap(98, 98, 98)
-                                .addComponent(jButton3)))
+                                .addComponent(food2)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(102, 102, 102)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton8, javax.swing.GroupLayout.Alignment.TRAILING))))
+                                .addComponent(foodPic3, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(foodPic6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(food6, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addGap(64, 64, 64))
             .addGroup(layout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addComponent(jLabel9)
+                .addComponent(headerLabel)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -299,33 +299,33 @@ public class UserSite extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton1)))
+                        .addComponent(pinButton)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(foodPic2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(foodPic3, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(foodPic1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3)
-                            .addComponent(jButton4))
+                            .addComponent(food1)
+                            .addComponent(food2)
+                            .addComponent(food3))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(foodPic4, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(foodPic5, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(foodPic6, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton5)
-                            .addComponent(jButton7)
-                            .addComponent(jButton8))
+                            .addComponent(food4)
+                            .addComponent(food5)
+                            .addComponent(food6))
                         .addGap(48, 48, 48))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel9)
+                        .addComponent(headerLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -335,63 +335,63 @@ public class UserSite extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if(evt.getSource().equals(jButton1)){
+    private void pinButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pinButtonActionPerformed
+        if(evt.getSource().equals(pinButton)){
             UserPin nu = new UserPin();
             nu.pack();
             nu.setVisible(true);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_pinButtonActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        if(evt.getSource().equals(jButton2)){
+    private void food1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_food1ActionPerformed
+        if(evt.getSource().equals(food1)){
             this.jTextArea1.append("ข้าวกระเพราไก่  x1"+"\n");
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_food1ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        if(evt.getSource().equals(jButton3)){
+    private void food2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_food2ActionPerformed
+        if(evt.getSource().equals(food2)){
             this.jTextArea1.append("ข้าวไก่กระเทียม  x1"+"\n");
         }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_food2ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        if(evt.getSource().equals(jButton4)){
+    private void food3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_food3ActionPerformed
+        if(evt.getSource().equals(food3)){
             this.jTextArea1.append("ข้าวผัดหมู  x1"+"\n");
         }
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_food3ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        if(evt.getSource().equals(jButton5)){
+    private void food4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_food4ActionPerformed
+        if(evt.getSource().equals(food4)){
             this.jTextArea1.append("ข้าวแกงกระหรี่หมูทอด  x1"+"\n");
         }
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_food4ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        if(evt.getSource().equals(jButton7)){
+    private void food5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_food5ActionPerformed
+        if(evt.getSource().equals(food5)){
             this.jTextArea1.append("โจ้กหมู  x1"+"\n");
         }
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_food5ActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        if(evt.getSource().equals(jButton8)){
+    private void food6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_food6ActionPerformed
+        if(evt.getSource().equals(food6)){
             this.jTextArea1.append("ข้าวต้มกุ้ง  x1"+"\n");
         }
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_food6ActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        if(evt.getSource().equals(jButton10)){
+    private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
+        if(evt.getSource().equals(clearButton)){
             jTextArea1.setText(" ");
         }
-    }//GEN-LAST:event_jButton10ActionPerformed
+    }//GEN-LAST:event_clearButtonActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
+    }//GEN-LAST:event_submitButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -429,29 +429,29 @@ public class UserSite extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JLabel ClientNameLabel;
+    private javax.swing.JScrollPane FoodList;
+    private javax.swing.JLabel RoomLabel;
+    private javax.swing.JButton clearButton;
+    private javax.swing.JButton food1;
+    private javax.swing.JButton food2;
+    private javax.swing.JButton food3;
+    private javax.swing.JButton food4;
+    private javax.swing.JButton food5;
+    private javax.swing.JButton food6;
+    private javax.swing.JLabel foodPic1;
+    private javax.swing.JLabel foodPic2;
+    private javax.swing.JLabel foodPic3;
+    private javax.swing.JLabel foodPic4;
+    private javax.swing.JLabel foodPic5;
+    private javax.swing.JLabel foodPic6;
+    private javax.swing.JLabel headerLabel;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JButton pinButton;
+    private javax.swing.JButton submitButton;
     // End of variables declaration//GEN-END:variables
 }

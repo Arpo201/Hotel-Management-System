@@ -28,11 +28,11 @@ public class FoodOrderForm extends javax.swing.JInternalFrame {
     
     public void setRoom(int num){
         String text = "ห้อง " + num;
-        this.room.setText(text);
+        this.roomNumber.setText(text);
     }
     
     public String getRoom(){
-        return this.room.getText();
+        return this.roomNumber.getText();
     }
     
     @SuppressWarnings("unchecked")
@@ -40,10 +40,10 @@ public class FoodOrderForm extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        room = new javax.swing.JLabel();
+        roomNumber = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         orderData = new javax.swing.JTextArea();
-        jLabel1 = new javax.swing.JLabel();
+        foodListHeader = new javax.swing.JLabel();
         close = new javax.swing.JButton();
         time = new javax.swing.JLabel();
         date = new javax.swing.JLabel();
@@ -52,20 +52,20 @@ public class FoodOrderForm extends javax.swing.JInternalFrame {
 
         jPanel2.setBackground(new java.awt.Color(146, 177, 204));
 
-        room.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
-        room.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        room.setText("ห้อง 101");
+        roomNumber.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
+        roomNumber.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomNumber.setText("ห้อง 101");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(room, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(roomNumber, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(room, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(roomNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 2, Short.MAX_VALUE))
         );
 
@@ -76,9 +76,9 @@ public class FoodOrderForm extends javax.swing.JInternalFrame {
         orderData.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
         orderData.setRows(5);
 
-        jLabel1.setFont(new java.awt.Font("Angsana New", 1, 30)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("รายการอาหาร");
+        foodListHeader.setFont(new java.awt.Font("Angsana New", 1, 30)); // NOI18N
+        foodListHeader.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        foodListHeader.setText("รายการอาหาร");
 
         close.setBackground(new java.awt.Color(206, 237, 255));
         close.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
@@ -104,7 +104,7 @@ public class FoodOrderForm extends javax.swing.JInternalFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(foodListHeader, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(time, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(date, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
@@ -124,7 +124,7 @@ public class FoodOrderForm extends javax.swing.JInternalFrame {
                 .addGap(7, 7, 7)
                 .addComponent(date)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
+                .addComponent(foodListHeader)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(orderData, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
@@ -158,11 +158,11 @@ public class FoodOrderForm extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton close;
     private javax.swing.JLabel date;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel foodListHeader;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTextArea orderData;
-    private javax.swing.JLabel room;
+    private javax.swing.JLabel roomNumber;
     private javax.swing.JLabel time;
     // End of variables declaration//GEN-END:variables
 }
