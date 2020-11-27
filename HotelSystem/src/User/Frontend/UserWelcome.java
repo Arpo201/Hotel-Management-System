@@ -5,7 +5,7 @@
  */
 package User.Frontend;
 
-import User.Backend.ClientSocketHandler;
+import User.Backend.ServerConnector;
 
 /**
  *
@@ -17,7 +17,7 @@ public class UserWelcome extends javax.swing.JFrame {
      * Creates new form Welcome
      */
     public UserWelcome() {
-        new ClientSocketHandler().start();
+        new ServerConnector().start();
         initComponents();
     }
 
@@ -53,10 +53,10 @@ public class UserWelcome extends javax.swing.JFrame {
         });
 
         welcomeLabel.setFont(new java.awt.Font("Angsana New", 1, 56)); // NOI18N
-        welcomeLabel.setText("     Welcome!");
+        welcomeLabel.setText("Welcome!");
 
         ClientNameLabel.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
-        ClientNameLabel.setText("               Mr. Asama Courage to sell");
+        ClientNameLabel.setText("Mr. Asama Courage to sell");
 
         instuctionLabel.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         instuctionLabel.setText("\"Hotel System Food Delivery Program\"");
@@ -195,8 +195,12 @@ public class UserWelcome extends javax.swing.JFrame {
         });
     }
 
+    public static void setClientName(String name) {
+        ClientNameLabel.setText(name);
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ClientNameLabel;
+    private static javax.swing.JLabel ClientNameLabel;
     private javax.swing.JButton continueButton;
     private javax.swing.JLabel instuctionLabel;
     private javax.swing.JPanel jPanel1;

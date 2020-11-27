@@ -13,19 +13,19 @@ public class MainCompoNavbar extends javax.swing.JPanel {
     }
     
     public void getHomeBtn(){
-        ImageIcon setHomeIcon = new ImageIcon(new ImageIcon(getClass().getResource("../Images/home-icon.png")).getImage().getScaledInstance(60, 50, Image.SCALE_SMOOTH));
+        ImageIcon setHomeIcon = new ImageIcon(new ImageIcon(getClass().getResource("/Assets/home-icon.png")).getImage().getScaledInstance(60, 50, Image.SCALE_SMOOTH));
         this.homeIcon.setText("");
         this.homeIcon.setIcon(setHomeIcon);
     }
     
     public void getRoomBtn(){
-        ImageIcon setBedIcon = new ImageIcon(new ImageIcon(getClass().getResource("../Images/bed-icon.jpg")).getImage().getScaledInstance(80, 40, Image.SCALE_SMOOTH));
+        ImageIcon setBedIcon = new ImageIcon(new ImageIcon(getClass().getResource("/Assets/bed-icon.jpg")).getImage().getScaledInstance(80, 40, Image.SCALE_SMOOTH));
         this.bedIcon.setText("");
         this.bedIcon.setIcon(setBedIcon);
     }
     
     public void getLogoutBtn(){
-        ImageIcon setLogoutIcon = new ImageIcon(new ImageIcon(getClass().getResource("../Images/logout-icon.jpg")).getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH));
+        ImageIcon setLogoutIcon = new ImageIcon(new ImageIcon(getClass().getResource("/Assets/logout-icon.jpg")).getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH));
         this.logoutIcon.setText("");
         this.logoutIcon.setIcon(setLogoutIcon);
     }

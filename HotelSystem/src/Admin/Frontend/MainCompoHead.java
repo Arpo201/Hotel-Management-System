@@ -24,7 +24,7 @@ public class MainCompoHead extends javax.swing.JPanel {
     }
     
     public void getLogo(){
-        ImageIcon setHomeIcon = new ImageIcon(new ImageIcon(getClass().getResource("../Images/hotel.png")).getImage().getScaledInstance(80, 50, Image.SCALE_SMOOTH));
+        ImageIcon setHomeIcon = new ImageIcon(new ImageIcon(getClass().getResource("/Assets/hotel.png")).getImage().getScaledInstance(80, 50, Image.SCALE_SMOOTH));
         this.logoIcon.setText("");
         this.logoIcon.setIcon(setHomeIcon);
     }

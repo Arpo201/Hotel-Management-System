@@ -5,7 +5,7 @@
  */
 package Admin.Frontend;
 
-import Admin.Backend.ServerSocketHandler;
+import Admin.Backend.ClientListener;
 
 import javax.swing.*;
 import java.awt.*;
@@ -27,7 +27,7 @@ public class RunAdmin {
         }
 
         public static void startSocket(){
-            new ServerSocketHandler().start();
+            new ClientListener().start();
         }
 
         public RunAdmin(String name){
