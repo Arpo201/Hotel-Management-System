@@ -103,7 +103,7 @@ public class DebugBufferingPacketReader implements MessageReader<NativePacketHea
         String PacketPayloadImpl = StringUtils.dumpAsHex(buf.getByteBuffer(), bytesToDump);
 
         StringBuilder packetDump = new StringBuilder(DEBUG_MSG_LEN + NativeConstants.HEADER_LENGTH + PacketPayloadImpl.length());
-        packetDump.append("Server ");
+        packetDump.append("Admin ");
         packetDump.append(reuse.isPresent() ? "(re-used) " : "(new) ");
         packetDump.append(buf.toString());
         packetDump.append(" --------------------> Client\n");
