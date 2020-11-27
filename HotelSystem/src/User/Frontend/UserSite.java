@@ -5,7 +5,9 @@
  */
 package User.Frontend;
 
+import User.Backend.ServerConnector;
 import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 import java.awt.*;
 import javax.swing.*;
@@ -20,13 +22,15 @@ public class UserSite extends javax.swing.JFrame {
      * Creates new form UserSite
      */
     public UserSite() {
+        foodList = new JSONObject();
+        foodList.put("foodList", new JSONArray());
         initComponents();
-        ImageIcon setHomeIcon = new ImageIcon(new ImageIcon(getClass().getResource("../Images/food1.jpg")).getImage().getScaledInstance(100, 120, Image.SCALE_SMOOTH));
-        ImageIcon setHomeIcon2 = new ImageIcon(new ImageIcon(getClass().getResource("../Images/food2.jpg")).getImage().getScaledInstance(100, 120, Image.SCALE_SMOOTH));
-        ImageIcon setHomeIcon3 = new ImageIcon(new ImageIcon(getClass().getResource("../Images/food3.jpg")).getImage().getScaledInstance(100, 120, Image.SCALE_SMOOTH));
-        ImageIcon setHomeIcon4 = new ImageIcon(new ImageIcon(getClass().getResource("../Images/food4.jpg")).getImage().getScaledInstance(100, 120, Image.SCALE_SMOOTH));
-        ImageIcon setHomeIcon5 = new ImageIcon(new ImageIcon(getClass().getResource("../Images/food5.jpg")).getImage().getScaledInstance(100, 120, Image.SCALE_SMOOTH));
-        ImageIcon setHomeIcon6 = new ImageIcon(new ImageIcon(getClass().getResource("../Images/food6.jpg")).getImage().getScaledInstance(100, 120, Image.SCALE_SMOOTH));
+        ImageIcon setHomeIcon = new ImageIcon(new ImageIcon(getClass().getResource("/Assets/food1.jpg")).getImage().getScaledInstance(100, 120, Image.SCALE_SMOOTH));
+        ImageIcon setHomeIcon2 = new ImageIcon(new ImageIcon(getClass().getResource("/Assets/food2.jpg")).getImage().getScaledInstance(100, 120, Image.SCALE_SMOOTH));
+        ImageIcon setHomeIcon3 = new ImageIcon(new ImageIcon(getClass().getResource("/Assets/food3.jpg")).getImage().getScaledInstance(100, 120, Image.SCALE_SMOOTH));
+        ImageIcon setHomeIcon4 = new ImageIcon(new ImageIcon(getClass().getResource("/Assets/food4.jpg")).getImage().getScaledInstance(100, 120, Image.SCALE_SMOOTH));
+        ImageIcon setHomeIcon5 = new ImageIcon(new ImageIcon(getClass().getResource("/Assets/food5.jpg")).getImage().getScaledInstance(100, 120, Image.SCALE_SMOOTH));
+        ImageIcon setHomeIcon6 = new ImageIcon(new ImageIcon(getClass().getResource("/Assets/food6.jpg")).getImage().getScaledInstance(100, 120, Image.SCALE_SMOOTH));
         this.foodPic1.setText("");
         this.foodPic1.setIcon(setHomeIcon);
         
@@ -348,24 +352,28 @@ public class UserSite extends javax.swing.JFrame {
     private void food1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_food1ActionPerformed
         if(evt.getSource().equals(food1)){
             this.jTextArea1.append("ข้าวกระเพราไก่  x1"+"\n");
+            ((JSONArray)foodList.get("foodList")).add("ข้าวกระเพราไก่  x1");
         }
     }//GEN-LAST:event_food1ActionPerformed
 
     private void food2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_food2ActionPerformed
         if(evt.getSource().equals(food2)){
             this.jTextArea1.append("ข้าวไก่กระเทียม  x1"+"\n");
+            ((JSONArray)foodList.get("foodList")).add("ข้าวไก่กระเทียม  x1");
         }
     }//GEN-LAST:event_food2ActionPerformed
 
     private void food3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_food3ActionPerformed
         if(evt.getSource().equals(food3)){
             this.jTextArea1.append("ข้าวผัดหมู  x1"+"\n");
+            ((JSONArray)foodList.get("foodList")).add("ข้าวผัดหมู  x1");
         }
     }//GEN-LAST:event_food3ActionPerformed
 
     private void food4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_food4ActionPerformed
         if(evt.getSource().equals(food4)){
             this.jTextArea1.append("ข้าวแกงกระหรี่หมูทอด  x1"+"\n");
+            ((JSONArray)foodList.get("foodList")).add("ข้าวแกงกระหรี่หมูทอด  x1");
         }
     }//GEN-LAST:event_food4ActionPerformed
 
@@ -376,23 +384,26 @@ public class UserSite extends javax.swing.JFrame {
     private void food5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_food5ActionPerformed
         if(evt.getSource().equals(food5)){
             this.jTextArea1.append("โจ้กหมู  x1"+"\n");
+            ((JSONArray)foodList.get("foodList")).add("โจ้กหมู  x1");
         }
     }//GEN-LAST:event_food5ActionPerformed
 
     private void food6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_food6ActionPerformed
         if(evt.getSource().equals(food6)){
             this.jTextArea1.append("ข้าวต้มกุ้ง  x1"+"\n");
+            ((JSONArray)foodList.get("foodList")).add("ข้าวต้มกุ้ง  x1");
         }
     }//GEN-LAST:event_food6ActionPerformed
 
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
         if(evt.getSource().equals(clearButton)){
             jTextArea1.setText(" ");
+            ((JSONArray)foodList.get("foodList")).clear();
         }
     }//GEN-LAST:event_clearButtonActionPerformed
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
-        // TODO add your handling code here:
+        ServerConnector.pushQueues(foodList);
     }//GEN-LAST:event_submitButtonActionPerformed
 
     /**
@@ -455,6 +466,6 @@ public class UserSite extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton pinButton;
     private javax.swing.JButton submitButton;
-    private JSONArray foodList;
+    private JSONObject foodList;
     // End of variables declaration//GEN-END:variables
 }

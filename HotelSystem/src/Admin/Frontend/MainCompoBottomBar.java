@@ -13,7 +13,7 @@ public class MainCompoBottomBar extends javax.swing.JPanel {
     }
     
     public void getClientBtn(){
-        ImageIcon setClientIcon = new ImageIcon(new ImageIcon(getClass().getResource("../Images/user-icon.png")).getImage().getScaledInstance(35, 40, Image.SCALE_SMOOTH));
+        ImageIcon setClientIcon = new ImageIcon(new ImageIcon(getClass().getResource("/Assets/user-icon.png")).getImage().getScaledInstance(35, 40, Image.SCALE_SMOOTH));
         this.clientIcon.setText("");
         this.clientIcon.setIcon(setClientIcon);
     }
