@@ -16,10 +16,13 @@ public class ClientListener extends Thread {
         try(ServerSocket socket = new ServerSocket(3141);) {
             while(true) {
                 Socket connectionSocket = socket.accept();
+                connectionSocket.setKeepAlive(true);
                 clientProcessingPool.submit(new ClientHandler(connectionSocket));
             }
         } catch (IOException exception) {
             RunAdmin.startSocket();
+            exception.printStackTrace();
+            System.out.println("Something went wrong\nRestarting...");
         }
     }
 }

@@ -5,19 +5,13 @@
  */
 package Admin.Frontend;
 
+import org.json.simple.JSONObject;
+
 /**
  *
  * @author Asus
  */
 public class RunOrder {
-    private static FoodClientOrder cof;
-    public RunOrder(){
-        cof = new FoodClientOrder();
-    }
-    
-    public void addOrder(int num){
-        cof.addOrder(num);
-    }
     public static void main(String[] args) {
         new FoodClientOrder().setVisible(true);
     }

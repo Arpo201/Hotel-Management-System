@@ -5,6 +5,7 @@
  */
 package User.Frontend;
 
+import Admin.Backend.ClientListener;
 import User.Backend.ServerConnector;
 
 /**
@@ -12,12 +13,24 @@ import User.Backend.ServerConnector;
  * @author Rping
  */
 public class UserWelcome extends javax.swing.JFrame {
+    private static ServerConnector server;
 
     /**
      * Creates new form Welcome
      */
+    public void startSocket(){
+        server = new ServerConnector();
+        server.start();
+    }
+
+    public static void notifySocket() {
+        synchronized (server) {
+            server.notify();
+        }
+    }
+
     public UserWelcome() {
-        new ServerConnector().start();
+        startSocket();
         initComponents();
     }
 

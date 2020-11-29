@@ -1,50 +1,59 @@
 package User.Backend;
 
-import Admin.Backend.ClientHandler;
+import User.Frontend.UserWelcome;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.DataOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.Socket;
+import java.text.MessageFormat;
 
 public class ServerConnector extends Thread {
-    private static JSONArray queues = new JSONArray();
-    private static DataOutputStream outToServer;
+    private static ObjectOutputStream outToServer;
 
     @Override
     public void run() {
         JSONParser parser = new JSONParser();
         try {
-            pushQueues((JSONObject) parser.parse("{\"type\":\"auth\", \"id\": \"301\"}"));
+            QueueHandler.pushQueues((JSONObject) parser.parse("{\"type\":\"auth\", \"id\": \"301\"}"));
+            QueueHandler.pushQueues((JSONObject) parser.parse("{\"type\":\"get_response\"}"));
         } catch (ParseException ignored) {}
 
-        try(Socket socket = new Socket("localhost", 3141);
-            DataOutputStream outToServer = new DataOutputStream(socket.getOutputStream());
+        try(
+                Socket socket = new Socket("localhost", 3141);
+                ObjectOutputStream outToServer = new ObjectOutputStream(socket.getOutputStream());
+                ObjectInputStream inFromServer = new ObjectInputStream(socket.getInputStream());
         ) {
             ServerConnector.outToServer = outToServer;
-            if(socket.isConnected()) System.out.println("Connected!");
-            while(socket.isConnected()) {
-                if(queues.size() > 0) {
-                    outToServer.writeBytes(popQueues().toJSONString() + "\n");
+            System.out.println("Connected!");
+            while (true){
+                sendJSON(popQueues());
+                JSONObject serverData = (JSONObject) inFromServer.readObject();
+                System.out.println(serverData);
+                if(serverData.get("type").equals("customer_name")) {
+                    UserWelcome.setClientName(serverData.get("name").toString());
                 }
-                new ServerHandler(socket).start();
-                Thread.sleep(100);
             }
-        } catch (IOException | InterruptedException exception) {
+        } catch (IOException | InterruptedException | ClassNotFoundException exception) {
             exception.printStackTrace();
         }
     }
 
-    public static JSONObject popQueues() {
+    private void sendJSON(JSONObject data) throws IOException {
+        outToServer.writeObject(data);
+        outToServer.flush();
+        System.out.println(MessageFormat.format("Sending {0} to server", data.toJSONString()));
+    }
+
+    public synchronized JSONObject popQueues() throws InterruptedException {
+        JSONArray queues = QueueHandler.getQueues();
+        while (queues.size() <= 0) {
+            wait();
+        }
         JSONObject queue = (JSONObject) queues.get(0);
         queues.remove(0);
         return queue;
-    }
-
-    public static void pushQueues(JSONObject queue) {
-        ServerConnector.queues.add(queue);
     }
 }
