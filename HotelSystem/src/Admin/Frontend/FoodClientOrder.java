@@ -1,5 +1,7 @@
 package Admin.Frontend;
 
+import org.json.simple.JSONObject;
+
 /**
  *
  * @author Asus
@@ -9,11 +11,14 @@ public class FoodClientOrder extends javax.swing.JFrame {
         initComponents();
     }
 
-    public void addOrder(int num){
+    public static void addOrder(JSONObject orderData){
         FoodOrderForm newOrder = new FoodOrderForm();
-        newOrder.setRoom(num);
-        newOrder.setTitle("ห้อง"+num);
-        this.desktopPane.add(newOrder, "ห้อง "+num);
+        System.out.println(orderData.toJSONString());
+        String roomId = orderData.get("room_id").toString();
+        newOrder.setRoom(roomId);
+        newOrder.setOrderData(orderData.get("order").toString());
+        newOrder.setTitle("ห้อง"+roomId);
+        desktopPane.add(newOrder, "ห้อง "+roomId);
     }
 
     @SuppressWarnings("unchecked")
@@ -110,7 +115,7 @@ public class FoodClientOrder extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void testBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testBtnActionPerformed
-        addOrder(555);
+        addOrder(new JSONObject());
         System.out.println("add");
     }//GEN-LAST:event_testBtnActionPerformed
 
@@ -167,7 +172,7 @@ public class FoodClientOrder extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel body;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JDesktopPane desktopPane;
+    private static javax.swing.JDesktopPane desktopPane;
     private javax.swing.JLabel headLabel;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton testBtn;

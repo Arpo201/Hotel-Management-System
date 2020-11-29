@@ -5,6 +5,8 @@
  */
 package User.Frontend;
 
+import java.io.*;
+
 /**
  *
  * @author Rping
@@ -15,6 +17,16 @@ public class UserPin extends javax.swing.JFrame {
      * Creates new form Pin
      */
     public UserPin() {
+
+        try(FileInputStream fin = new FileInputStream("RoomData.dat");
+            ObjectInputStream in = new ObjectInputStream(fin)) {
+            System.out.println("Configuration found, loading...");
+            UserSite.setRoomId((String) in.readObject());
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("No configuration files found, loading default config...");
+            UserSite.setRoomId("");
+        }
+
         initComponents();
     }
 
@@ -39,10 +51,10 @@ public class UserPin extends javax.swing.JFrame {
         num7 = new javax.swing.JButton();
         num8 = new javax.swing.JButton();
         num9 = new javax.swing.JButton();
-        num10 = new javax.swing.JButton();
+        num0 = new javax.swing.JButton();
         submitButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Monospaced", 1, 24)); // NOI18N
@@ -123,8 +135,8 @@ public class UserPin extends javax.swing.JFrame {
             }
         });
 
-        num10.setText("10");
-        num10.addActionListener(new java.awt.event.ActionListener() {
+        num0.setText("10");
+        num0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 num10ActionPerformed(evt);
             }
@@ -173,7 +185,7 @@ public class UserPin extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(num10, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(num0, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(116, 116, 116))
         );
         layout.setVerticalGroup(
@@ -196,7 +208,7 @@ public class UserPin extends javax.swing.JFrame {
                     .addComponent(num8)
                     .addComponent(num9))
                 .addGap(28, 28, 28)
-                .addComponent(num10)
+                .addComponent(num0)
                 .addGap(16, 16, 16)
                 .addComponent(submitButton)
                 .addGap(0, 13, Short.MAX_VALUE))
@@ -212,8 +224,8 @@ public class UserPin extends javax.swing.JFrame {
     }//GEN-LAST:event_num1ActionPerformed
 
     private void num10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num10ActionPerformed
-        if(evt.getSource().equals(num10)){
-            this.jTextArea1.append("10");
+        if(evt.getSource().equals(num0)){
+            this.jTextArea1.append("0");
         }
     }//GEN-LAST:event_num10ActionPerformed
 
@@ -266,7 +278,14 @@ public class UserPin extends javax.swing.JFrame {
     }//GEN-LAST:event_num9ActionPerformed
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
-        // TODO add your handling code here:
+        if(jTextArea1.getText().equals("3141592")) {
+            try(FileOutputStream fout = new FileOutputStream("RoomData.dat");
+                ObjectOutputStream out = new ObjectOutputStream(fout)) {
+                out.writeObject(UserSite.getRoomId());
+            } catch (IOException exception) {
+                System.out.println("Unable to write file");
+            }
+        }
     }//GEN-LAST:event_submitButtonActionPerformed
 
     /**
@@ -310,7 +329,7 @@ public class UserPin extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton num1;
-    private javax.swing.JButton num10;
+    private javax.swing.JButton num0;
     private javax.swing.JButton num2;
     private javax.swing.JButton num3;
     private javax.swing.JButton num4;

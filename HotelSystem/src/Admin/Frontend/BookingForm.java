@@ -23,12 +23,29 @@ public class BookingForm extends javax.swing.JFrame {
         this.roomId = roomId;
         this.roomData = Room.getRoomData(roomId);
         initComponents();
+        fetchData();
         this.checkin.setDateFormat(new SimpleDateFormat("dd/MM/yyyy"));
         this.checkout.setDateFormat(new SimpleDateFormat("dd/MM/yyyy"));
     }
     public static void getBookingForm(String roomId){
         BookingForm bf = new BookingForm(roomId);
         bf.setVisible(true);
+    }
+    private void fetchData() {
+        numRoom.setText(MessageFormat.format("ห้อง {0}", roomId));
+        prefix.setSelectedItem(roomData.get("prefix").toString());
+        fname.setText(roomData.get("first_name").toString());
+        lname.setText(roomData.get("last_name").toString());
+        phoneNum.setText(roomData.get("tel").toString());
+        mail.setText(roomData.get("email").toString());
+        try {
+            String[] checkoutDate = roomData.get("checkout").toString().split("/");
+            checkout.setSelectedDate(new Calendar.Builder().setDate(Integer.parseInt(checkoutDate[2]), Integer.parseInt(checkoutDate[1]), Integer.parseInt(checkoutDate[0])).build());
+            String[] checkinDate = roomData.get("checkin").toString().split("/");
+            checkin.setSelectedDate(new Calendar.Builder().setDate(Integer.parseInt(checkinDate[2]), Integer.parseInt(checkinDate[1]), Integer.parseInt(checkinDate[0])).build());
+        } catch (ArrayIndexOutOfBoundsException ignored) {
+
+        }
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -81,11 +98,9 @@ public class BookingForm extends javax.swing.JFrame {
 
         numRoom.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         numRoom.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        numRoom.setText(MessageFormat.format("ห้อง {0}", roomId));
 
         prefix.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
         prefix.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "นาย", "นาง", "นางสาว" }));
-        prefix.setSelectedItem(roomData.get("prefix").toString());
 
         fname.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
         fname.addActionListener(new java.awt.event.ActionListener() {
@@ -93,7 +108,6 @@ public class BookingForm extends javax.swing.JFrame {
                 fnameActionPerformed(evt);
             }
         });
-        fname.setText(roomData.get("first_name").toString());
 
         lnameLabel.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
         lnameLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
@@ -105,7 +119,6 @@ public class BookingForm extends javax.swing.JFrame {
                 lnameActionPerformed(evt);
             }
         });
-        lname.setText(roomData.get("last_name").toString());
 
         phoneLabel.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
         phoneLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -117,7 +130,6 @@ public class BookingForm extends javax.swing.JFrame {
                 phoneNumActionPerformed(evt);
             }
         });
-        phoneNum.setText(roomData.get("tel").toString());
 
         mailLabel.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
         mailLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -129,7 +141,6 @@ public class BookingForm extends javax.swing.JFrame {
                 mailActionPerformed(evt);
             }
         });
-        mail.setText(roomData.get("email").toString());
 
         checkinLabel.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
         checkinLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -141,12 +152,6 @@ public class BookingForm extends javax.swing.JFrame {
         checkin.setMinDate(java.util.Calendar.getInstance());
         checkin.setNavigateFont(new java.awt.Font("Angsana New", java.awt.Font.PLAIN, 24));
         checkin.setCurrentNavigateIndex(0);
-        try {
-            String[] checkinDate = roomData.get("checkin").toString().split("/");
-            checkin.setSelectedDate(new Calendar.Builder().setDate(Integer.parseInt(checkinDate[2]), Integer.parseInt(checkinDate[1]), Integer.parseInt(checkinDate[0])).build());
-        } catch (ArrayIndexOutOfBoundsException ignored) {
-
-        }
 
         checkoutLabel.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
         checkoutLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -158,12 +163,6 @@ public class BookingForm extends javax.swing.JFrame {
         checkout.setMinDate(java.util.Calendar.getInstance());
         checkout.setNavigateFont(new java.awt.Font("Angsana New", java.awt.Font.PLAIN, 24));
         checkout.setCurrentNavigateIndex(0);
-        try {
-            String[] checkoutDate = roomData.get("checkout").toString().split("/");
-            checkout.setSelectedDate(new Calendar.Builder().setDate(Integer.parseInt(checkoutDate[2]), Integer.parseInt(checkoutDate[1]), Integer.parseInt(checkoutDate[0])).build());
-        } catch (ArrayIndexOutOfBoundsException ignored) {
-
-        }
 
         javax.swing.GroupLayout bodyPanelLayout = new javax.swing.GroupLayout(bodyPanel);
         bodyPanel.setLayout(bodyPanelLayout);

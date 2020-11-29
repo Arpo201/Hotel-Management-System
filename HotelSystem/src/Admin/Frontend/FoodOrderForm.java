@@ -5,6 +5,7 @@
  */
 package Admin.Frontend;
 
+import javax.swing.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -26,15 +27,23 @@ public class FoodOrderForm extends javax.swing.JInternalFrame {
         this.date.setText(formatter.format(date));
     }
     
-    public void setRoom(int num){
-        String text = "ห้อง " + num;
+    public void setRoom(String roomId){
+        String text = "ห้อง " + roomId;
         this.roomNumber.setText(text);
     }
     
     public String getRoom(){
         return this.roomNumber.getText();
     }
-    
+
+    public String getOrderData() {
+        return orderData.getText();
+    }
+
+    public void setOrderData(String orderData) {
+        this.orderData.setText(orderData);
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

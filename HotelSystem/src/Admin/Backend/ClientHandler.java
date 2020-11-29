@@ -1,19 +1,18 @@
 package Admin.Backend;
 
+import Admin.Frontend.RunOrder;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.Socket;
 import java.text.MessageFormat;
 
 public class ClientHandler extends Thread {
     private final Socket clientSocket;
-    private String id = null;
+    private static String id = null;
+    private static ObjectOutputStream outToClient;
 
     public ClientHandler(Socket clientSocket) {
         this.clientSocket = clientSocket;
@@ -21,34 +20,36 @@ public class ClientHandler extends Thread {
 
     @Override
     public void run() {
-        String clientData;
-        JSONParser parser = new JSONParser();
+        JSONObject clientData;
         try(
-            BufferedReader inFromClient = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-            DataOutputStream outToClient = new DataOutputStream(clientSocket.getOutputStream());
+            ObjectOutputStream outToClient = new ObjectOutputStream(clientSocket.getOutputStream());
+            ObjectInputStream inFromClient = new ObjectInputStream(clientSocket.getInputStream());
         ) {
-            JSONObject jsonData;
+            ClientHandler.outToClient = outToClient;
             while (true) {
-                clientData = inFromClient.readLine();
-                try {
-                    jsonData = (JSONObject) parser.parse(clientData);
-                    if(this.id == null && jsonData.get("type").equals("auth")) {
-                        this.id = jsonData.get("id").toString();
-                        System.out.println(MessageFormat.format("Room {0} is connected", this.id));
-                        outToClient.writeBytes(getNameFromRoomId(this.id).toJSONString() + "\n");
-                    }
-                    System.out.println(MessageFormat.format("Got data from {0}: {1}", this.id, jsonData.toJSONString()));
-                } catch (ParseException ignored) {}
+                clientData = (JSONObject) inFromClient.readObject();
+                if(clientData == null) break;
+                System.out.println(clientData);
+                new ResponseHandler(clientData, id).start();
             }
-        } catch (IOException e) {
-            System.out.println("Client disconnected!");
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println(MessageFormat.format("Client {0} disconnected!", id));
         }
     }
 
-    private static JSONObject getNameFromRoomId(String roomId) {
-        JSONObject data = new JSONObject(), roomData = Admin.Backend.Room.getRoomData(roomId);
-        data.put("type", "customer_name");
-        data.put("name", roomData.get("first_name").toString() + " " + roomData.get("last_name").toString());
-        return data;
+    static void setClientId(String id) {
+        ClientHandler.id = id;
+    }
+
+    static void sendAck() throws IOException {
+        JSONObject jsonData = new JSONObject();
+        jsonData.put("type", "ack");
+        sendJSON(jsonData);
+    }
+
+    static void sendJSON(JSONObject data) throws IOException {
+        outToClient.writeObject(data);
+        outToClient.flush();
+        System.out.println(MessageFormat.format("Sending {0} to {1}", data.toJSONString(), id));
     }
 }
