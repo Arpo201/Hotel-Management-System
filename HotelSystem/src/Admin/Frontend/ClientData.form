@@ -102,6 +102,9 @@
       </Layout>
       <SubComponents>
         <Container class="javax.swing.JScrollPane" name="ClientTable">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
@@ -120,6 +123,7 @@
                     <Column editable="true" title="floor" type="java.lang.String"/>
                   </Table>
                 </Property>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </Component>
           </SubComponents>

@@ -100,6 +100,8 @@ public class ClientData extends javax.swing.JFrame {
 
         body.setBackground(new java.awt.Color(234, 242, 249));
 
+        ClientTable.setEnabled(false);
+
         table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null},
@@ -119,6 +121,7 @@ public class ClientData extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        table.setEnabled(false);
         ClientTable.setViewportView(table);
 
         javax.swing.GroupLayout bodyLayout = new javax.swing.GroupLayout(body);
