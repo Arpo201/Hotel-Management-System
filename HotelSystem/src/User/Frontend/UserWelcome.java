@@ -34,7 +34,7 @@ public class UserWelcome extends javax.swing.JFrame {
     public UserWelcome() {
         startSocket();
         initComponents();
-        ImageIcon setWallIcon = new ImageIcon(new ImageIcon(getClass().getResource("/Assets/wallpaper.jpg")).getImage().getScaledInstance(100, 415, Image.SCALE_SMOOTH));
+        ImageIcon setWallIcon = new ImageIcon(new ImageIcon(getClass().getResource("/Assets/wallpaper3.jpg")).getImage().getScaledInstance(100, 415, Image.SCALE_SMOOTH));
         this.jLabel1.setText("");
         this.jLabel1.setIcon(setWallIcon);
         this.jLabel2.setText("");
@@ -61,6 +61,7 @@ public class UserWelcome extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(56, 86, 116));
 

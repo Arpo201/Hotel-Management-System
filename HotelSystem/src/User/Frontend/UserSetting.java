@@ -28,18 +28,6 @@ public class UserSetting extends javax.swing.JFrame {
         this.bdate.setMaxDate(Calendar.getInstance());
         this.bdate.setDateFormat(new SimpleDateFormat("dd/MM/yyyy"));
     }
-    public Connection connectDB(){
-        try {
-            Class.forName("com.mysql.jdbc.Driver");//ระบุ Driver
-            String url = "jdbc:mysql://" +"68.183.181.112"+ "/" +"hotel"; //=localhost/StudentDB
-            Connection connect = DriverManager.getConnection(url,"hotel","r2BIwa7o2e"); //ใช้งาน interface ที่ชื่อ Connection
-            System.out.println("เชื่อมต่อฐานข้อมูลเรียบร้อย");
-            return connect;
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        return null;
-    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -54,23 +42,9 @@ public class UserSetting extends javax.swing.JFrame {
         jpageLabel = new javax.swing.JLabel();
         closeButton = new javax.swing.JLabel();
         minButton = new javax.swing.JLabel();
-        jPasswordLabel = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        createButton = new javax.swing.JButton();
-        cancelButton = new javax.swing.JButton();
+        saveButton = new javax.swing.JButton();
         jFnameLabel = new javax.swing.JLabel();
         jFnameTextField = new javax.swing.JTextField();
-        jRetypeLabel = new javax.swing.JLabel();
-        jRetypeTextField = new javax.swing.JTextField();
-        birthDateLabel = new javax.swing.JLabel();
-        bdate = new datechooser.beans.DateChooserCombo();
-        jRetypeLabel2 = new javax.swing.JLabel();
-        jAddressField = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jUsernameLabel = new javax.swing.JLabel();
-        jUsernameTextField = new javax.swing.JTextField();
-        jLnameLabel = new javax.swing.JLabel();
-        jLnameTextField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -81,7 +55,7 @@ public class UserSetting extends javax.swing.JFrame {
 
         jpageLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jpageLabel.setForeground(new java.awt.Color(255, 255, 255));
-        jpageLabel.setText("Register Form");
+        jpageLabel.setText("Setting");
 
         closeButton.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         closeButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -127,106 +101,26 @@ public class UserSetting extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPasswordLabel.setFont(new java.awt.Font("Angsana New", 1, 30)); // NOI18N
-        jPasswordLabel.setForeground(new java.awt.Color(255, 255, 255));
-        jPasswordLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jPasswordLabel.setText("Password:");
-
-        jPasswordField1.setFont(new java.awt.Font("Angsana New", 0, 30)); // NOI18N
-        jPasswordField1.setPreferredSize(new java.awt.Dimension(5, 42));
-
-        createButton.setBackground(new java.awt.Color(0, 204, 255));
-        createButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        createButton.setForeground(new java.awt.Color(255, 255, 255));
-        createButton.setText("Create");
-        createButton.addActionListener(new java.awt.event.ActionListener() {
+        saveButton.setBackground(new java.awt.Color(0, 204, 255));
+        saveButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        saveButton.setForeground(new java.awt.Color(255, 255, 255));
+        saveButton.setText("Save");
+        saveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                createButtonActionPerformed(evt);
-            }
-        });
-
-        cancelButton.setBackground(new java.awt.Color(255, 102, 102));
-        cancelButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        cancelButton.setForeground(new java.awt.Color(255, 255, 255));
-        cancelButton.setText("Cancel");
-        cancelButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelButtonActionPerformed(evt);
+                saveButtonActionPerformed(evt);
             }
         });
 
         jFnameLabel.setFont(new java.awt.Font("Angsana New", 1, 30)); // NOI18N
         jFnameLabel.setForeground(new java.awt.Color(255, 255, 255));
         jFnameLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jFnameLabel.setText("First Name:");
+        jFnameLabel.setText("Room ID");
 
         jFnameTextField.setFont(new java.awt.Font("Angsana New", 0, 30)); // NOI18N
         jFnameTextField.setPreferredSize(new java.awt.Dimension(5, 42));
         jFnameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jFnameTextFieldActionPerformed(evt);
-            }
-        });
-
-        jRetypeLabel.setFont(new java.awt.Font("Angsana New", 1, 30)); // NOI18N
-        jRetypeLabel.setForeground(new java.awt.Color(255, 255, 255));
-        jRetypeLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jRetypeLabel.setText("Retype Pass:");
-
-        jRetypeTextField.setFont(new java.awt.Font("Angsana New", 0, 30)); // NOI18N
-        jRetypeTextField.setPreferredSize(new java.awt.Dimension(5, 42));
-        jRetypeTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRetypeTextFieldActionPerformed(evt);
-            }
-        });
-
-        birthDateLabel.setFont(new java.awt.Font("Angsana New", 1, 30)); // NOI18N
-        birthDateLabel.setForeground(new java.awt.Color(255, 255, 255));
-        birthDateLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        birthDateLabel.setText("Birth Date:");
-
-        bdate.setCalendarPreferredSize(new java.awt.Dimension(500, 300));
-        bdate.setNothingAllowed(false);
-        bdate.setFieldFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
-        bdate.setNavigateFont(new java.awt.Font("Angsana New", java.awt.Font.PLAIN, 24));
-        bdate.setCurrentNavigateIndex(0);
-
-        jRetypeLabel2.setFont(new java.awt.Font("Angsana New", 1, 30)); // NOI18N
-        jRetypeLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jRetypeLabel2.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jRetypeLabel2.setText("Address:");
-
-        jTextArea1.setColumns(10);
-        jTextArea1.setFont(new java.awt.Font("Angsana New", 0, 30)); // NOI18N
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setMaximumSize(new java.awt.Dimension(2, 2));
-        jTextArea1.setMinimumSize(new java.awt.Dimension(2, 2));
-        jAddressField.setViewportView(jTextArea1);
-
-        jUsernameLabel.setFont(new java.awt.Font("Angsana New", 1, 30)); // NOI18N
-        jUsernameLabel.setForeground(new java.awt.Color(255, 255, 255));
-        jUsernameLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jUsernameLabel.setText("Username:");
-
-        jUsernameTextField.setFont(new java.awt.Font("Angsana New", 0, 30)); // NOI18N
-        jUsernameTextField.setPreferredSize(new java.awt.Dimension(5, 42));
-        jUsernameTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jUsernameTextFieldActionPerformed(evt);
-            }
-        });
-
-        jLnameLabel.setFont(new java.awt.Font("Angsana New", 1, 30)); // NOI18N
-        jLnameLabel.setForeground(new java.awt.Color(255, 255, 255));
-        jLnameLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLnameLabel.setText("Last Name:");
-
-        jLnameTextField.setFont(new java.awt.Font("Angsana New", 0, 30)); // NOI18N
-        jLnameTextField.setPreferredSize(new java.awt.Dimension(5, 42));
-        jLnameTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jLnameTextFieldActionPerformed(evt);
             }
         });
 
@@ -237,68 +131,24 @@ public class UserSetting extends javax.swing.JFrame {
             .addComponent(Head, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(104, 104, 104)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPasswordLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jFnameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRetypeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(birthDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRetypeLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jUsernameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLnameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jFnameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                    .addComponent(jFnameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                    .addComponent(jRetypeTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                    .addComponent(jUsernameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                    .addComponent(jLnameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                    .addComponent(jAddressField)
-                    .addComponent(bdate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(180, Short.MAX_VALUE)
-                .addComponent(cancelButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(createButton)
-                .addContainerGap(180, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(saveButton)
+                    .addComponent(jFnameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(104, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(Head, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jFnameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jFnameLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLnameLabel)
-                    .addComponent(jLnameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jUsernameLabel)
-                    .addComponent(jUsernameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPasswordLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRetypeLabel)
-                    .addComponent(jRetypeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(birthDateLabel)
-                    .addComponent(bdate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRetypeLabel2)
-                    .addComponent(jAddressField, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(createButton)
-                    .addComponent(cancelButton))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addComponent(saveButton)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -315,28 +165,12 @@ public class UserSetting extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLnameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLnameTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLnameTextFieldActionPerformed
-
-    private void jUsernameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUsernameTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jUsernameTextFieldActionPerformed
-
-    private void jRetypeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRetypeTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRetypeTextFieldActionPerformed
-
     private void jFnameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFnameTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jFnameTextFieldActionPerformed
 
-    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_cancelButtonActionPerformed
-
-    private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
-        if(evt.getSource().equals(createButton)){
+    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
+        if(evt.getSource().equals(saveButton)){
             String sql = "insert into user_hotel value('"+jUsernameTextField.getText()+"','"+jRetypeTextField.getText()+"')";
         try {
             con = connectDB();
@@ -355,7 +189,7 @@ public class UserSetting extends javax.swing.JFrame {
             e.printStackTrace();
         }
         }
-    }//GEN-LAST:event_createButtonActionPerformed
+    }//GEN-LAST:event_saveButtonActionPerformed
 
     private void minButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minButtonMouseClicked
         this.setState(JFrame.ICONIFIED);
@@ -405,26 +239,12 @@ public class UserSetting extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Head;
-    private datechooser.beans.DateChooserCombo bdate;
-    private javax.swing.JLabel birthDateLabel;
-    private javax.swing.JButton cancelButton;
     private javax.swing.JLabel closeButton;
-    private javax.swing.JButton createButton;
-    private javax.swing.JScrollPane jAddressField;
     private javax.swing.JLabel jFnameLabel;
     private javax.swing.JTextField jFnameTextField;
-    private javax.swing.JLabel jLnameLabel;
-    private javax.swing.JTextField jLnameTextField;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JLabel jPasswordLabel;
-    private javax.swing.JLabel jRetypeLabel;
-    private javax.swing.JLabel jRetypeLabel2;
-    private javax.swing.JTextField jRetypeTextField;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JLabel jUsernameLabel;
-    private javax.swing.JTextField jUsernameTextField;
     private javax.swing.JLabel jpageLabel;
     private javax.swing.JLabel minButton;
+    private javax.swing.JButton saveButton;
     // End of variables declaration//GEN-END:variables
 }
