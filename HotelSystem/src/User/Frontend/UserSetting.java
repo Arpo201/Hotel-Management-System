@@ -25,8 +25,6 @@ public class UserSetting extends javax.swing.JFrame {
     public UserSetting() {
         initComponents();
         this.setLocationRelativeTo(null);
-        this.bdate.setMaxDate(Calendar.getInstance());
-        this.bdate.setDateFormat(new SimpleDateFormat("dd/MM/yyyy"));
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -170,25 +168,7 @@ public class UserSetting extends javax.swing.JFrame {
     }//GEN-LAST:event_jFnameTextFieldActionPerformed
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
-        if(evt.getSource().equals(saveButton)){
-            String sql = "insert into user_hotel value('"+jUsernameTextField.getText()+"','"+jRetypeTextField.getText()+"')";
-        try {
-            con = connectDB();
-            Statement stm = con.createStatement();
-            stm.executeUpdate(sql);
-            System.out.println("บันทึกข้อมูลเรียบร้อย");
-            LoginForm l = new LoginForm();
-            UserSetting re = new UserSetting();
-            l.pack();
-            l.setVisible(true);
-            this.setVisible(false);
-            System.out.println(this.bdate);
-            con.close();
-            stm.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        }
+
     }//GEN-LAST:event_saveButtonActionPerformed
 
     private void minButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minButtonMouseClicked

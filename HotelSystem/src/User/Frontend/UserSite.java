@@ -455,5 +455,7 @@ public class UserSite extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTextArea orderText;
     private javax.swing.JButton submitButton;
+    private static String roomId;
+    private JSONObject order;
     // End of variables declaration//GEN-END:variables
 }

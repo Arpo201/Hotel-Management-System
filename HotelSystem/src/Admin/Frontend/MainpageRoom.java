@@ -13,6 +13,7 @@ public class MainpageRoom extends javax.swing.JPanel {
 
     public MainpageRoom() {
         initComponents();
+        updateRoomStatus();
         jDateLabel.setText(this.getDate());
     }
     

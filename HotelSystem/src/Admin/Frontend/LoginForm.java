@@ -29,25 +29,10 @@ public class LoginForm extends javax.swing.JFrame {
      * Creates new form LoginForm
      */
     public LoginForm() {
-        connection = new DatabaseConnection().getConnection();
+        if (connection == null) connection = new DatabaseConnection().getConnection();
         System.out.println(connection);
         initComponents();
         this.setLocationRelativeTo(null);// center form in the screen
-    }
-
-    public void insertData(){
-        String sql = "insert into user value('rock','androw')";
-        try {
-//            con = connectDB();
-            Statement stm = connection.createStatement();
-            stm.executeUpdate(sql);
-            System.out.println("บันทึกข้อมูลเรียบร้อย");
-
-            connection.close();
-            stm.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     /**
@@ -268,27 +253,7 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_minButtonMouseClicked
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-        if(evt.getSource().equals(loginButton)){
-            String sql = MessageFormat.format("select count(*) as count, full_name from user where username = \"{0}\" and password = \"{1}\"", jUsernameField.getText(), jPasswordField.getText());
-            try {
-                this.rs = connection.createStatement().executeQuery(sql);
-                while(rs.next()){
-                    if(rs.getInt("count") == 1){
-                        System.out.println("OK");
-                        this.state.setText("Pass");
-                        this.state.setForeground(Color.GREEN);
-                        new RunAdmin(rs.getString("full_name"));
-                        this.dispose();
-                        break;
-                    }else{
-    //                    this.state.setForeground(Color.getHSBColor(255, 199, 199));
-                        this.state.setText("Fail");
-                    }
-                }
-            } catch (Exception ex) {
-                Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
-            }
-      }
+        login();
     }//GEN-LAST:event_loginButtonActionPerformed
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
@@ -296,12 +261,34 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     private void jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldActionPerformed
-        // TODO add your handling code here:
+        login();
     }//GEN-LAST:event_jPasswordFieldActionPerformed
 
     private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
         // TODO add your handling code here:
     }//GEN-LAST:event_jPanel1MouseDragged
+
+    private void login() {
+        String sql = MessageFormat.format("select count(*) as count, full_name from user where username = \"{0}\" and password = \"{1}\"", jUsernameField.getText(), jPasswordField.getText());
+        try {
+            this.rs = connection.createStatement().executeQuery(sql);
+            while(rs.next()){
+                if(rs.getInt("count") == 1){
+                    System.out.println("OK");
+                    this.state.setText("Pass");
+                    this.state.setForeground(Color.GREEN);
+                    new RunAdmin(rs.getString("full_name"));
+                    this.dispose();
+                    break;
+                }else{
+                    //                    this.state.setForeground(Color.getHSBColor(255, 199, 199));
+                    this.state.setText("Fail");
+                }
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     /**
      * @param args the command line arguments

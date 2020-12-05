@@ -128,4 +128,22 @@ public class DatabaseHelper {
     public static String getAllAvailableRoomCount() {
         return getAvailableRoomCount(-1);
     }
+
+
+    public static boolean addNewAdmin(JSONObject data) {
+        String sql = MessageFormat.format("insert into user values({0}, {1}, {2})",
+                data.get("username").toString(),
+                data.get("password").toString(),
+                data.get("full_name").toString()
+        );
+        try {
+            Statement stm = connection.createStatement();
+            stm.executeUpdate(sql);
+            stm.close();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }

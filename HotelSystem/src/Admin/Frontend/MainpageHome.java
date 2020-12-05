@@ -2,6 +2,8 @@ package Admin.Frontend;
 
 import Admin.Backend.DatabaseHelper;
 
+import javax.swing.*;
+
 public class MainpageHome extends javax.swing.JPanel {
     
     
@@ -264,6 +266,11 @@ public class MainpageHome extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void clientDataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clientDataMouseClicked
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         new ClientData().setVisible(true);
     }//GEN-LAST:event_clientDataMouseClicked
 

@@ -7,6 +7,7 @@ package Admin.Frontend;
 
 import Admin.Backend.DatabaseHelper;
 
+import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -74,7 +75,7 @@ public class ClientData extends javax.swing.JFrame {
         ClientTable = new javax.swing.JScrollPane();
         table = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
         head.setBackground(new java.awt.Color(67, 106, 141));
 
@@ -160,6 +161,11 @@ public class ClientData extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         new ClientData().setVisible(true);
     }
 

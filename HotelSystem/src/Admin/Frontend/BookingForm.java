@@ -356,7 +356,7 @@ public class BookingForm extends javax.swing.JFrame {
         data.put("checkin", checkin.getText());
         data.put("checkout", checkout.getText());
         DatabaseHelper.setRoomData(data);
-        RunAdmin.updateUI();
+        RunAdmin.updateUI("room");
         this.dispose();
     }//GEN-LAST:event_confirmActionPerformed
 

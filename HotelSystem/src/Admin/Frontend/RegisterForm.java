@@ -9,6 +9,9 @@ package Admin.Frontend;
  *
  * @author Asus
  */
+import Admin.Backend.DatabaseHelper;
+import org.json.simple.JSONObject;
+
 import java.sql.*;
 import java.sql.DriverManager;
 import java.text.SimpleDateFormat;
@@ -27,18 +30,7 @@ public class RegisterForm extends javax.swing.JFrame {
         this.bdate.setMaxDate(Calendar.getInstance());
         this.bdate.setDateFormat(new SimpleDateFormat("dd/MM/yyyy"));
     }
-    public Connection connectDB(){
-        try {
-            Class.forName("com.mysql.jdbc.Driver");//ระบุ Driver
-            String url = "jdbc:mysql://" +"68.183.181.112"+ "/" +"hotel"; //=localhost/StudentDB
-            Connection connect = DriverManager.getConnection(url,"hotel","r2BIwa7o2e"); //ใช้งาน interface ที่ชื่อ Connection
-            System.out.println("เชื่อมต่อฐานข้อมูลเรียบร้อย");
-            return connect;
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        return null;
-    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -335,25 +327,12 @@ public class RegisterForm extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
-        if(evt.getSource().equals(createButton)){
-            String sql = "insert into user_hotel value('"+jUsernameTextField.getText()+"','"+jRetypeTextField.getText()+"')";
-        try {
-            con = connectDB();
-            Statement stm = con.createStatement();
-            stm.executeUpdate(sql);
-            System.out.println("บันทึกข้อมูลเรียบร้อย");
-            LoginForm l = new LoginForm();
-            RegisterForm re = new RegisterForm();
-            l.pack();
-            l.setVisible(true);
-            this.setVisible(false);
-            System.out.println(this.bdate);
-            con.close();
-            stm.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        }
+//        if (jPasswordField1.getPassword().equals(jRetypeTextField.getText())) {}
+        JSONObject data = new JSONObject();
+        data.put("username", jUsernameLabel.getText());
+        data.put("password", jPasswordField1.getPassword());
+        data.put("full_name", jFnameTextField.getText() + " " + jLnameTextField.getText());
+        if(DatabaseHelper.addNewAdmin(data)) this.dispose();
     }//GEN-LAST:event_createButtonActionPerformed
 
     private void minButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minButtonMouseClicked

@@ -6,9 +6,11 @@
 package Admin.Frontend;
 
 import Admin.Backend.ClientListener;
+import Admin.Backend.DatabaseConnection;
 
 import javax.swing.*;
 import java.awt.*;
+import java.sql.SQLException;
 
 /**
  *
@@ -26,12 +28,8 @@ public class RunAdmin {
             this("");
         }
 
-        public static void startSocket(){
-            new ClientListener().start();
-        }
-
         public RunAdmin(String name){
-            startSocket();
+            ClientListener.startSocketServer();
 
             frame = new JFrame();
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -47,31 +45,50 @@ public class RunAdmin {
             frame.add(nav, BorderLayout.WEST);
             frame.add(card);
             frame.add(clientBar, BorderLayout.SOUTH);
+
+            home.updateData();
             
             frame.pack();
             frame.setLocationRelativeTo(null);
             frame.setVisible(true);
         }
 
-        public static void updateUI() {
+        public static void updateUI(String type) {
+            if (type == "room") room.updateRoomStatus();
+            else home.updateData();
             clientBar.updateUserCount();
-            room.updateRoomStatus();
         }
-        
+
         public static void getHome(){
             CardLayout c1 = (CardLayout)(card.getLayout());
-            updateUI();
-            home.updateData();
+            updateUI("home");
             c1.show(card, "Home");
         }
         public static void getRoom(){
             CardLayout c1 = (CardLayout)(card.getLayout());
-            updateUI();
+            updateUI("room");
             c1.show(card, "Room");
         }
         public static void logout(){
+            ClientListener.stopSocketServer();
             frame.dispose();
-            new LoginForm().setVisible(true);
+            try {
+                for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                    if ("Nimbus".equals(info.getName())) {
+                        javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                        break;
+                    }
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+
+            /* Create and display the form */
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    new LoginForm().setVisible(true);
+                }
+            });
         }
     public static void main(String[] args) {
         try {
