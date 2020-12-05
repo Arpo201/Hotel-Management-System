@@ -115,6 +115,7 @@ public class FoodClientOrder extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void testBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testBtnActionPerformed
+//        desktopPane.add(new FoodOrderForm());
         addOrder(new JSONObject());
         System.out.println("add");
     }//GEN-LAST:event_testBtnActionPerformed

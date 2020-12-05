@@ -5,6 +5,7 @@
  */
 package Admin.Frontend;
 
+import javax.swing.UIManager;
 import org.json.simple.JSONObject;
 
 /**
@@ -13,6 +14,11 @@ import org.json.simple.JSONObject;
  */
 public class RunOrder {
     public static void main(String[] args) {
-        new FoodClientOrder().setVisible(true);
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            new FoodClientOrder().setVisible(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
