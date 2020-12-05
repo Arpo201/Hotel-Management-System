@@ -13,7 +13,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-public class Room {
+public class DatabaseHelper {
     private static Connection connection = new DatabaseConnection().getConnection();
 
     public static String getUserCount() {
@@ -27,6 +27,17 @@ public class Room {
             Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
         }
         return "0";
+    }
+
+    public static ResultSet getUserData() {
+        ResultSet rs = null;
+        String sql = "select * from room where first_name != '' and last_name != ''";
+        try {
+            rs = connection.createStatement().executeQuery(sql);
+        } catch (Exception ex) {
+            Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rs;
     }
 
     public static JSONObject getAvailableStatus() {

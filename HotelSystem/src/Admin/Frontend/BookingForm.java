@@ -1,6 +1,6 @@
 package Admin.Frontend;
 
-import Admin.Backend.Room;
+import Admin.Backend.DatabaseHelper;
 import org.json.simple.JSONObject;
 
 import java.text.MessageFormat;
@@ -20,7 +20,7 @@ public class BookingForm extends javax.swing.JFrame {
     }
     public BookingForm(String roomId) {
         this.roomId = roomId;
-        this.roomData = Room.getRoomData(roomId);
+        this.roomData = DatabaseHelper.getRoomData(roomId);
         initComponents();
         fetchData();
         this.checkin.setDateFormat(new SimpleDateFormat("dd/MM/yyyy"));
@@ -355,7 +355,7 @@ public class BookingForm extends javax.swing.JFrame {
         data.put("email", mail.getText());
         data.put("checkin", checkin.getText());
         data.put("checkout", checkout.getText());
-        Room.setRoomData(data);
+        DatabaseHelper.setRoomData(data);
         RunAdmin.updateUI();
         this.dispose();
     }//GEN-LAST:event_confirmActionPerformed

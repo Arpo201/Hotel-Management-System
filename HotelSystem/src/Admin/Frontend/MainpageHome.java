@@ -1,6 +1,6 @@
 package Admin.Frontend;
 
-import Admin.Backend.Room;
+import Admin.Backend.DatabaseHelper;
 
 public class MainpageHome extends javax.swing.JPanel {
     
@@ -276,10 +276,10 @@ public class MainpageHome extends javax.swing.JPanel {
     }//GEN-LAST:event_clientDataMouseReleased
 
     public void updateData() {
-        allAvailableRoomCount.setText(Room.getAllAvailableRoomCount());
-        floor1AvailableCount.setText(Room.getAvailableRoomCount(1));
-        floor2AvailableCount.setText(Room.getAvailableRoomCount(2));
-        floor3AvailableCount.setText(Room.getAvailableRoomCount(3));
+        allAvailableRoomCount.setText(DatabaseHelper.getAllAvailableRoomCount());
+        floor1AvailableCount.setText(DatabaseHelper.getAvailableRoomCount(1));
+        floor2AvailableCount.setText(DatabaseHelper.getAvailableRoomCount(2));
+        floor3AvailableCount.setText(DatabaseHelper.getAvailableRoomCount(3));
     }
 
 
