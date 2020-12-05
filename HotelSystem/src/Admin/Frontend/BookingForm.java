@@ -12,10 +12,9 @@ import java.util.Calendar;
  * @author Asus
  */
 public class BookingForm extends javax.swing.JFrame {
-
-    /**
-     * Creates new form BookingForm
-     */
+    private String roomId;
+    private JSONObject roomData;
+    
     public BookingForm() {
         this(null);
     }
@@ -50,6 +49,7 @@ public class BookingForm extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+
         northPanel = new javax.swing.JPanel();
         bookingLabel = new javax.swing.JLabel();
         bodyPanel = new javax.swing.JPanel();
@@ -98,6 +98,7 @@ public class BookingForm extends javax.swing.JFrame {
 
         numRoom.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         numRoom.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        numRoom.setText("ห้อง 101");
 
         prefix.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
         prefix.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "นาย", "นาง", "นางสาว" }));
@@ -218,7 +219,7 @@ public class BookingForm extends javax.swing.JFrame {
                 .addGroup(bodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(checkout, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(checkoutLabel))
-                .addGap(85, 85, 85))
+                .addGap(40, 40, 40))
         );
 
         southPanel.setBackground(new java.awt.Color(146, 177, 204));
@@ -415,7 +416,5 @@ public class BookingForm extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> prefix;
     private javax.swing.JButton reset;
     private javax.swing.JPanel southPanel;
-    private String roomId;
-    private JSONObject roomData;
     // End of variables declaration//GEN-END:variables
 }

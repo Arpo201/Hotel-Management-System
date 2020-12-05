@@ -68,10 +68,10 @@ public class MainpageHome extends javax.swing.JPanel {
         allAvailableRoomCount.setFont(new java.awt.Font("Angsana New", 1, 100)); // NOI18N
         allAvailableRoomCount.setForeground(new java.awt.Color(120, 208, 31));
         allAvailableRoomCount.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        allAvailableRoomCount.setText(Room.getAllAvailableRoomCount());
+        allAvailableRoomCount.setText("15");
 
         jfloor1Panel.setBackground(new java.awt.Color(255, 255, 255));
-        jfloor1Panel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jfloor1Panel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jfloor1Panel.setMinimumSize(new java.awt.Dimension(300, 200));
 
         floor1Label.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
@@ -85,7 +85,7 @@ public class MainpageHome extends javax.swing.JPanel {
         floor1AvailableCount.setFont(new java.awt.Font("Angsana New", 1, 60)); // NOI18N
         floor1AvailableCount.setForeground(new java.awt.Color(120, 208, 31));
         floor1AvailableCount.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        floor1AvailableCount.setText(Room.getAvailableRoomCount(1));
+        floor1AvailableCount.setText("5");
 
         javax.swing.GroupLayout jfloor1PanelLayout = new javax.swing.GroupLayout(jfloor1Panel);
         jfloor1Panel.setLayout(jfloor1PanelLayout);
@@ -108,7 +108,7 @@ public class MainpageHome extends javax.swing.JPanel {
         );
 
         jfloor2Panel.setBackground(new java.awt.Color(255, 255, 255));
-        jfloor2Panel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jfloor2Panel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jfloor2Panel.setMinimumSize(new java.awt.Dimension(300, 200));
 
         floor2Label.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
@@ -122,7 +122,7 @@ public class MainpageHome extends javax.swing.JPanel {
         floor2AvailableCount.setFont(new java.awt.Font("Angsana New", 1, 60)); // NOI18N
         floor2AvailableCount.setForeground(new java.awt.Color(120, 208, 31));
         floor2AvailableCount.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        floor2AvailableCount.setText(Room.getAvailableRoomCount(2));
+        floor2AvailableCount.setText("5");
 
         javax.swing.GroupLayout jfloor2PanelLayout = new javax.swing.GroupLayout(jfloor2Panel);
         jfloor2Panel.setLayout(jfloor2PanelLayout);
@@ -145,7 +145,7 @@ public class MainpageHome extends javax.swing.JPanel {
         );
 
         jfloor3Panel.setBackground(new java.awt.Color(255, 255, 255));
-        jfloor3Panel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jfloor3Panel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jfloor3Panel.setMinimumSize(new java.awt.Dimension(300, 200));
 
         floor3Label.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
@@ -159,7 +159,7 @@ public class MainpageHome extends javax.swing.JPanel {
         floor3AvailableCount.setFont(new java.awt.Font("Angsana New", 1, 60)); // NOI18N
         floor3AvailableCount.setForeground(new java.awt.Color(120, 208, 31));
         floor3AvailableCount.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        floor3AvailableCount.setText(Room.getAvailableRoomCount(3));
+        floor3AvailableCount.setText("5");
 
         javax.swing.GroupLayout jfloor3PanelLayout = new javax.swing.GroupLayout(jfloor3Panel);
         jfloor3Panel.setLayout(jfloor3PanelLayout);
