@@ -131,7 +131,7 @@ public class DatabaseHelper {
 
 
     public static boolean addNewAdmin(JSONObject data) {
-        String sql = MessageFormat.format("insert into user values({0}, {1}, {2})",
+        String sql = MessageFormat.format("insert into user values(null, \"{0}\", \"{1}\", \"{2}\")",
                 data.get("username").toString(),
                 data.get("password").toString(),
                 data.get("full_name").toString()

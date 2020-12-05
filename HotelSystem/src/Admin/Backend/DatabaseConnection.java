@@ -15,10 +15,12 @@ public class DatabaseConnection {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+        } else {
+            System.out.println("Already connected! doing nothing.");
         }
     }
 
-    public Connection getConnection() {
+    public static Connection getConnection() {
         return connection;
     }
 

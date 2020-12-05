@@ -13,14 +13,12 @@ import Admin.Backend.DatabaseHelper;
 import org.json.simple.JSONObject;
 
 import java.sql.*;
-import java.sql.DriverManager;
 import java.text.SimpleDateFormat;
 import javax.swing.*;
+import java.util.Arrays;
 import java.util.Calendar;
 
 public class RegisterForm extends javax.swing.JFrame {
-    private Connection con;
-
     /**
      * Creates new form RegisterForm
      */
@@ -47,7 +45,7 @@ public class RegisterForm extends javax.swing.JFrame {
         minButton = new javax.swing.JLabel();
         jPasswordLabel = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
-        createButton = new javax.swing.JButton();
+        addButton = new javax.swing.JButton();
         cancelButton = new javax.swing.JButton();
         errorLabel = new javax.swing.JLabel();
         jFnameTextField = new javax.swing.JTextField();
@@ -127,13 +125,13 @@ public class RegisterForm extends javax.swing.JFrame {
         jPasswordField1.setFont(new java.awt.Font("Angsana New", 0, 30)); // NOI18N
         jPasswordField1.setPreferredSize(new java.awt.Dimension(5, 42));
 
-        createButton.setBackground(new java.awt.Color(0, 204, 255));
-        createButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        createButton.setForeground(new java.awt.Color(255, 255, 255));
-        createButton.setText("Create");
-        createButton.addActionListener(new java.awt.event.ActionListener() {
+        addButton.setBackground(new java.awt.Color(0, 204, 255));
+        addButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        addButton.setForeground(new java.awt.Color(255, 255, 255));
+        addButton.setText("Add");
+        addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                createButtonActionPerformed(evt);
+                addButtonActionPerformed(evt);
             }
         });
 
@@ -148,7 +146,7 @@ public class RegisterForm extends javax.swing.JFrame {
         });
 
         errorLabel.setFont(new java.awt.Font("Angsana New", 1, 24)); // NOI18N
-        errorLabel.setForeground(new java.awt.Color(255, 0, 0));
+        errorLabel.setForeground(new java.awt.Color(255, 102, 102));
         errorLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         errorLabel.setText("   ");
 
@@ -214,11 +212,8 @@ public class RegisterForm extends javax.swing.JFrame {
             }
         });
 
-        jPasswordField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField2ActionPerformed(evt);
-            }
-        });
+        jPasswordField2.setFont(new java.awt.Font("Angsana New", 0, 30)); // NOI18N
+        jPasswordField2.setPreferredSize(new java.awt.Dimension(5, 42));
 
         jFnameLabel1.setFont(new java.awt.Font("Angsana New", 1, 30)); // NOI18N
         jFnameLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -258,7 +253,7 @@ public class RegisterForm extends javax.swing.JFrame {
                 .addContainerGap(180, Short.MAX_VALUE)
                 .addComponent(cancelButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(createButton)
+                .addComponent(addButton)
                 .addContainerGap(180, Short.MAX_VALUE))
             .addComponent(errorLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -298,7 +293,7 @@ public class RegisterForm extends javax.swing.JFrame {
                     .addComponent(jAddressField, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(createButton)
+                    .addComponent(addButton)
                     .addComponent(cancelButton))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
@@ -333,14 +328,18 @@ public class RegisterForm extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_cancelButtonActionPerformed
 
-    private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
-        if (!jPasswordField1.getPassword().equals(jPasswordField2.getPassword())) {
+    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
+        if (jUsernameTextField.getText().trim().isEmpty()) {
+            errorLabel.setText("กรุณากรอก Username");
+        } else if (String.valueOf(jPasswordField1.getPassword()).trim().isEmpty()) {
+            errorLabel.setText("กรุณากรอกรหัสผ่าน");
+        } else if (!Arrays.equals(jPasswordField1.getPassword(), jPasswordField2.getPassword())) {
             errorLabel.setText("กรุณากรอกรหัสผ่านให้ตรงกัน");
         } else {
             JSONObject data = new JSONObject();
-            data.put("username", jUsernameLabel.getText());
-            data.put("password", jPasswordField1.getPassword());
-            data.put("full_name", jFnameTextField.getText() + " " + jLnameTextField.getText());
+            data.put("username", jUsernameTextField.getText().trim());
+            data.put("password", String.valueOf(jPasswordField1.getPassword()).trim());
+            data.put("full_name", jFnameTextField.getText().trim() + " " + jLnameTextField.getText().trim());
             if(DatabaseHelper.addNewAdmin(data)) this.dispose();
             else errorLabel.setText("Username นี้มีอยู่ในระบบแล้ว");
         }
@@ -353,10 +352,6 @@ public class RegisterForm extends javax.swing.JFrame {
     private void closeButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeButtonMouseClicked
         this.dispose();
     }//GEN-LAST:event_closeButtonMouseClicked
-
-    private void jPasswordField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -399,7 +394,7 @@ public class RegisterForm extends javax.swing.JFrame {
     private javax.swing.JLabel birthDateLabel;
     private javax.swing.JButton cancelButton;
     private javax.swing.JLabel closeButton;
-    private javax.swing.JButton createButton;
+    private javax.swing.JButton addButton;
     private javax.swing.JLabel errorLabel;
     private javax.swing.JScrollPane jAddressField;
     private javax.swing.JLabel jFnameLabel1;

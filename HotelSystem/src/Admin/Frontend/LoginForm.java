@@ -30,7 +30,6 @@ public class LoginForm extends javax.swing.JFrame {
      */
     public LoginForm() {
         if (connection == null) connection = new DatabaseConnection().getConnection();
-        System.out.println(connection);
         initComponents();
         this.setLocationRelativeTo(null);// center form in the screen
     }
@@ -273,7 +272,7 @@ public class LoginForm extends javax.swing.JFrame {
             this.rs = connection.createStatement().executeQuery(sql);
             while(rs.next()){
                 if(rs.getInt("count") == 1){
-                    System.out.println("OK");
+                    System.out.println("Logging in...");
                     this.state.setText("Pass");
                     this.state.setForeground(Color.GREEN);
                     new RunAdmin(rs.getString("full_name"));
