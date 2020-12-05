@@ -148,9 +148,8 @@ public class RegisterForm extends javax.swing.JFrame {
         });
 
         errorLabel.setFont(new java.awt.Font("Angsana New", 1, 30)); // NOI18N
-        errorLabel.setForeground(new java.awt.Color(255, 255, 255));
+        errorLabel.setForeground(new java.awt.Color(255, 0, 0));
         errorLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        errorLabel.setText("error");
 
         jFnameTextField.setFont(new java.awt.Font("Angsana New", 0, 30)); // NOI18N
         jFnameTextField.setPreferredSize(new java.awt.Dimension(5, 42));
@@ -337,12 +336,16 @@ public class RegisterForm extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
-//        if (jPasswordField1.getPassword().equals(jRetypeTextField.getText())) {}
-        JSONObject data = new JSONObject();
-        data.put("username", jUsernameLabel.getText());
-        data.put("password", jPasswordField1.getPassword());
-        data.put("full_name", jFnameTextField.getText() + " " + jLnameTextField.getText());
-        if(DatabaseHelper.addNewAdmin(data)) this.dispose();
+        if (!jPasswordField1.getPassword().equals(jPasswordField2.getPassword())) {
+            errorLabel.setText("กรุณากรอกรหัสผ่านให้ตรงกัน");
+        } else {
+            JSONObject data = new JSONObject();
+            data.put("username", jUsernameLabel.getText());
+            data.put("password", jPasswordField1.getPassword());
+            data.put("full_name", jFnameTextField.getText() + " " + jLnameTextField.getText());
+            if(DatabaseHelper.addNewAdmin(data)) this.dispose();
+            else errorLabel.setText("Username นี้มีอยู่ในระบบแล้ว");
+        }
     }//GEN-LAST:event_createButtonActionPerformed
 
     private void minButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minButtonMouseClicked
