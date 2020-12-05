@@ -52,7 +52,6 @@ public class RegisterForm extends javax.swing.JFrame {
         jFnameLabel = new javax.swing.JLabel();
         jFnameTextField = new javax.swing.JTextField();
         jRetypeLabel = new javax.swing.JLabel();
-        jRetypeTextField = new javax.swing.JTextField();
         birthDateLabel = new javax.swing.JLabel();
         bdate = new datechooser.beans.DateChooserCombo();
         jRetypeLabel2 = new javax.swing.JLabel();
@@ -63,6 +62,7 @@ public class RegisterForm extends javax.swing.JFrame {
         jLnameLabel = new javax.swing.JLabel();
         jLnameTextField = new javax.swing.JTextField();
         jFnameTextField1 = new javax.swing.JTextField();
+        jPasswordField2 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -165,14 +165,6 @@ public class RegisterForm extends javax.swing.JFrame {
         jRetypeLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jRetypeLabel.setText("Retype Pass:");
 
-        jRetypeTextField.setFont(new java.awt.Font("Angsana New", 0, 30)); // NOI18N
-        jRetypeTextField.setPreferredSize(new java.awt.Dimension(5, 42));
-        jRetypeTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRetypeTextFieldActionPerformed(evt);
-            }
-        });
-
         birthDateLabel.setFont(new java.awt.Font("Angsana New", 1, 30)); // NOI18N
         birthDateLabel.setForeground(new java.awt.Color(255, 255, 255));
         birthDateLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
@@ -230,6 +222,12 @@ public class RegisterForm extends javax.swing.JFrame {
             }
         });
 
+        jPasswordField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -247,19 +245,20 @@ public class RegisterForm extends javax.swing.JFrame {
                     .addComponent(jLnameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                            .addComponent(jRetypeTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                            .addComponent(jUsernameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                            .addComponent(jLnameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                            .addComponent(jAddressField)
-                            .addComponent(bdate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jFnameTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jFnameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE))))
+                            .addComponent(jFnameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPasswordField2, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                                .addComponent(jUsernameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                                .addComponent(jLnameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                                .addComponent(jAddressField)
+                                .addComponent(bdate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(180, Short.MAX_VALUE)
@@ -291,9 +290,9 @@ public class RegisterForm extends javax.swing.JFrame {
                     .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPasswordLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRetypeLabel)
-                    .addComponent(jRetypeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jRetypeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPasswordField2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(birthDateLabel)
@@ -306,7 +305,7 @@ public class RegisterForm extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(createButton)
                     .addComponent(cancelButton))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -330,10 +329,6 @@ public class RegisterForm extends javax.swing.JFrame {
     private void jUsernameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUsernameTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jUsernameTextFieldActionPerformed
-
-    private void jRetypeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRetypeTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRetypeTextFieldActionPerformed
 
     private void jFnameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFnameTextFieldActionPerformed
         // TODO add your handling code here:
@@ -363,6 +358,10 @@ public class RegisterForm extends javax.swing.JFrame {
     private void jFnameTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFnameTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jFnameTextField1ActionPerformed
+
+    private void jPasswordField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -414,10 +413,10 @@ public class RegisterForm extends javax.swing.JFrame {
     private javax.swing.JTextField jLnameTextField;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JLabel jPasswordLabel;
     private javax.swing.JLabel jRetypeLabel;
     private javax.swing.JLabel jRetypeLabel2;
-    private javax.swing.JTextField jRetypeTextField;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel jUsernameLabel;
     private javax.swing.JTextField jUsernameTextField;
