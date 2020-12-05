@@ -1,6 +1,6 @@
 package Admin.Frontend;
 
-import Admin.Backend.Room;
+import Admin.Backend.DatabaseHelper;
 import org.json.simple.JSONObject;
 
 import javax.swing.*;
@@ -29,7 +29,7 @@ public class MainpageRoom extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        roomStatus = Room.getAvailableStatus();
+        roomStatus = DatabaseHelper.getAvailableStatus();
 
         jPageHeadPanel = new javax.swing.JPanel();
         jPageLabel = new javax.swing.JLabel();
@@ -467,7 +467,7 @@ public class MainpageRoom extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     public void updateRoomStatus() {
-        roomStatus = Room.getAvailableStatus();
+        roomStatus = DatabaseHelper.getAvailableStatus();
         String[] rooms = {"101", "102", "103", "104", "105", "201", "202", "203", "204", "205", "301", "302", "303", "304", "305"};
         for (int i = 0; i < rooms.length; i++) {
             try {

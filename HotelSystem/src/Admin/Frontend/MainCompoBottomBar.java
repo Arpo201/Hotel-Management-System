@@ -1,6 +1,6 @@
 package Admin.Frontend;
 
-import Admin.Backend.Room;
+import Admin.Backend.DatabaseHelper;
 
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -37,7 +37,7 @@ public class MainCompoBottomBar extends javax.swing.JPanel {
         ClientNum.setFont(new java.awt.Font("Angsana New", 0, 36)); // NOI18N
         ClientNum.setForeground(new java.awt.Color(255, 255, 255));
         ClientNum.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ClientNum.setText(Room.getUserCount());
+        ClientNum.setText(DatabaseHelper.getUserCount());
         ClientNum.setAlignmentY(0.0F);
         ClientNum.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
@@ -91,7 +91,7 @@ public class MainCompoBottomBar extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     public void updateUserCount() {
-        ClientNum.setText(Room.getUserCount());
+        ClientNum.setText(DatabaseHelper.getUserCount());
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

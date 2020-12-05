@@ -74,6 +74,11 @@ public class RunAdmin {
             new LoginForm().setVisible(true);
         }
     public static void main(String[] args) {
-        new RunAdmin();
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            new RunAdmin();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -1,14 +1,9 @@
 package Admin.Backend;
 
 import Admin.Frontend.FoodClientOrder;
-import Admin.Frontend.RunOrder;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
-import java.io.DataOutputStream;
 import java.io.IOException;
-import java.net.Socket;
 import java.text.MessageFormat;
 
 public class ResponseHandler extends Thread {
@@ -52,7 +47,7 @@ public class ResponseHandler extends Thread {
     }
 
     static void sendCustomerName(String roomId) throws IOException {
-        JSONObject jsonData = new JSONObject(), roomData = Admin.Backend.Room.getRoomData(roomId);
+        JSONObject jsonData = new JSONObject(), roomData = DatabaseHelper.getRoomData(roomId);
         jsonData.put("type", "customer_name");
         jsonData.put("name", roomData.get("first_name").toString() + " " + roomData.get("last_name").toString());
         ClientHandler.sendJSON(jsonData);
