@@ -59,7 +59,6 @@ public class UserWelcome extends javax.swing.JFrame implements WindowListener {
                 exception.printStackTrace();
             }
             JOptionPane.showMessageDialog(null, "Please set room id in roomid.conf", "Room ID isn't configured!", JOptionPane.ERROR_MESSAGE);
-            stopSocket();
             System.exit(0);
         }
 

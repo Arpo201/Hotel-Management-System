@@ -17,6 +17,7 @@ public class ClientListener extends Thread {
         try(ServerSocket socket = new ServerSocket(3141);) {
             ClientListener.socket = socket;
             System.out.println("Listening on port 3141");
+            System.out.println(socket);
             while(!this.isInterrupted()) {
                 Socket connectionSocket = socket.accept();
                 connectionSocket.setKeepAlive(true);
