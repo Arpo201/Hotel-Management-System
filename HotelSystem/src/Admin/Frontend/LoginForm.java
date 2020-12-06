@@ -166,6 +166,7 @@ public class LoginForm extends javax.swing.JFrame {
 
         state.setFont(new java.awt.Font("Angsana New", 1, 24)); // NOI18N
         state.setForeground(new java.awt.Color(255, 119, 119));
+        state.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         state.setText("        ");
 
         jPasswordField.setFont(new java.awt.Font("Angsana New", 1, 24)); // NOI18N
@@ -196,10 +197,9 @@ public class LoginForm extends javax.swing.JFrame {
                         .addGap(136, 136, 136)
                         .addComponent(cancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(42, 42, 42)
-                        .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(state)))
+                        .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(state, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
