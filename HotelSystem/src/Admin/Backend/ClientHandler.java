@@ -12,7 +12,6 @@ public class ClientHandler extends Thread {
     private final Socket clientSocket;
     private static String id = null;
     private static ObjectOutputStream outToClient;
-    private static ResponseHandler responseHandler;
 
     public ClientHandler(Socket clientSocket) {
         this.clientSocket = clientSocket;
@@ -28,8 +27,7 @@ public class ClientHandler extends Thread {
             ClientHandler.outToClient = outToClient;
             while (true) {
                 clientData = (JSONObject) inFromClient.readObject();
-                responseHandler = new ResponseHandler(clientData, id);
-                responseHandler.start();
+                new ResponseHandler(clientData, id).start();
             }
         } catch (IOException | ClassNotFoundException e) {
             System.out.println(MessageFormat.format("Client {0} disconnected!", id));
