@@ -1,7 +1,5 @@
 package Admin.Backend;
 
-import Admin.Frontend.LoginForm;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -24,9 +22,7 @@ public class DatabaseHelper {
             if(rs.next()){
                 return rs.getString("count");
             }
-        } catch (Exception ex) {
-            Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } catch (Exception ignored) { }
         return "0";
     }
 
@@ -35,9 +31,7 @@ public class DatabaseHelper {
         String sql = "select * from room where first_name != '' and last_name != ''";
         try {
             rs = connection.createStatement().executeQuery(sql);
-        } catch (Exception ex) {
-            Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } catch (Exception ignored) { }
         return rs;
     }
 
@@ -54,9 +48,7 @@ public class DatabaseHelper {
             while(rs.next()){
                 data.replace(rs.getString("id"), false);
             }
-        } catch (Exception ex) {
-            Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } catch (Exception ignored) { }
         return data;
     }
 
@@ -83,9 +75,7 @@ public class DatabaseHelper {
                 data.replace("checkin", rs.getString("checkin"));
                 data.replace("checkout", rs.getString("checkout"));
             }
-        } catch (Exception ex) {
-            Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } catch (Exception ignored) { }
         return data;
     }
 
@@ -120,9 +110,7 @@ public class DatabaseHelper {
             if(rs.next()){
                 return rs.getString("count");
             }
-        } catch (Exception ex) {
-            Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } catch (Exception ignored) { }
         return "0";
     }
 

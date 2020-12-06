@@ -5,7 +5,7 @@
  */
 package User.Frontend;
 
-import Admin.Backend.ClientListener;
+import User.Backend.DatabaseHelper;
 import User.Backend.QueueHandler;
 import User.Backend.ServerConnector;
 import org.json.simple.JSONObject;
@@ -16,7 +16,6 @@ import java.awt.Image;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.io.*;
-import java.text.MessageFormat;
 import javax.swing.*;
 
 /**
@@ -66,10 +65,9 @@ public class UserWelcome extends javax.swing.JFrame implements WindowListener {
         initComponents();
         setClientName("Connecting...");
         this.addWindowListener(this);
-        JSONParser parser = new JSONParser();
-        try {
-            QueueHandler.pushQueues((JSONObject) parser.parse("{\"type\":\"auth\", \"id\": \"" + UserSite.getRoomId() + "\"}"));
-        } catch (ParseException ignored) {}
+        String customerName = DatabaseHelper.getRoomData(UserSite.getRoomId());
+        setClientName(customerName);
+        UserSite.setCustomerName(customerName);
         ImageIcon setWallIcon = new ImageIcon(new ImageIcon(getClass().getResource("/Assets/wallpaper3.jpg")).getImage().getScaledInstance(100, 415, Image.SCALE_SMOOTH));
         this.jLabel1.setText("");
         this.jLabel1.setIcon(setWallIcon);
@@ -256,6 +254,7 @@ public class UserWelcome extends javax.swing.JFrame implements WindowListener {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JLabel welcomeLabel;
+    // End of variables declaration//GEN-END:variables
 
     @Override
     public void windowOpened(WindowEvent e) {
@@ -291,5 +290,4 @@ public class UserWelcome extends javax.swing.JFrame implements WindowListener {
     public void windowDeactivated(WindowEvent e) {
 
     }
-    // End of variables declaration//GEN-END:variables
 }

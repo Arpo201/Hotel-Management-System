@@ -22,7 +22,7 @@ public class FoodClientOrder extends JFrame implements WindowListener {
 
     public static void addOrder(JSONObject orderData){
         FoodOrderForm newOrder = new FoodOrderForm();
-        String roomId = orderData.get("room_id").toString();
+        String roomId = orderData.get("id").toString();
         newOrder.setRoom(roomId);
         String orderString = "";
         for(Object order : (JSONArray)orderData.get("order")) {
@@ -42,7 +42,6 @@ public class FoodClientOrder extends JFrame implements WindowListener {
         headLabel = new JLabel();
         body = new JPanel();
         desktopPane = new JDesktopPane();
-        testBtn = new JButton();
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,14 +67,6 @@ public class FoodClientOrder extends JFrame implements WindowListener {
 
         desktopPane.setBackground(new java.awt.Color(227, 234, 240));
 
-        testBtn.setText("add test");
-        testBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                testBtnActionPerformed(evt);
-            }
-        });
-
-        desktopPane.setLayer(testBtn, JLayeredPane.DEFAULT_LAYER);
 
         GroupLayout desktopPaneLayout = new GroupLayout(desktopPane);
         desktopPane.setLayout(desktopPaneLayout);
@@ -83,14 +74,12 @@ public class FoodClientOrder extends JFrame implements WindowListener {
             desktopPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(GroupLayout.Alignment.TRAILING, desktopPaneLayout.createSequentialGroup()
                 .addContainerGap(928, Short.MAX_VALUE)
-                .addComponent(testBtn)
                 .addContainerGap())
         );
         desktopPaneLayout.setVerticalGroup(
             desktopPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(desktopPaneLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(testBtn)
                 .addContainerGap(481, Short.MAX_VALUE))
         );
 
@@ -150,7 +139,7 @@ public class FoodClientOrder extends JFrame implements WindowListener {
     private static JDesktopPane desktopPane = new JDesktopPane();
     private JLabel headLabel;
     private JPanel jPanel1;
-    private JButton testBtn;
+    // End of variables declaration//GEN-END:variables
 
     @Override
     public void windowOpened(WindowEvent e) {
@@ -186,5 +175,4 @@ public class FoodClientOrder extends JFrame implements WindowListener {
     public void windowDeactivated(WindowEvent e) {
 
     }
-    // End of variables declaration//GEN-END:variables
 }

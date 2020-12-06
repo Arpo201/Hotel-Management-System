@@ -5,12 +5,8 @@
  */
 package Admin.Frontend;
 
-import Admin.Backend.ClientListener;
-import Admin.Backend.DatabaseConnection;
-
 import javax.swing.*;
 import java.awt.*;
-import java.sql.SQLException;
 
 /**
  *
@@ -29,8 +25,6 @@ public class RunAdmin {
         }
 
         public RunAdmin(String name){
-            ClientListener.startSocketServer();
-
             frame = new JFrame();
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             
@@ -70,7 +64,6 @@ public class RunAdmin {
             c1.show(card, "Room");
         }
         public static void logout(){
-            ClientListener.stopSocketServer();
             frame.dispose();
             try {
                 for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

@@ -27,11 +27,6 @@ public class ServerConnector extends Thread {
                 sendJSON(popQueues());
                 JSONObject serverData = (JSONObject) inFromServer.readObject();
                 System.out.println(serverData);
-                if(serverData.get("type").equals("customer_name")) {
-                    String customerName = serverData.get("name").toString();
-                    UserWelcome.setClientName(customerName);
-                    UserSite.setCustomerName(customerName);
-                }
             }
         } catch (IOException | ClassNotFoundException exception) {
             UserWelcome.startSocket();

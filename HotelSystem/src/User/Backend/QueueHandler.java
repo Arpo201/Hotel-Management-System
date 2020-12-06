@@ -1,5 +1,6 @@
 package User.Backend;
 
+import User.Frontend.UserSite;
 import User.Frontend.UserWelcome;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -14,6 +15,7 @@ public class QueueHandler {
     }
 
     public static void pushQueues(JSONObject queue) {
+        queue.put("id", UserSite.getRoomId());
         queues.add(queue);
         UserWelcome.notifySocket();
         System.out.println(MessageFormat.format("Got new queue: {0} | total: {1}", queue.toJSONString(), queues.size()));
