@@ -6,23 +6,36 @@
 package User.Frontend;
 
 import Admin.Backend.ClientListener;
+import User.Backend.QueueHandler;
 import User.Backend.ServerConnector;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 import java.awt.Image;
-import javax.swing.ImageIcon;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+import java.io.*;
+import java.text.MessageFormat;
+import javax.swing.*;
 
 /**
  *
  * @author Rping
  */
-public class UserWelcome extends javax.swing.JFrame {
+public class UserWelcome extends javax.swing.JFrame implements WindowListener {
     private static ServerConnector server;
 
     /**
      * Creates new form Welcome
      */
-    public void startSocket(){
+    public static void startSocket(){
         server = new ServerConnector();
         server.start();
+    }
+
+    public static void stopSocket() {
+        server.interrupt();
     }
 
     public static void notifySocket() {
@@ -32,8 +45,32 @@ public class UserWelcome extends javax.swing.JFrame {
     }
 
     public UserWelcome() {
+        try(FileReader fr = new FileReader("roomid.conf");
+            BufferedReader br = new BufferedReader(fr)) {
+            System.out.println("Configuration found, loading...");
+            String roomId = Integer.toString(Integer.parseInt(br.readLine()));
+            UserSite.setRoomId(roomId);
+
+        } catch (IOException | NumberFormatException ignored) {
+            try(FileWriter fw = new FileWriter("roomid.conf");
+                BufferedWriter bw = new BufferedWriter(fw)) {
+                bw.write("-\n# Replace - with this room's id");
+            } catch (IOException exception) {
+                exception.printStackTrace();
+            }
+            JOptionPane.showMessageDialog(null, "Please set room id in roomid.conf", "Room ID isn't configured!", JOptionPane.ERROR_MESSAGE);
+            stopSocket();
+            System.exit(0);
+        }
+
         startSocket();
         initComponents();
+        setClientName("Connecting...");
+        this.addWindowListener(this);
+        JSONParser parser = new JSONParser();
+        try {
+            QueueHandler.pushQueues((JSONObject) parser.parse("{\"type\":\"auth\", \"id\": \"" + UserSite.getRoomId() + "\"}"));
+        } catch (ParseException ignored) {}
         ImageIcon setWallIcon = new ImageIcon(new ImageIcon(getClass().getResource("/Assets/wallpaper3.jpg")).getImage().getScaledInstance(100, 415, Image.SCALE_SMOOTH));
         this.jLabel1.setText("");
         this.jLabel1.setIcon(setWallIcon);
@@ -85,7 +122,7 @@ public class UserWelcome extends javax.swing.JFrame {
 
         instuctionLabel.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         instuctionLabel.setForeground(new java.awt.Color(255, 255, 255));
-        instuctionLabel.setText("\"Hotel Backend Food Delivery Program\"");
+        instuctionLabel.setText("\"Hotel Delivery Program\"");
 
         jLabel1.setText("jLabel1");
 
@@ -190,11 +227,6 @@ public class UserWelcome extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -202,19 +234,8 @@ public class UserWelcome extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UserWelcome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UserWelcome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UserWelcome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UserWelcome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
+        } catch (Exception ignored) { }
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new UserWelcome().setVisible(true);
@@ -236,5 +257,40 @@ public class UserWelcome extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JLabel welcomeLabel;
+
+    @Override
+    public void windowOpened(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowClosing(WindowEvent e) {
+        stopSocket();
+    }
+
+    @Override
+    public void windowClosed(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowIconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeiconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowActivated(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent e) {
+
+    }
     // End of variables declaration//GEN-END:variables
 }

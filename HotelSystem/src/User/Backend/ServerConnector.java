@@ -1,5 +1,6 @@
 package User.Backend;
 
+import User.Frontend.UserSite;
 import User.Frontend.UserWelcome;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -15,12 +16,6 @@ public class ServerConnector extends Thread {
 
     @Override
     public void run() {
-        JSONParser parser = new JSONParser();
-        try {
-            QueueHandler.pushQueues((JSONObject) parser.parse("{\"type\":\"auth\", \"id\": \"301\"}"));
-            QueueHandler.pushQueues((JSONObject) parser.parse("{\"type\":\"get_response\"}"));
-        } catch (ParseException ignored) {}
-
         try(
                 Socket socket = new Socket("localhost", 3141);
                 ObjectOutputStream outToServer = new ObjectOutputStream(socket.getOutputStream());
@@ -33,17 +28,21 @@ public class ServerConnector extends Thread {
                 JSONObject serverData = (JSONObject) inFromServer.readObject();
                 System.out.println(serverData);
                 if(serverData.get("type").equals("customer_name")) {
-                    UserWelcome.setClientName(serverData.get("name").toString());
+                    String customerName = serverData.get("name").toString();
+                    UserWelcome.setClientName(customerName);
+                    UserSite.setCustomerName(customerName);
                 }
             }
-        } catch (IOException | InterruptedException | ClassNotFoundException exception) {
-            exception.printStackTrace();
-        }
+        } catch (IOException | ClassNotFoundException exception) {
+            UserWelcome.startSocket();
+            System.out.println("Something went wrong\nRestarting...");
+        } catch (InterruptedException ignored) { }
     }
 
     private void sendJSON(JSONObject data) throws IOException {
         outToServer.writeObject(data);
         outToServer.flush();
+        outToServer.reset();
         System.out.println(MessageFormat.format("Sending {0} to server", data.toJSONString()));
     }
 

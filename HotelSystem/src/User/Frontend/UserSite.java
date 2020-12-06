@@ -6,21 +6,44 @@
 package User.Frontend;
 
 import User.Backend.QueueHandler;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.text.MessageFormat;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.Vector;
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Rping
  */
 public class UserSite extends javax.swing.JFrame {
+    private static String roomId;
+
+    private static String customerName;
+
     /**
      * Creates new form UserSite
      */
     public UserSite() {
         initComponents();
+        orderList = new JSONArray();
+        jTable1.setModel(new DefaultTableModel(new Vector<Vector<String>>(), getColumnNames()));
+
+        int floor;
+        try {
+            floor = Integer.parseInt(roomId.substring(0, 1));
+        } catch (IndexOutOfBoundsException ignored) {
+            floor = 0;
+        };
+        RoomLabel.setText(MessageFormat.format("ห้อง {0}  ชั้น {1}", roomId, floor));
+        ClientNameLabel.setText("Hello, " + customerName);
+
         ImageIcon menu1 = new ImageIcon(new ImageIcon(getClass().getResource("/Assets/food1.jpg")).getImage().getScaledInstance((int)(this.foodPic1.getWidth()*0.9), (int)(this.foodPic1.getHeight()*0.7), Image.SCALE_SMOOTH));
         ImageIcon menu2 = new ImageIcon(new ImageIcon(getClass().getResource("/Assets/food2.jpg")).getImage().getScaledInstance((int)(this.foodPic1.getWidth()*0.9), (int)(this.foodPic1.getHeight()*0.7), Image.SCALE_SMOOTH));
         ImageIcon menu3 = new ImageIcon(new ImageIcon(getClass().getResource("/Assets/food3.jpg")).getImage().getScaledInstance((int)(this.foodPic1.getWidth()*0.9), (int)(this.foodPic1.getHeight()*0.7), Image.SCALE_SMOOTH));
@@ -31,24 +54,21 @@ public class UserSite extends javax.swing.JFrame {
         ImageIcon setHomeIcon = new ImageIcon(new ImageIcon(getClass().getResource("/Assets/hotel.png")).getImage().getScaledInstance(80, 50, Image.SCALE_SMOOTH));
         this.foodPic1.setText("");
         this.foodPic1.setIcon(menu1);
-        
+
         this.foodPic2.setText("");
         this.foodPic2.setIcon(menu2);
-        
+
         this.foodPic3.setText("");
         this.foodPic3.setIcon(menu3);
-        
+
         this.foodPic4.setText("");
         this.foodPic4.setIcon(menu4);
-        
+
         this.foodPic5.setText("");
         this.foodPic5.setIcon(menu5);
-        
+
         this.foodPic6.setText("");
         this.foodPic6.setIcon(menu6);
-        
-        this.jLabel1.setText("");
-        this.jLabel1.setIcon(setHomeIcon);
     }
 
     /**
@@ -63,7 +83,6 @@ public class UserSite extends javax.swing.JFrame {
         top = new javax.swing.JPanel();
         ClientNameLabel = new javax.swing.JLabel();
         RoomLabel = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         left = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -109,9 +128,6 @@ public class UserSite extends javax.swing.JFrame {
         RoomLabel.setForeground(new java.awt.Color(255, 255, 255));
         RoomLabel.setText("ห้อง 101  ชั้น 1");
 
-        jLabel1.setText("jLabel1");
-        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
         javax.swing.GroupLayout topLayout = new javax.swing.GroupLayout(top);
         top.setLayout(topLayout);
         topLayout.setHorizontalGroup(
@@ -121,9 +137,7 @@ public class UserSite extends javax.swing.JFrame {
                 .addComponent(RoomLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 482, Short.MAX_VALUE)
                 .addComponent(ClientNameLabel)
-                .addGap(46, 46, 46)
-                .addComponent(jLabel1)
-                .addGap(24, 24, 24))
+                .addGap(46, 46, 46))
         );
         topLayout.setVerticalGroup(
             topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,8 +145,7 @@ public class UserSite extends javax.swing.JFrame {
                 .addGap(10, 10, 10)
                 .addGroup(topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(RoomLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ClientNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                    .addComponent(ClientNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10))
         );
 
@@ -470,52 +483,95 @@ public class UserSite extends javax.swing.JFrame {
 
     private void food1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_food1ActionPerformed
         if(evt.getSource().equals(food1)){
-//            this.orderText.append("ข้าวกระเพราไก่  x1"+"\n");
+            genOrder("ข้าวกระเพราไก่");
         }
     }//GEN-LAST:event_food1ActionPerformed
 
     private void food2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_food2ActionPerformed
         if(evt.getSource().equals(food2)){
-//            this.orderText.append("ข้าวไก่กระเทียม  x1"+"\n");
+            genOrder("ข้าวไก่กระเทียม");
         }
     }//GEN-LAST:event_food2ActionPerformed
 
     private void food3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_food3ActionPerformed
         if(evt.getSource().equals(food3)){
-//            this.orderText.append("ข้าวผัดหมู  x1"+"\n");
+            genOrder("ข้าวผัดหมู");
         }
     }//GEN-LAST:event_food3ActionPerformed
 
     private void food4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_food4ActionPerformed
         if(evt.getSource().equals(food4)){
-//            this.orderText.append("ข้าวแกงกระหรี่หมูทอด  x1"+"\n");
+            genOrder("ข้าวแกงกระหรี่หมูทอด");
         }
     }//GEN-LAST:event_food4ActionPerformed
 
     private void food5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_food5ActionPerformed
         if(evt.getSource().equals(food5)){
-//            this.orderText.append("โจ้กหมู  x1"+"\n");
+            genOrder("โจ้กหมู");
         }
     }//GEN-LAST:event_food5ActionPerformed
 
     private void food6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_food6ActionPerformed
         if(evt.getSource().equals(food6)){
-//            this.orderText.append("ข้าวต้มกุ้ง  x1"+"\n");
+            genOrder("ข้าวต้มกุ้ง");
         }
     }//GEN-LAST:event_food6ActionPerformed
 
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
         if(evt.getSource().equals(clearButton)){
-            orderText.setText(" ");
+            orderList.clear();
+            jTable1.setModel(new DefaultTableModel(new Vector<Vector<String>>(), getColumnNames()));
         }
     }//GEN-LAST:event_clearButtonActionPerformed
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
-        order = new JSONObject();
+        if(orderList.size() == 0) return;
+        JSONObject order = new JSONObject();
         order.put("type", "food_order");
-        order.put("order", orderText.getText());
+        order.put("order", orderList);
         QueueHandler.pushQueues(order);
     }//GEN-LAST:event_submitButtonActionPerformed
+
+    private void genOrder(String food) {
+        boolean found = false;
+        for (int i = 0; i < orderList.size(); i++) {
+            JSONObject item = (JSONObject) orderList.get(i);
+            if(food.equals(item.get("name"))) {
+                item.put("count", (int) item.get("count")+1);
+                orderList.remove(i);
+                orderList.add(i, item);
+
+                found = true;
+                break;
+            }
+        }
+        if(!found) {
+            JSONObject order = new JSONObject();
+            order.put("name", food);
+            order.put("count", 1);
+            orderList.add(order);
+        }
+
+        Vector<Vector<String>> data = new Vector<Vector<String>>();
+        for (int row = 0; row < orderList.size(); row++) {
+            Vector<String> vector = new Vector<String>();
+            JSONObject order = ((JSONObject)orderList.get(row));
+            vector.add(Integer.toString(row+1));
+            vector.add(order.get("name").toString());
+            vector.add(order.get("count").toString());
+            data.add(vector);
+        }
+
+        jTable1.setModel(new DefaultTableModel(data, getColumnNames()));
+    }
+
+    private Vector<String> getColumnNames() {
+        Vector<String> columnNames = new Vector<String>();
+        columnNames.add("No.");
+        columnNames.add("Food");
+        columnNames.add("Count");
+        return columnNames;
+    }
 
     /**
      * @param args the command line arguments
@@ -524,7 +580,7 @@ public class UserSite extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -548,7 +604,6 @@ public class UserSite extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new UserSite().setVisible(true);
-
             }
         });
     }
@@ -561,10 +616,13 @@ public class UserSite extends javax.swing.JFrame {
         UserSite.roomId = roomId;
     }
 
+    public static void setCustomerName(String customerName) {
+        UserSite.customerName = customerName;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ClientNameLabel;
-    private javax.swing.JLabel RoomLabel;
+    private static javax.swing.JLabel RoomLabel;
     private javax.swing.JPanel body;
     private javax.swing.JPanel bot;
     private javax.swing.JButton clearButton;
@@ -592,11 +650,11 @@ public class UserSite extends javax.swing.JFrame {
     private javax.swing.JPanel grid4;
     private javax.swing.JPanel grid5;
     private javax.swing.JPanel grid6;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JPanel left;
     private javax.swing.JButton submitButton;
     private javax.swing.JPanel top;
+    private JSONArray orderList;
     // End of variables declaration//GEN-END:variables
 }

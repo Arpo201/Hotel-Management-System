@@ -1,6 +1,5 @@
 package Admin.Backend;
 
-import Admin.Frontend.RunOrder;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -28,8 +27,6 @@ public class ClientHandler extends Thread {
             ClientHandler.outToClient = outToClient;
             while (true) {
                 clientData = (JSONObject) inFromClient.readObject();
-                if(clientData == null) break;
-                System.out.println(clientData);
                 new ResponseHandler(clientData, id).start();
             }
         } catch (IOException | ClassNotFoundException e) {
@@ -50,6 +47,7 @@ public class ClientHandler extends Thread {
     static void sendJSON(JSONObject data) throws IOException {
         outToClient.writeObject(data);
         outToClient.flush();
+        outToClient.reset();
         System.out.println(MessageFormat.format("Sending {0} to {1}", data.toJSONString(), id));
     }
 }

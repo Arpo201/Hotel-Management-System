@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Admin.Frontend;
+package Kitchen.Frontend;
 
-import javax.swing.UIManager;
-import org.json.simple.JSONObject;
+import javax.swing.*;
 
 /**
  *

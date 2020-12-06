@@ -1,6 +1,5 @@
 package Admin.Backend;
 
-import Admin.Frontend.FoodClientOrder;
 import org.json.simple.JSONObject;
 
 import java.io.IOException;
@@ -26,16 +25,13 @@ public class ResponseHandler extends Thread {
                 System.out.println(MessageFormat.format("Room {0} is connected", this.clientId));
                 sendCustomerName(this.clientId);
             } else if(clientData.get("type").equals("food_order")) {
-                try {
-                    FoodClientOrder.addOrder(clientData);
-                } catch (NullPointerException e) {}
+                QueueHandler.pushQueues(clientData);
                 ClientHandler.sendAck();
             } else {
                 ClientHandler.sendAck();
             }
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
         }
     }
 

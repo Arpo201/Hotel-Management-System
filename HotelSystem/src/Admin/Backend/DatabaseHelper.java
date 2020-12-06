@@ -9,6 +9,7 @@ import java.text.MessageFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -128,7 +129,6 @@ public class DatabaseHelper {
     public static String getAllAvailableRoomCount() {
         return getAvailableRoomCount(-1);
     }
-
 
     public static boolean addNewAdmin(JSONObject data) {
         String sql = MessageFormat.format("insert into user values(null, \"{0}\", \"{1}\", \"{2}\")",

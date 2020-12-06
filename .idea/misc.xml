@@ -5,8 +5,12 @@
   </component>
   <component name="ProjectPlainTextFileTypeManager">
     <file url="file://$PROJECT_DIR$/HotelSystem/src/Admin/Frontend/BookingForm.form" />
+    <file url="file://$PROJECT_DIR$/HotelSystem/src/Admin/Frontend/MainCompoHead.form" />
     <file url="file://$PROJECT_DIR$/HotelSystem/src/Admin/Frontend/RegisterForm.form" />
+    <file url="file://$PROJECT_DIR$/HotelSystem/src/User/Frontend/UserPin.form" />
+    <file url="file://$PROJECT_DIR$/HotelSystem/src/User/Frontend/UserSetting.form" />
     <file url="file://$PROJECT_DIR$/HotelSystem/src/User/Frontend/UserSite.form" />
+    <file url="file://$PROJECT_DIR$/HotelSystem/src/User/Frontend/UserWelcome.form" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_14" default="false" project-jdk-name="15" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/HotelSystem/out" />

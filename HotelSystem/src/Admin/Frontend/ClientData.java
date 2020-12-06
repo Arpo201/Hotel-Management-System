@@ -35,9 +35,7 @@ public class ClientData extends javax.swing.JFrame {
 
 
 
-    public static DefaultTableModel buildTableModel(ResultSet rs)
-            throws SQLException {
-
+    public static DefaultTableModel buildTableModel(ResultSet rs) throws SQLException {
         ResultSetMetaData metaData = rs.getMetaData();
 
         // names of columns
