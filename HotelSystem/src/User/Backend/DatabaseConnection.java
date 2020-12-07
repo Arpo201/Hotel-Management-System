@@ -9,7 +9,7 @@ public class DatabaseConnection {
 
     public DatabaseConnection() {
         if(connection == null) {
-            String url = "jdbc:mysql://68.183.181.112/hotel";
+            String url = "jdbc:mysql://68.183.181.112/hotel?useSSL=true&requireSSL=true&enabledTLSProtocols=TLSv1.2";
             try {
                 connection = DriverManager.getConnection(url, "hotel", "r2BIwa7o2e");
             } catch (SQLException e) {
