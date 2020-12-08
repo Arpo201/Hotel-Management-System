@@ -13,7 +13,7 @@ public class DatabaseHelper {
         JSONObject roomData = new JSONObject();
         roomData.put("first_name", "");
         roomData.put("last_name", "");
-        String sql = MessageFormat.format("select * from room where id = {0}", roomId);
+        String sql = MessageFormat.format("select first_name, last_name from room where id = {0}", roomId);
         try {
             ResultSet rs = connection.createStatement().executeQuery(sql);
             if(rs.next()){
