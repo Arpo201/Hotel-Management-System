@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.text.MessageFormat;
 
 public class DatabaseHelper {
-    private static Connection connection = new DatabaseConnection().getConnection();
+    private static Connection connection = new DatabaseConnector().getConnection();
 
     public static String getRoomData(String roomId) {
         JSONObject roomData = new JSONObject();

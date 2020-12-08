@@ -4,16 +4,13 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.text.MessageFormat;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class DatabaseHelper {
-    private static Connection connection = new DatabaseConnection().getConnection();
+    private static Connection connection = new DatabaseConnector().getConnection();
 
     public static String getUserCount() {
         String sql = "select count(*) as count from room where first_name != '' and last_name != ''";

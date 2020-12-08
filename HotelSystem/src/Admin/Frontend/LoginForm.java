@@ -8,7 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 
-import Admin.Backend.DatabaseConnection;
+import Admin.Backend.DatabaseConnector;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -29,7 +29,7 @@ public class LoginForm extends javax.swing.JFrame {
      * Creates new form LoginForm
      */
     public LoginForm() {
-        if (connection == null) connection = new DatabaseConnection().getConnection();
+        if (connection == null) connection = new DatabaseConnector().getConnection();
         initComponents();
         this.setLocationRelativeTo(null);// center form in the screen
     }
