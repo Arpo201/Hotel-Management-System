@@ -1,5 +1,6 @@
 package Kitchen.Backend;
 
+import Kitchen.Frontend.FoodClientOrder;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -27,16 +28,17 @@ public class ClientHandler extends Thread {
             ClientHandler.outToClient = outToClient;
             while (true) {
                 clientData = (JSONObject) inFromClient.readObject();
-                new ResponseHandler(clientData, id).start();
+                if(ClientHandler.id == null) {
+                    ClientHandler.id = clientData.get("id").toString();
+                }
+                System.out.println(MessageFormat.format("Got data from {0}: {1}", id, clientData));
+                FoodClientOrder.addOrder(clientData);
+                ClientHandler.sendAck();
             }
         } catch (IOException | ClassNotFoundException e) {
             System.out.println(MessageFormat.format("Client {0} disconnected!", id));
             ClientHandler.id = null;
         }
-    }
-
-    static void setClientId(String id) {
-        ClientHandler.id = id;
     }
 
     static void sendAck() throws IOException {
