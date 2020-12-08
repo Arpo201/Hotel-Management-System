@@ -17,7 +17,7 @@ public class ServerConnector extends Thread {
     @Override
     public void run() {
         try(
-                Socket socket = new Socket("localhost", 3141);
+                Socket socket = new Socket("25.76.40.105", 3141);
                 ObjectOutputStream outToServer = new ObjectOutputStream(socket.getOutputStream());
                 ObjectInputStream inFromServer = new ObjectInputStream(socket.getInputStream());
         ) {
