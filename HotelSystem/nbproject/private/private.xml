@@ -3,25 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Project/Hotel-Management-System/HotelSystem/src/Admin/Frontend/RunOrder.java</file>
-            <file>file:/D:/Project/Hotel-Management-System/HotelSystem/src/Admin/Backend/ClientListener.java</file>
-            <file>file:/D:/Project/Hotel-Management-System/HotelSystem/src/Admin/Frontend/ClientData.java</file>
-            <file>file:/D:/Project/Hotel-Management-System/HotelSystem/src/Admin/Backend/ClientHandler.java</file>
-            <file>file:/D:/Project/Hotel-Management-System/HotelSystem/src/Admin/Frontend/FoodOrderForm.java</file>
-            <file>file:/D:/Project/Hotel-Management-System/HotelSystem/src/User/Frontend/UserSetting.java</file>
-            <file>file:/D:/Project/Hotel-Management-System/HotelSystem/src/Admin/Frontend/RunAdmin.java</file>
-            <file>file:/D:/Project/Hotel-Management-System/HotelSystem/src/Admin/Backend/DatabaseConnection.java</file>
-            <file>file:/D:/Project/Hotel-Management-System/HotelSystem/src/Admin/Frontend/RegisterForm.java</file>
-            <file>file:/D:/Project/Hotel-Management-System/HotelSystem/src/Admin/Frontend/LoginForm.java</file>
-            <file>file:/D:/Project/Hotel-Management-System/HotelSystem/src/User/Frontend/UserSite.java</file>
-            <file>file:/D:/Project/Hotel-Management-System/HotelSystem/src/Assets/hotel.png</file>
-            <file>file:/D:/Project/Hotel-Management-System/HotelSystem/src/User/Frontend/UserPin.java</file>
-            <file>file:/D:/Project/Hotel-Management-System/HotelSystem/src/Admin/Frontend/FoodClientOrder.java</file>
-            <file>file:/D:/Project/Hotel-Management-System/HotelSystem/src/Admin/Frontend/BookingForm.java</file>
-            <file>file:/D:/Project/Hotel-Management-System/HotelSystem/src/User/Frontend/UserInfo.java</file>
-            <file>file:/D:/Project/Hotel-Management-System/HotelSystem/src/Admin/Frontend/MainpageHome.java</file>
-            <file>file:/D:/Project/Hotel-Management-System/HotelSystem/src/User/Frontend/UserWelcome.java</file>
-            <file>file:/D:/Project/Hotel-Management-System/HotelSystem/src/Admin/Frontend/MainpageRoom.java</file>
+            <file>file:/C:/Users/Demon/Documents/GitHub/Hotel-Management-System/HotelSystem/src/Kitchen/Backend/ClientHandler.java</file>
+            <file>file:/C:/Users/Demon/Documents/GitHub/Hotel-Management-System/HotelSystem/src/Kitchen/Frontend/RunOrder.java</file>
+            <file>file:/C:/Users/Demon/Documents/GitHub/Hotel-Management-System/HotelSystem/src/Kitchen/Backend/ResponseHandler.java</file>
+            <file>file:/C:/Users/Demon/Documents/GitHub/Hotel-Management-System/HotelSystem/src/Kitchen/Backend/ClientListener.java</file>
         </group>
     </open-files>
 </project-private>
