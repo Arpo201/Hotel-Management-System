@@ -30,8 +30,6 @@ public class MainpageRoom extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        roomStatus = DatabaseHelper.getAvailableStatus();
-
         jPageHeadPanel = new javax.swing.JPanel();
         jPageLabel = new javax.swing.JLabel();
         jBodyPanel = new javax.swing.JPanel();
@@ -86,8 +84,7 @@ public class MainpageRoom extends javax.swing.JPanel {
         floor3Label.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         floor3Label.setText("ชั้น 3");
 
-        if((boolean) roomStatus.get("301")) R301.setBackground(new java.awt.Color(216, 255, 186));
-        else R301.setBackground(new java.awt.Color(239, 140, 140));
+        R301.setBackground(new java.awt.Color(216, 255, 186));
         R301.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         R301.setText("301");
         R301.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -101,8 +98,6 @@ public class MainpageRoom extends javax.swing.JPanel {
             }
         });
 
-        if((boolean) roomStatus.get("302")) R302.setBackground(new java.awt.Color(216, 255, 186));
-        else R302.setBackground(new java.awt.Color(239, 140, 140));
         R302.setBackground(new java.awt.Color(216, 255, 186));
         R302.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         R302.setText("302");
@@ -117,8 +112,6 @@ public class MainpageRoom extends javax.swing.JPanel {
             }
         });
 
-        if((boolean) roomStatus.get("303")) R303.setBackground(new java.awt.Color(216, 255, 186));
-        else R303.setBackground(new java.awt.Color(239, 140, 140));
         R303.setBackground(new java.awt.Color(216, 255, 186));
         R303.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         R303.setText("303");
@@ -133,8 +126,6 @@ public class MainpageRoom extends javax.swing.JPanel {
             }
         });
 
-        if((boolean) roomStatus.get("304")) R304.setBackground(new java.awt.Color(216, 255, 186));
-        else R304.setBackground(new java.awt.Color(239, 140, 140));
         R304.setBackground(new java.awt.Color(216, 255, 186));
         R304.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         R304.setText("304");
@@ -149,8 +140,6 @@ public class MainpageRoom extends javax.swing.JPanel {
             }
         });
 
-        if((boolean) roomStatus.get("305")) R305.setBackground(new java.awt.Color(216, 255, 186));
-        else R305.setBackground(new java.awt.Color(239, 140, 140));
         R305.setBackground(new java.awt.Color(216, 255, 186));
         R305.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         R305.setText("305");
@@ -200,8 +189,6 @@ public class MainpageRoom extends javax.swing.JPanel {
         floor2Label.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         floor2Label.setText("ชั้น 2");
 
-        if((boolean) roomStatus.get("201")) R201.setBackground(new java.awt.Color(216, 255, 186));
-        else R201.setBackground(new java.awt.Color(239, 140, 140));
         R201.setBackground(new java.awt.Color(216, 255, 186));
         R201.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         R201.setText("201");
@@ -216,8 +203,6 @@ public class MainpageRoom extends javax.swing.JPanel {
             }
         });
 
-        if((boolean) roomStatus.get("202")) R202.setBackground(new java.awt.Color(216, 255, 186));
-        else R202.setBackground(new java.awt.Color(239, 140, 140));
         R202.setBackground(new java.awt.Color(216, 255, 186));
         R202.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         R202.setText("202");
@@ -232,8 +217,6 @@ public class MainpageRoom extends javax.swing.JPanel {
             }
         });
 
-        if((boolean) roomStatus.get("203")) R203.setBackground(new java.awt.Color(216, 255, 186));
-        else R203.setBackground(new java.awt.Color(239, 140, 140));
         R203.setBackground(new java.awt.Color(216, 255, 186));
         R203.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         R203.setText("203");
@@ -248,8 +231,6 @@ public class MainpageRoom extends javax.swing.JPanel {
             }
         });
 
-        if((boolean) roomStatus.get("204")) R204.setBackground(new java.awt.Color(216, 255, 186));
-        else R204.setBackground(new java.awt.Color(239, 140, 140));
         R204.setBackground(new java.awt.Color(216, 255, 186));
         R204.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         R204.setText("204");
@@ -264,8 +245,6 @@ public class MainpageRoom extends javax.swing.JPanel {
             }
         });
 
-        if((boolean) roomStatus.get("205")) R205.setBackground(new java.awt.Color(216, 255, 186));
-        else R205.setBackground(new java.awt.Color(239, 140, 140));
         R205.setBackground(new java.awt.Color(216, 255, 186));
         R205.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         R205.setText("205");
@@ -315,8 +294,6 @@ public class MainpageRoom extends javax.swing.JPanel {
         floor1Label.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         floor1Label.setText("ชั้น 1");
 
-        if((boolean) roomStatus.get("101")) R101.setBackground(new java.awt.Color(216, 255, 186));
-        else R101.setBackground(new java.awt.Color(239, 140, 140));
         R101.setBackground(new java.awt.Color(216, 255, 186));
         R101.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         R101.setText("101");
@@ -331,8 +308,6 @@ public class MainpageRoom extends javax.swing.JPanel {
             }
         });
 
-        if((boolean) roomStatus.get("102")) R102.setBackground(new java.awt.Color(216, 255, 186));
-        else R102.setBackground(new java.awt.Color(239, 140, 140));
         R102.setBackground(new java.awt.Color(216, 255, 186));
         R102.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         R102.setText("102");
@@ -347,8 +322,6 @@ public class MainpageRoom extends javax.swing.JPanel {
             }
         });
 
-        if((boolean) roomStatus.get("103")) R103.setBackground(new java.awt.Color(216, 255, 186));
-        else R103.setBackground(new java.awt.Color(239, 140, 140));
         R103.setBackground(new java.awt.Color(216, 255, 186));
         R103.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         R103.setText("103");
@@ -363,8 +336,6 @@ public class MainpageRoom extends javax.swing.JPanel {
             }
         });
 
-        if((boolean) roomStatus.get("104")) R104.setBackground(new java.awt.Color(216, 255, 186));
-        else R104.setBackground(new java.awt.Color(239, 140, 140));
         R104.setBackground(new java.awt.Color(216, 255, 186));
         R104.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         R104.setText("104");
@@ -379,8 +350,6 @@ public class MainpageRoom extends javax.swing.JPanel {
             }
         });
 
-        if((boolean) roomStatus.get("105")) R105.setBackground(new java.awt.Color(216, 255, 186));
-        else R105.setBackground(new java.awt.Color(239, 140, 140));
         R105.setBackground(new java.awt.Color(216, 255, 186));
         R105.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         R105.setText("105");

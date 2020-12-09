@@ -8,6 +8,10 @@ public class DatabaseConnector {
     private static Connection connection = null;
 
     public DatabaseConnector() {
+        connect();
+    }
+
+    public static void connect() {
         if(connection == null) {
             String url = "jdbc:mysql://68.183.181.112/hotel?useSSL=true&requireSSL=true&enabledTLSProtocols=TLSv1.2";
             try {

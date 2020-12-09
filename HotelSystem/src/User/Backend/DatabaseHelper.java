@@ -20,7 +20,9 @@ public class DatabaseHelper {
                 roomData.replace("first_name", rs.getString("first_name"));
                 roomData.replace("last_name", rs.getString("last_name"));
             }
-        } catch (Exception ignored) { }
+        } catch (Exception ignored) {
+            DatabaseConnector.connect();
+        }
 
         return roomData.get("first_name").toString() + " " + roomData.get("last_name").toString();
     }

@@ -19,7 +19,9 @@ public class DatabaseHelper {
             if(rs.next()){
                 return rs.getString("count");
             }
-        } catch (Exception ignored) { }
+        } catch (Exception ignored) {
+            DatabaseConnector.connect();
+        }
         return "0";
     }
 
@@ -28,7 +30,9 @@ public class DatabaseHelper {
         String sql = "select * from room where first_name != '' and last_name != ''";
         try {
             rs = connection.createStatement().executeQuery(sql);
-        } catch (Exception ignored) { }
+        } catch (Exception ignored) {
+            DatabaseConnector.connect();
+        }
         return rs;
     }
 
@@ -45,7 +49,9 @@ public class DatabaseHelper {
             while(rs.next()){
                 data.replace(rs.getString("id"), false);
             }
-        } catch (Exception ignored) { }
+        } catch (Exception ignored) {
+            DatabaseConnector.connect();
+        }
         return data;
     }
 
@@ -72,7 +78,9 @@ public class DatabaseHelper {
                 data.replace("checkin", rs.getString("checkin"));
                 data.replace("checkout", rs.getString("checkout"));
             }
-        } catch (Exception ignored) { }
+        } catch (Exception ignored) {
+            DatabaseConnector.connect();
+        }
         return data;
     }
 
@@ -92,8 +100,8 @@ public class DatabaseHelper {
             stm.executeUpdate(sql);
             stm.close();
             return true;
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception ignored) {
+            DatabaseConnector.connect();
             return false;
         }
     }
@@ -107,7 +115,9 @@ public class DatabaseHelper {
             if(rs.next()){
                 return rs.getString("count");
             }
-        } catch (Exception ignored) { }
+        } catch (Exception ignored) {
+            DatabaseConnector.connect();
+        }
         return "0";
     }
 
@@ -126,8 +136,8 @@ public class DatabaseHelper {
             stm.executeUpdate(sql);
             stm.close();
             return true;
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception ignored) {
+            DatabaseConnector.connect();
             return false;
         }
     }

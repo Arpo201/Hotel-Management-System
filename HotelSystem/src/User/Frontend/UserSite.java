@@ -50,8 +50,6 @@ public class UserSite extends javax.swing.JFrame {
         ImageIcon menu4 = new ImageIcon(new ImageIcon(getClass().getResource("/Assets/food4.jpg")).getImage().getScaledInstance((int)(this.foodPic1.getWidth()*0.9), (int)(this.foodPic1.getHeight()*0.7), Image.SCALE_SMOOTH));
         ImageIcon menu5 = new ImageIcon(new ImageIcon(getClass().getResource("/Assets/food5.jpg")).getImage().getScaledInstance((int)(this.foodPic1.getWidth()*0.9), (int)(this.foodPic1.getHeight()*0.7), Image.SCALE_SMOOTH));
         ImageIcon menu6 = new ImageIcon(new ImageIcon(getClass().getResource("/Assets/food6.jpg")).getImage().getScaledInstance((int)(this.foodPic1.getWidth()*0.9), (int)(this.foodPic1.getHeight()*0.7), Image.SCALE_SMOOTH));
-        ImageIcon menu7 = new ImageIcon(new ImageIcon(getClass().getResource("/Assets/food1.jpg")).getImage().getScaledInstance((int)(this.foodPic1.getWidth()*0.9), (int)(this.foodPic1.getHeight()*0.7), Image.SCALE_SMOOTH));
-        ImageIcon setHomeIcon = new ImageIcon(new ImageIcon(getClass().getResource("/Assets/hotel.png")).getImage().getScaledInstance(80, 50, Image.SCALE_SMOOTH));
         this.foodPic1.setText("");
         this.foodPic1.setIcon(menu1);
 
